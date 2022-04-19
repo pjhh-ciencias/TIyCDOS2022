@@ -1,0 +1,1544 @@
+
+<!DOCTYPE html PUBLIC >
+
+<html lang="es">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!-- Following part is mathjax, for latex-->
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+
+    <!-- This part is for jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+
+    <!-- This part is to load main.js -->
+    <script type="text/javascript" src="../main.js"></script>
+
+
+    <!-- Next part is for new coomands -->
+    <script>
+      window.MathJax = {
+        tex: {
+          macros: {
+            sen: "\\operatorname{sen}",
+            seg: ["\\overrightarrow{#1}", 1],
+            arcsen: "\\operatorname{arcsen}",
+            arcsec: "\\operatorname{arcsec}"
+          },
+          tags: "ams", /* this part is for numbered equations */
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        }
+      };
+    </script>
+
+    <!-- This part is for using single $ for latex input, instead of \(\) -->
+    <!--<script>
+        MathJax = {
+        tex: {
+            inlineMath: [['$', '$'], ['\\(', '\\)']]
+            },
+        svg: {
+            fontCache: 'global'
+        }
+    };
+    </script>-->
+
+    <!-- CSS -->
+
+    <link rel="stylesheet" , href="../style.css" />
+
+    <!-- This part restart counter of cards to start at n+1 -->
+    <style>
+        body.number-title{
+          counter-reset: sectionCounter 7 cardCounter ;
+        }
+        h1.number-title{
+          counter-reset: sectionCounter 7 cardCounter ;
+        }
+      </style>
+  
+    <!-- Top Menu  -->
+
+
+        <header class="main-header">
+          <h1> Cálculo DOS </h1>
+         <nav class="top-nav">
+           <ul>
+              <li> <a href="../Home.html"> Inicio  </a> </li>
+              <li> <a href="../InfoPrimerDia.html"> Información general </a> </li>
+              <li> <a href="../Secciones.html"> Secciones  </a> </li>
+              <li> <a href="../ExternalLinks.html"> Links </a> </li>
+              
+            </ul>
+          </nav>
+          <nav class="small-nav" align=right>
+            <button onclick="myFunction()">Claro/Obscuro 
+          </nav>
+        </header>
+
+      <!-- This part is for title in tab-->
+      <title> § 8 </title>
+    
+  </head>
+
+<body class="fondo-body" >
+
+<h1 class="number-title flexbox"> Teoremas Fundamentales </h1>
+
+
+<div class="info-box">
+    <h2 class="number-title"> Introducción </h2>
+    <p>
+        Los teoremas fundamentales del cálculo son como las dos caras de una misma moneda. El primer  
+        Teorema Fundamental
+        es visto desde la perspectiva de las derivadas y el segundo desde la perspectiva de las 
+        antiderivadas.        
+    </p>
+
+</div>
+
+<h1 class="flexbox"> Segundo Teorema Fundamental</h1>
+<h2 class="flexbox"> Antiderivadas </h2>
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    
+    <p>
+        Dada una función $f$, una antiderivada de $f$ (ó primitiva),  en $(a,b)$, es una
+        función $F$  tal que $F'(x)=f(x)$ para toda $x$ en $(a,b)$.
+    </p>
+    <p>
+        Notación: escribimos $\int f(x)dx$ o $\int f$ para denotar una antidarivada de $f$ y se 
+        se denominan integrales indefinidas.
+    </p>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Encuentra anti-derivadas de las siguientes funciones:
+    </p>
+
+
+<ol>
+    <li>$e^x$, $x\in \mathbb{R}$;</li> 
+    <li>$\sen(x)$, $x\in \mathbb{R}$;</li> 
+    <li>$\cos(x)$, $x\in \mathbb{R}$;</li> 
+    <li>
+        $x^p$, $x\in (0,\infty)$ donde $p \in \mathbb{Q}$ y $p>0$. 
+    </li> 
+</ol>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Si $F_1$ y $F_2$ son primitivas de $f$ en $(a,b)$, demuestra que existe una constante $c$ tal que
+        $F_1(x)=F_2(x)+c$, para todo $x\in (a,b)$.
+    </p>
+    <button class="respButton hvr-grow "> Solución  </button>
+     <div class="resp-box flexbox">
+    <p>
+        Supongamos que \(F_1,F_2:[a,b]\to \mathbb{R}\) son antiderivadas de \(f\) en \([a,b]\). Se sigue que 
+        la función \(g(x)=F_1(x)-F_2(x)\) tiene derivada cero en \((a,b)\), pues 
+        \[g'(x)=F_1'(x)-F_2'(x)=f(x)-f(x)=0.\]
+        Por lo tanto \(g\) es constante en \((a,b)\). Si ésta constante es \(c\) entonces 
+        \(F_1(x)-F_2(x)=c\) para todo \(x\in (a,b)\), es decir \(F_1(x)=F_2(x)+c\).
+    </p>
+    </div>
+</div>
+
+<div class="teorema-box"> 
+    <h2 class="number-title"  id="Teo:TF-2"> Teorema </h2>
+    <h3> Segundo Teorema Fundamental</h3>
+    <p>
+        Sea $f:[a,b] \to \mathbb{R}$ una función  continua en todo punto de  $[a,b]$.
+    </p>
+    <p>
+        Supongamos que 
+        $F:[a,b]\to \mathbb{R}$ es  una antiderivada de \(f\) continua en $[a,b]$ y diferenciable en $(a,b)$.
+        Entonces
+        $$
+        \int_a^bf(x)dx=F(b)-F(a).
+        $$        
+    </p>
+
+        <button class="respButton hvr-grow "> Demostración  </button>
+        <div class="resp-box flexbox">
+        <p>
+            Para \(n\in \mathbb{N}\) denotamos por \(P_n=\{x_i\}_{i=0}^n\) la partición homogenea de \([a,b]\)
+            de longitud \(n\).
+        </p>
+        <p>
+            Ahora aplicamos el Teorema del Valor medio para las derivadas a la función \(F\) en 
+            los intervalos \([x_{i-1},x_i]\) para obtener puntos \(c_i\in [x_{i-1},x_i]\)
+            que cumplan 
+            \begin{equation}\label{Eqn:Aux12oTFC}
+            f(c_i)(x_i-x_{i-1})=F(x_i)-F(x_{i-1})
+            \end{equation}
+        </p>
+        <p>
+            Si aplicamos el  <a href="./S5.html#Ejer:AproximacionSumasRiemann">Ejercicio 5.11</a> (con los puntos \(r_i=c_i\)) obtenemos que 
+            \[
+            \int_a^b f(x)dx=\lim_{n\to \infty} \sum_{i=1}^n f(c_i)(x_i-x_{i-1})
+            \]
+            pero por usando \eqref{Eqn:Aux12oTFC} podemos escribir el límite anterior como 
+            \[
+            \int_a^b f(x)dx=\lim_{n\to \infty} \sum_{i=1}^n F(x_i)-F(x_{i-1})
+            \]
+            pero al ser la suma del lado derecho una suma telescópica resulta 
+            \[
+            \sum_{i=1}^{n}F(x_i)-F(x_{i-1})=F(b)-F(a)
+            \]
+            por lo que concluimos 
+            \[
+            \int_a^b f(x)dx=F(b)-F(a).
+            \]
+        </p>
+        
+        </div>
+    
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2>
+    <p>
+        Este ejercicio justifica porqué la integral de la velocidad es la distancia.
+    </p> 
+    <p>
+        Imagina una partícula que se mueve sobre el eje de las $x$ y por $x(t)$ denotemos
+        la positión (tomando al cero como marco de referencia)  de la particula en el tiempo $t$ y 
+        por $v(t)$ denotamos a la velocidad de la partícula. Es decir $x'(t)=v(t)$.
+
+        Decimos que  $\int_a^b v(t)dt$ representa la distancia neta recorrida, del tiempo $a$ al tiempo
+        $b$, pues usando sumas de Riemann tenemos la siguiente aproximación:
+        $$
+        \sum_{i=1}^n v(\xi_i)(x_i-x_{i-1}) \sim \textrm{distancia neta recorrida del tiempo $a$ al tiempo $b$}
+        $$
+
+        Usa el teorema fundamental para probar
+        $$
+        \int_a^b v(t)dx=x(b)-x(a).
+        $$
+    </p>
+    <p>
+        Nota que $x(b)-x(a)$ es el cambio neto de la distancia desde el tiempo $a$ al tiempo $b$.
+    </p>
+
+</div>
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Recuerda que si $a < b$ definimos $\int_b^a f(x)dx=-\int_a^b f(x)dx$. 
+    </p>
+    <p>
+        Con esta notación demuestra que el segundo Teorema
+        Fundamental sigue siendo válido si intercambiamos $a$ y $b$, es decir, 
+        si $F$ es una antiderivada de $f$ en $(a,b)$, entonces
+        $$
+        \int_b^a f(x)dx= F(a)-F(b).
+        $$ 
+    </p>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2>
+    <p>
+        Recuerda que si $f:[a,b]\to \mathbb{R}$ es integrable en $[a,b]$ y $c\in (a,b)$ entonces
+        $$
+        \int_a^cf(x)dx+\int_c^b f(x)dx=\int_a^b f(x)dx.
+        $$
+    </p> 
+    <p>
+        Ahora, asume que $F$ es una antiderivada de $f$ en $(a,b)$. Usa el segundo Teorema Fundamental para dar otra
+        prueba de ésta fórmula.
+    </p>
+
+<button class="respButton hvr-grow "> Demostración  </button>
+ <div class="resp-box flexbox">
+
+<p>
+Sea $F\colon [a,b] \to \mathbb{R}$ una antiderivada de $f$  en $(a,b)$ tal que $F$ es  continua en $[a,b]$,
+entonces $F^{'}(x)= f(x)$ para todo $x \in (a,b)$ y por el <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> 
+se tiene que 
+
+\begin{equation*}\int_{a}^{b} f(x) dx = F(b) - F(a)\end{equation*}
+</p>
+
+<p>
+Sea $c\in (a,b)$. Consideremos las funciones $F_{1}\colon [a,c] \to \mathbb{R}$ y $F_{2}\colon [c,b] \to \mathbb{R}$
+definidas como $F_{1}(x):= F(x), \forall x \in [a,c]$ y $F_{2}(x):= F(x), \forall x \in [c,b]$  respectivamente. 
+</p>
+Luego,  dado que la funcion $F$ es continua en $[a,b]$ y diferenciable en $(a,b)$ se sigue que las funciones $F_{1}$ y $F_{2}$ son continuas 
+en $[a,c]$ y $[c,b]$ respectivamente  y diferenciables en $(a,c)$ y $(c,b)$ respectivamente. Por lo tanto del segundo Teorema 
+Fundamental del Calculo y la definión  de las funciones $F_{1}$ y $F_{2}$ se tiene que:
+
+\begin{equation}\label{eqn:TFC_a_c}
+\int_{a}^{c} f(x) dx = F_{1}(c) - F_{1}(a)= F(c)-F(a)
+\end{equation}
+
+
+\begin{equation}\label{eqn:TFC_c_b}
+\int_{c}^{b} f(x) dx = F_{2}(b) - F_{2}(c)= F(b)-F(c)
+\end{equation}
+
+Por lo tanto de \eqref{eqn:TFC_a_c} y \eqref{eqn:TFC_c_b} se tiene que:
+
+$$
+\int_a^cf(x)dx+\int_c^b f(x)dx= (F(c)- F(a)) - (F(b) - F(c))=F(b)-F(a)
+$$
+
+</div>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+   <p>
+    Por el 
+    <a href="https://tfrancisco-ciencias.github.io/CalculoUNO/Secciones/S16.html#Ejer:RectaSoporteExpEnCero">
+        C1:Ejercicio 16.5</a> sabemos que, para todo $x\in \mathbb{R}$:
+    $$
+    e^x \geq 1+x.
+    $$
+   </p>
+    
+<ol>
+
+    <li>
+        Fija $x>0$. Integra ambos lados de la desigualdad anterior en el intervalo $[0,x]$ y 
+        usa el Segundo Teorema Fundamental para obtener
+        $$
+        e^x \geq 1+x +\frac{x^2}{2}.
+        $$
+    </li> 
+    <li>
+        Generaliza el ejercicio anterior y prueba que, para todo natural $n\geq 1$:
+        $$
+        e^x \geq \sum_{k=0}^n \frac{x^k}{k!}.
+        $$
+        Nota que $\sum_{k=0}^n \frac{x^k}{k!}$ es el $n$-ésimo polinomio de Taylor de $e^x$. Asi 
+        que el ejercicio dice que, en $[0, \infty)$, las gráficas de  los polinomios de Taylor 
+        de $e^x$  están por debajo de la gráfica de $e^x$.
+    </li> 
+
+    <li>
+        ¿Es cierto que 
+        $$
+        e^x \geq \sum_{k=0}^n \frac{x^k}{k!}
+        $$
+        si $x < 0 $? Demuestra o da un contraejemplo.
+    </li>  
+</ol>
+
+<button class="respButton hvr-grow "> Solución  </button>
+     <div class="resp-box flexbox">
+<p>
+    <b>Demostración inciso 1</b>.
+</p> 
+
+<p>
+    Fijamos \(x> 0\),  como \(e^x \geq  1 +x \) podemos integrar por ambos lados de la desigualdad en el 
+    intervalo \([0,x]\), recordemos que esto se puede hacer por la 
+    <i>Monotonía de la Integral</i>, por lo que : 
+    \[ \int_0^xe^ydy \geq \int_0^x(1 + y) dy = \int_0^xdx 
+    + \int_0^xydy = x + \frac{x^2}{2} .\] 
+</p>
+<p>
+    Es decir, \(\int_0^xe^ydy \geq  x + \frac{x^2}{2}. \) Por otro lado, 
+    tenemos que la función exponencial, \(e^y\), es su propia antiderivada entonces 
+    por el <i>Segundo Teorema Fundamental</i> tenemos: 
+    \[ \int_0^xe^ydy  = e^x -e^0 = e^x -1 .\] 
+    Lo cual implica, \( e^x -1 \geq x + \frac{x^2}{2} .\) Por lo tanto, \[ e^x \geq 1+ x +\frac{x^2}{2} .\] 
+</p>
+
+<p>
+    <b>Demostración inciso 2</b>.
+</p> 
+
+<p>
+    Para demostrar este inciso, procedemos por inducción. La base de inducción ya la hicimos en el inciso (1).
+</p>
+<p>
+    <b>Hipótesis de Inducción.</b>Supongamos que existe un natural \(n \geq 1\) tal que 
+    \[ e^x \geq \sum_{k=0}^n\frac{x^k}{k!} . \]
+</p>
+
+ <p>
+    <b>Paso Inductivo.</b>Por demostrar que \(e^x \geq \sum_{k=0}^{n+1}\frac{x^k}{k!}\). 
+    Integrando en \([0,x]\) y usando la <i>Monotonía de la Integral</i> tenemos: 
+    \[ \int_0^xe^ydy \geq \int_0^x\left(\sum_{k=0}^n\frac{y^k}{k!}\right) dy .\] 
+ </p>  
+ <p>
+    Y por la linealidad de la integral tenemos : 
+    \begin{eqnarray*} 
+    \int_0^x\left(\sum_{k=0}^n\frac{y^k}{k!}\right) dy &=&  \sum_{k=0}^n\frac{1}{k!}\int_0^xy^kdy 
+     \\ 
+     &=&   \sum_{k=0}^n\frac{1}{k!}\cdot\frac{x^{k+1}}{k+1} \\
+     &= &  \sum_{k=0}^n\frac{x^{k+1}}{k+1!}   \\
+    &=& \sum_{k=1}^{n+1}\frac{x^{k}}{k!} .
+    \end{eqnarray*}
+ </p>
+
+ <p>
+    Por lo tanto: \[ \int_0^xe^ydy \geq  \sum_{k=1}^{n+1}\frac{x^{k}}{k!} .\] 
+    Y como ya vimos que \( \int_0^xe^ydy = e^x -1\). Lo cual implica que, \( e^x -1 \geq  
+    \sum_{k=1}^{n+1}\frac{x^{k}}{k!}\). Por lo tanto: \[ e^x \geq 1 + \sum_{k=1}^{n+1}\frac{x^k}{k!} 
+    = \sum_{k=0}^{n+1}\frac{x^k}{k!} .\]
+ </p>
+
+ <p>
+    Esto demuestra el paso inductiva. Por lo tanto, para todo \(n \geq 1\) tenemos, 
+    \[ e^x \geq \sum_{k=0}^n\frac{x^k}{k!} . \]
+ </p>
+
+<p>
+    <b>Demostración inciso 2</b>.
+</p> 
+<p>
+    Es Falso. Consideremos \(n=2\) y \(x=-10\), entonces tenemos que \[ e^{-10} < 
+        1 < 1 -10 + \frac{(-10)^2}{2} = 41. \]
+</p>
+</div>
+
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:IntegralPotenciasRacionales"> Ejercicio</h2>   
+    
+    <p>
+        Vimos en el ejercicio  <a href="./S4.html#Ejer:IntegralPotenciasNaturales"> Ejercicio 4.5</a> que para todo 
+        $k\in \mathbb{N}$ y $0\leq a < b$:
+        $$
+        \int_a^b x^k dx=\frac{b^{k+1}-a^{k+1}}{k+1}.
+        $$
+    </p>
+    <p>
+        Este ejercicio generaliza está fórmula para cuando $k$ es racional. 
+    </p>
+    <p>
+        Toma $p=\frac{n}{m}$, $m,n \in \mathbb{N}$, $m\ne 0$, un potencia racional. 
+        Usa el segundo Teorema Fundamental para demostrar que, para $0 \leq a < b$:
+        $$
+        \int_a^b x^pdx=\frac{b^{p+1}-a^{p+1}}{p+1}.
+        $$
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+<div class="resp-box flexbox">
+<p>
+Sean $0 \leq a < b$ y  $\displaystyle{p=\frac{n}{m}}$ un número racional con $m,n \in \mathbb{N}$ y  $m\ne 0$. 
+</p>
+
+<p>
+Consideremos la función $F\colon [a,b] \to \mathbb{R}$ definida  como $\displaystyle{F(x):=\frac{x^{p+1}}{p+1}}$,
+notemos que $F$ esta bien definida ya que $p+1 \ne 0$ por hipótesis sobre $p$.
+
+<p>
+Además,  observemos que la función  $F$ es continua en $[a,b]$ y diferenciable en $(a,b)$
+con $F^{'}(x)=x^p$ para todo $x \in (a,b)$. 
+</p> 
+
+</p>
+
+<p>
+Por lo tanto del <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> podemos 
+conluir que:
+$$
+\int_a^b x^pdx=F(b) - F(a)=\frac{b^{p+1}}{p+1} - \frac{a^{p+1}}{p+1}= \frac{b^{p+1}-a^{p+1}}{p+1}.
+$$
+</p>
+</div>
+</div>
+
+
+
+
+
+<!--<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Este ejercicio da una idea sobre la prueba del Segundo Teorema Fundamental. 
+        Recordemos que, por el <a href="./S5.html#Ejer:AproximacionSumasRiemann">Ejercicio</a>,  dada  
+        $f:[a,b] \to \mathbb{R}$, una función continua en todo punto de $[a,b]$, ésta es integrable y
+        \begin{equation}\label{Eqn:LimiteSumasRiemann}
+        \lim_{n\to \infty} \sum_{i=1}^n f(r_{i})(x_i-x_{i-1})=\int_a^b f(x)dx.
+        \end{equation}
+        donde $P=\{x_i\}_{i=1}^n$ es la partición homogenea de longitud n y los $r_{i}$, 
+        $i=1,\dots, n$, son puntos cualesquiera en el intervalo $[x_{i-1},x_i]$.
+    </p>
+<ol>
+    <li>
+        Toma $f(x)=x$, $x\in \mathbb{R}$, y $r_{i}$ los puntos medios del los intervalos 
+        $[x_{i-1},x_i]$, es decir $r_{i}=\frac{x_{i-1}+x_i}{2}$. Demuestra que
+        $$
+        \sum_{i=1}^n f(r_i)(x_i-x_{i-1})=\frac{b^2-a^2}{2}.
+        $$
+        Concluye usando \eqref{Eqn:LimiteSumasRiemann} que $\int_a^b xdx=\frac{b^2-a^2}{2}$.
+    </li> 
+
+    <li>
+        Toma $f(x)=x^2$, $x\in \mathbb{R}$, y define $r_i=\sqrt[2]{(x_{i-1}^2+x_{i-1}x_i+x_i^2)/3}$. 
+        Prueba que $r_i \in [x_{i-1}, x_i]$ y que
+        $$
+        \sum_{i=1}^n f(r_i)(x_i-x_{i-1})=\frac{b^3-a^3}{3}
+        $$
+        Concluye usando \eqref{Eqn:LimiteSumasRiemann} que $\int_a^b x^2dx=\frac{b^3-a^3}{3}$.
+    </li> 
+    <li>
+        Toma $f(x)=\frac{1}{x^2}$, $x>0$. Define $r_i=\sqrt{x_{i-1}x_i}$. Prueba que $r_i\in [x_{i-1},x_i]$ 
+        y que 
+        $$
+        \sum_{i=1}^n f(r_i)(x_i-x_{i-1})=\frac{1}{a}-\frac{1}{b}
+        $$
+        Concluye usando \eqref{Eqn:LimiteSumasRiemann} que $\int_a^b \frac{1}{x^2}dx=\frac{1}{a}-\frac{1}{b}$, 
+        con $0< a < b$.
+    </li> 
+</ol>
+</div>
+-->
+
+
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Para las siguientes funciones $f$, encuentra una anti-derivada y calcula $\int_a^b f(x)dx$.
+    </p>
+<ol>
+    <li>$f(x)=\frac{x^4-x+3}{x^3}$, $x>0$.</li> 
+    <li>$f(x)=(1+\sqrt{x})^2$, $x>0$.</li> 
+    <li>$f(x)=x^{4/3}-5\cos(x)$, $x\in \mathbb{R}$. </li> 
+</ol>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Usando  un cambio de variable lineal y/o el segundo T.F.C. 
+        calcula las siguientes integrales.
+    </p>
+
+<ol>
+    <li>$\int_{0}^{\pi} 3\sen(3x+2)dx$.</li> 
+    <li>$\int_0^{\pi} \cos(5x-2)dx$.</li> 
+    <li>$\int_{0}^2 x\sqrt{x+1}dx$.</li> 
+    <li>$\int_1^2 x^2\sqrt[3]{x+2}dx$.</li> 
+    <li>$\int_0^1 (x-2)e^{3x^2-12x+1}dx$</li> 
+    <li>Para $\omega >0$, $\int_0^{2\pi} \cos(\omega x)dx $ y $\int_0^{2\pi}\sen(\omega x)dx$.</li> 
+    <li>Para $c, d \in \mathbb{R}$ constantes, $\int_{a}^b e^{cx+m}dx$.</li> 
+</ol>
+    <button class="respButton hvr-grow "> Solución inciso 1 </button>
+    <div class="resp-box flexbox">
+        <p>Solución de inciso 1. </p>
+        <p>
+            Consideremos la función  $F\colon [0,\pi] \to \mathbb{R}$, definida como $F(x):=-\cos(3x+2)$. 
+            Observemos que $F$ es una funcion continua en $[0,\pi]$ y diferenciable en $(0,\pi)$. Aplicando 
+            la regla de la cadena se tiene que:
+            \begin{align*}
+            F^{'}(x)&= -(-\sen(3x+2)\cdot \frac{\mathrm{d}}{\mathrm{d}x} (3x +2))\\
+            &= \sen(3x+2)\cdot 3\\
+            &= 3 \cdot \sen(3x+2)
+            \end{align*}
+        </p>
+        <p>
+            Por lo tanto, $F$ es una antiderivada de la función $f(x)=3 \cdot \sen(3x+2)$ en $(0,\pi)$. 
+            Luego, del  <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> se sigue que 
+            \begin{align*}
+            \int_{0}^{\pi} 3\sen(3x+2)dx&=F(\pi)-F(0)\\
+            &= -\cos(3\cdot \pi + 2)- (-\cos(3\cdot 0 +2))\\
+            &=\cos(2)-\cos(3\pi+2)
+            \end{align*}
+        </p>
+        <p> Por lo tanto, 
+            $$\int_{0}^{\pi} 3\sen(3x+2)dx = \cos(2)-\cos(3\pi+2)$$
+        </p>
+    </div>
+    <button class="respButton hvr-grow "> Solución inciso 3 </button>
+    <div class="resp-box flexbox">
+        <p>Solución inciso 3</p> 
+         <p>Para calcuar la integral $\displaystyle{\int_{0}^2 x\sqrt{x+1}dx}$ realicemos el siguiente cambio de variable lineal. 
+         Haciendo $u=x+1$, del  Teorema  de cambio de variable lineal, la linealidad de la integral 
+         y el <a href="#Ejer:IntegralPotenciasRacionales"> Ejercicio 8.10</a> resulta que 
+         \begin{align*}
+         \int_{0}^2 x\sqrt{x+1}dx &= \int_{1}^3 (u-1)\sqrt{u}du\\
+         &= \int_{1}^3 (u-1)u^{1/2}du\\
+         &= \int_{1}^3 u^{3/2} - u^{1/2}du\\
+         &= \int_{1}^3 u^{3/2} - \int_{1}^3 u^{1/2}du\\
+         &=\left ( \frac{3^{5/2} - 1^{5/2} }{\frac{5}{2}}\right) -\left (\frac{3^{3/2} - 1^{3/2}}{\frac{3}{2}} \right)\\
+         &= \frac{2}{5} \left (9\sqrt{3} - 1 \right) - \frac{2}{3}\left (3\sqrt{3} - 1 \right)\\
+         &= \frac{24}{15} \sqrt{3} + \frac{4}{15}\\
+         &= \frac{4}{15}  \left( 6\sqrt{3} + 1\right)
+         \end{align*}
+        </p>
+         <p> Por lo tanto, 
+             $$\int_{0}^2 x\sqrt{x+1}dx = \frac{4}{15}  \left( 6\sqrt{3} + 1\right)$$
+         </p>
+        </p>
+    </div>
+    <button class="respButton hvr-grow "> Solución inciso 5 </button>
+    <div class="resp-box flexbox">
+    <p>Solución inciso 5</p>
+        <p>
+         Primero que nada observemos que de la linealidad de la integral se tiene la siguiente igualdad: 
+         $$
+         \int_0^1 (x-2)e^{3x^2-12x+1}dx= \frac{1}{6} \int_0^1 (6x-12)e^{3x^2-12x+1}dx
+         $$
+        </p>
+        
+            <p>
+         Consideremos la función $H\colon [0,1] \to \mathbb{R}$ definida como $H(x) \colon= e^{3x^2 - 12 x +1}$, 
+         observemos que la función $H$ es continua en $[0,1]$ y además $H$ es una antiderivada de la función 
+         $x\mapsto (6x-12)e^{3x^2-12x+1}$ en $(0,1)$.
+        </p>
+
+        <p>
+        Luego, por el  <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> se tiene que 
+
+        \begin{align*}
+        \int_0^1 (x-2)e^{3x^2-12x+1}dx &= \frac{1}{6} \int_0^1 (6x-12)e^{3x^2-12x+1}dx\\
+        &= \frac{1}{6} \left( H(1) - H(0)  \right)\\
+        &= \frac{1}{6} \left( e^{3\cdot(1)^2 - 12\cdot(1) +1} - e^{3\cdot (0)^2 - 12\cdot(0)+1} \right)\\
+        &= \frac{1}{6} \left(  e^{-8} - e\right)\\
+        &= \frac{1-e^{9}}{6e^{8}}
+        \end{align*}
+        </p>
+        <p>
+            Por lo tanto
+        $$
+        \int_0^1 (x-2)e^{3x^2-12x+1}dx =\frac{1-e^{9}}{6e^{8}}
+        $$
+    </p>
+    </div>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sean $a,b \in \mathbb{R}$ tal que $b-a$ es un múltiplo entero de $2\pi$. Demuestra que
+        $$
+        \int_a^b \cos(x)e^{\sen(x)}dx=0=\int_a^b \sen(x)e^{\cos(x)}dx.
+        $$
+    </p>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Encuentra el conjunto de pareas de reales $a,b$, con $a < b$, tales que
+        $$
+        \int_a^b 2xe^{x^2-1}dx=0.
+        $$
+    </p>
+
+    <button class="respButton hvr-grow "> Solución  </button>
+     <div class="resp-box flexbox">
+
+    <p>
+        Tenemos que para cualesquiera  \(a, b \in \mathbb{R}\) con  \(a < b\) se 
+        tiene \[\int_a^b2xe^{x^2-1} dx = \int_a^b2xe^{x^2}e^{-1} dx = \frac{1}{e}\int_a^b2xe^{x^2} dx \]
+    </p>
+    <p>
+        Si suponemos que \(\int_a^b2xe^{x^2-1} dx = 0\), entonces 
+        \( \int_a^b2xe^{x^2} dx = 0\). Y si \( \int_a^b2xe^{x^2} dx = 0\) se 
+        sigue que \(\int_a^b2xe^{x^2-1} dx = 0\). Entonces basta encontrar el conjunto de 
+        parejas de reales \(a, b\), con \(a < b\) tales que: \[ \int_a^b2xe^{x^2} dx = 0.\]    
+    </p>
+    <p>
+        Notemos que la derivada de \(e^{x^2}\) es \(2xe^{x^2}\) para cualquier \(x \in \mathbb{R}\).  
+        Esto implica que para cualesquiera \(a, b \in \mathbb{R}\) se tiene que la función  
+        \(F: [a,b] \rightarrow \mathbb{R}\) dada por \(F(x) = e^{x^2}\) es una antiderivada de  
+        \(2xe^{x^2}\) continua  en \([a, b]\) y diferenciable en \((a, b)\). Entonces por el 
+        <i>Segundo Teorema Fundamental</i> tenemos: 
+        \[ \int_a^b2xe^{x^2} dx =  F(b) - F(a) = e^{b^2} - e^{a^2}  . \]
+    </p>
+    <p>
+        Si \(  \int_a^b2xe^{x^2} dx = 0 \) implica que \( e^{b^2} - e^{a^2} = 0\), es decir 
+        \(e^{b^2} = e^{a^2}\). Y como la función \(e^x\) es biyectiva se sigue que \(b^2 = a^2\), 
+        lo que implica que \(b = \pm a\). Como estamos suponiendo que \(a < b\) esto da lugar a que
+         \(b>0 \) y \(a =-b\). 
+    </p>
+    <p>
+        Por lo tanto el conjunto  de parejas de reales \(a, b\), con \(a < b\), tales que 
+        \( \int_a^b2xe^{x^2-1} dx = 0,\) es: \[ \lbrace (a, b) \in \mathbb{R}^2 : b>0 
+        \text{ y } a =-b \rbrace . \]
+    </p>
+    </div>
+
+</div>    
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Usando el segundo T.F.C. encuentra una fórmula general para
+        $$
+        \int_a^b x^{n}e^{x^{n+1}}dx
+        $$
+        donde $n \geq 1$ es un natural.        
+    </p>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sea $g:\mathbb{R}\to \mathbb{R}$ una función diferenciable en todo $\mathbb{R}$, 
+        con derivada continua en todo $\mathbb{R}$. Usando el segundo T.F.C. encuentra una fórmula general para
+        $$
+        \int_a^b g'(x)\sen(g(x))dx, \quad \int_a^b g'(x)\cos(g(x))dx.
+        $$
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+<div class="resp-box flexbox">
+<p>
+Enfoquemonos en  encontrar una fórmula general para $\displaystyle{\int_a^b g^{'}(x) \sen(x)}$.
+</p>
+
+<p>
+Sean $a,b \in \mathbb{R}$ con $a < b$. Consideremos la función $F\colon [a,b] \to \mathbb{R}$ definida por 
+$F(x):=-\cos(g(x))$. Observemos que $F$ es continua ya que la composición de funciones continuas es una 
+función continua ($g$ es continua pues es diferenciable). Además, precisamente dado que las funciones 
+$g(x)$ y $\cos(x)$ son funciones diferenciables en todo $\mathbb{R}$, la función $F(x)=-\cos(g(x))$
+ es diferenciable en $(a,b)\subseteq \mathbb{R}$. 
+</p>
+
+<p>
+    Notemos además que por la regla de la cadena se tiene que $F^{'}(x)= \sen(x) \cdot g^{'}(x) $, esto es, $F$  es una antiderivada de la función 
+    $x \mapsto g^{'}(x) \sen(x)$. Luego, del <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> se sigue que 
+    
+    \begin{align*}
+    \int_a^b g'(x)\sen(g(x))dx &= F(b)-F(a)\\
+    &= -\cos(g(b)) - ( - \cos(g(a)))\\
+    &= \cos(g(a)) - \cos(g(b))
+    \end{align*}
+</p>
+
+<p>
+Por lo tanto, podemos concluir que:  
+$$
+\displaystyle{\int_a^b g'(x)\sen(g(x))dx}= \cos(g(a)) - \cos(g(b)) 
+$$
+</p>
+
+<p>
+    Similarmente se puede probar que:
+    $$
+    \displaystyle{\int_a^b g'(x)\cos(g(x))dx}= \sin(g(b)) - \sin(g(a)) 
+    $$
+</p>
+</div>
+ </div>   
+
+
+<div class="ejercicio-box"><h2 class="number-title"> Ejercicio</h2> Encuentras las siguientes integrales indefinidas.
+<ol>
+    <li>$\int c dx$, donde $c\in \mathbb{R}$ es una constante.</li> 
+    <li>$\int x^n dx$, donde $n\in \mathbb{N}$.</li> 
+    <li>$\int \sen(x)dx$.</li> 
+    <li>$\int \cos(x)dx$.</li> 
+    <li>$\int \sec^2(x)dx$.</li> 
+    <li>$\int \csc^2(x)dx$.</li> 
+    <li>$\int sec(x)tan(x)dx$.</li> 
+    <li>$\int \csc(x)\cot(x)dx$.</li> 
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Demuestra las siguientes fórmulas para las integrales indefinidas dadas, donde $a>0$ es una constante.
+    </p>
+
+<ol>
+    <li>$\int \frac{1}{\sqrt{a^2-x^2}}dx=\arcsen(x/a)+c$.</li>  
+    <li>$\int \frac{1}{x^2+a^2}dx=\frac{1}{a}\arctan(x)+c$.</li>  
+    <li>$\int \frac{1}{x\sqrt{x^2-a^2}}dx=\frac{1}{a}\arcsec(x/a)+c$.</li> 
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title" id="Ejer:Demo2TFCparaMononotas"> Ejercicio</h2> 
+    <p>
+        En el Segundo Teorema Fundamental  
+        se pide en las hipótesis  que la $f$ sea continua en $[a,b]$, 
+        pero se puede cambiar ésta hipótesis pidiendo ahora que $f$ sea monónotan en $[a,b]$. Es decir:
+    </p>
+    <p>
+        Supon que $f:[a,b] \to \mathbb{R}$ es monótona en  $[a,b]$; que $F:[a,b]\to \mathbb{R}$ es continua en $[a,b]$, diferenciable en $(a,b)$ y $F$ es una antiderivada de $f$ en $(a,b)$. Entonces
+        $$
+        \int_a^bf(x)dx=F(b)-F(a).
+        $$
+    </p>
+    <p>
+        Usa ahora el <a href="./S4.html#Ejer:LimiteSumasRiemannDeMonotonas"> Ejercicio 4.8</a>  
+        y las mismas ideas que en el <a href="#Teo:TF-2">Segundo Teorema Fundamental</a>  
+        para demostrar esta versión del segundo T.F.C.
+    </p>
+</div>
+
+
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        En este ejercicio vemos un ejemplo donde las hipótesis del
+         <a href="Ejer:Demo2TFCparaMononotas"> Segundo Teorema Fundamental </a> se pueden relajar.
+    </p>
+
+    <p>
+        Define $f:[0,1] \to \mathbb{R}$ y $F:[0,1] \to \mathbb{R}$ dadas por 
+        $$
+        f(x)=\left\{
+        \begin{array}{cc}
+        0 \quad \textrm{si $0\leq x < 1/2$} \\
+        1 \quad \textrm{si $1/2\leq x \leq 1$}
+        \end{array}
+        \right.
+        \quad 
+        F(x)=\left\{
+        \begin{array}{cc}
+        0 \quad \textrm{si $0\leq x < 1/2$} \\
+        x-1/2 \quad \textrm{si $1/2\leq x \leq 1$}
+        \end{array}
+        \right.
+        $$        
+    </p>
+    <p>
+        Demuestra que $F'(x)=f(x)$, para todo $x\in [0,1]$ excepto en $x=1/2$ y que
+        $$
+        \int_0^1 f(x)dx=F(1)-F(0).
+        $$        
+    </p>
+    <button class="respButton hvr-grow "> Solución   </button>
+     <div class="resp-box flexbox">
+
+    <p>
+        Es claro que \(F\) es diferenciable en \((0,1/2)\cup(1/2,1)\). Veamos que \(F\) no es 
+        diferenciable en \(1/2\). Tenemos que el límite por la derecha es:  
+        \begin{equation*}
+        \begin{split}
+        \lim_{h\rightarrow 0^+}\frac{F(\frac{1}{2}+h) -F(\frac{1}{2})}{h} = \lim_{h\rightarrow 0^+}\frac{1}{h}\left(\left(\frac{1}{2} +h -\frac{1}{2}\right) -0\right) =  \lim_{h\rightarrow 0^+}\frac{h}{h} = 1
+        \end{split}
+        \end{equation*} 
+    </p>
+    <p>
+        Y el límite por la izquierda es: 
+        \begin{equation*}
+        \begin{split}
+        \lim_{h\rightarrow 0^-}\frac{F(\frac{1}{2}+h) -F(\frac{1}{2})}{h} 
+        = \lim_{h\rightarrow 0^-}\frac{0-0}{h}=  0
+        \end{split}
+        \end{equation*} 
+        Como los límites \(\lim_{h\rightarrow 0^+}\frac{F(\frac{1}{2}+h) -F(\frac{1}{2})}{h} \) 
+        y \( \lim_{h\rightarrow 0^-}\frac{F(\frac{1}{2}+h) -F(\frac{1}{2})}{h} \) son distintos 
+        se tiene que el límite \(\lim_{h\rightarrow 0}\frac{F(\frac{1}{2}+h) -F(\frac{1}{2})}{h} \) 
+        no existe y por lo tanto \(F\) no es diferenciable en \(1/2\).
+    </p>
+    <p>
+        Por otro lado tenemos que \(f\) es integrable por ser una función continua, entonces por la linealidad con respecto a intervalos tenemos : 
+        \begin{equation*}
+        \begin{split}
+        \int_0^1f(x)dx & = \int_0^\frac{1}{2}f(x)dx + \int_\frac{1}{2}^1f(x)dx  = 0 
+        + \int_\frac{1}{2}^1dx  = 1 -\frac{1}{2} = \frac{1}{2}
+        \end{split}
+        \end{equation*} 
+    
+    </p>
+
+    <p>
+        Es decir \(\int_0^1f(x)dx = \frac{1}{2}\). Por otro lado \(F(1) = 1 -1/2 = 1/2\) y \(F(0) = 0\), 
+        lo que implica que \(F(1) -F(0) = 1/2\). Por lo tanto \[   \int_0^1f(x)dx = F(1) -F(0). \]
+    </p>
+    </div>
+
+ </div>
+
+ <div class="ejercicio-box">
+     <h2 class="number-title" id="Ejer:Demo2TFCparaMononotas"> Ejercicio</h2> 
+     <p>
+        Usa el <a href="#Ejer:Demo2TFCparaMononotas">Ejercicio</a>  
+        para probar la siguiente versión del segundo T.F.C.
+     </p>
+     <p>
+        Supon que $f:[a,b] \to \mathbb{R}$ es monótona en  $[a,b]$. Supon  
+        que $F:[a,b]\to \mathbb{R}$ es continua en $[a,b]$, diferenciable en $(a,b)$ 
+        excepto en $E \subset (a,b)$, un conjunto finito de $(a,b)$ y que  $F'(x)=f(x)$ para 
+        todo $x\in (a,b)\setminus E$. Entonces
+        $$
+        \int_a^bf(x)dx=F(b)-F(a).
+        $$
+     </p>
+     <button class="respButton hvr-grow "> Demostración  </button>
+<div class="resp-box flexbox">
+    <p>
+        Demostración sobre la cardinalidad del conjunto $E$. Sea $n=|E|$
+    </p>
+
+    <p>
+        Caso base. Veamos que la propiedad se cumple para $n=1$.
+    </p>
+
+    <p>
+        Sea $a < x_{1} < b$ tal que $F$ es continua y diferenciable en los subintervalos 
+        $(a,x_{1})$ y $(x_{1},b)$ .
+    </p>
+
+    <p> 
+        Luego, las funciones $F_1\colon [a,x_1] \to \mathbb{R}$ y 
+        $F_2\colon [x_1,b] \to \mathbb{R}$ definidas como:
+
+        \begin{equation}
+         F_{1}(x)\colon=F(x), \,\,\forall x \in [a,x_1]
+        \end{equation}    
+        y 
+        \begin{equation}
+         F_{2}(x)\colon=F(x), \,\,\forall x \in [x_1,b]
+        \end{equation}    
+    son tales que $F_{1}$ es continua en $[a,x_1]$ y diferenciable en $(a,x_1)$, 
+    con $F^{'}(x)=f(x)$, para todo $x\in (a,x_{1})$. Mientras que la función $F_{2}$
+    es continua en $[x_{1},b]$ y diferenciable en $(x_{1},b)$, con $F^{'}(x)=f(x)$, 
+    para todo $x\in (x_{1},b)$. 
+    </p>
+
+    <p>
+        Entonces, por el <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> se sigue que:
+        \begin{equation}\label{eqn:Apl_2TFC_F1}
+        \int_{a}^{x_1} f(x)dx= F_{1}(x_1)- F_{1}(a) = F(x_1)- F(a) 
+        \end{equation}
+        y 
+        \begin{equation}\label{eqn:Apl_2TFC_F2}
+        \int_{x_1}^{b} f(x)dx= F_{2}(b)- F_{2}(x_{1}) = F(b)- F(x_1) 
+        \end{equation}
+    </p>
+
+    <p>
+        Por otro lado, como $f$ es monotona en $[a,b]$, para $x_{1}\in (a,b)$ 
+        de  la aditividad de la integral  y las ecuaciones  \eqref{eqn:Apl_2TFC_F1}  y \eqref{eqn:Apl_2TFC_F2}
+        se tiene que:
+        \begin{align*}
+        \int_{a}^{b} f(x) dx &= \int_{a}^{x_{1}} f(x) dx   + \int_{x_1}^{b} f(x) dx \\
+        &= (F(x_1) - F(a)) + (F(b) - F(x_1))\\
+        &= F(b) - F(a) 
+        \end{align*}
+    </p>
+
+    <p>
+        Hipótesis  inductiva: Supongamos que la propiedad se cuemple para cuando $|E|=n$. 
+    </p> 
+    <p>  Esto es, si $f\colon [a,b] \to \mathbb{R} $ es monotona en $[a,b]$ y 
+        $F\colon [a,b] \to \mathbb{R}$ es diferenciable
+        en $(a,b)$ excepto en $E$, un subconjunto finito de $(a,b)$ y que 
+        $F^{'}(x)=f(x)$ para todo $x \in (a,b)\setminus E$, entonces 
+        $$
+        \int_{a}^{b} f(x) dx = F(b) - F(a)
+        $$
+    </p>
+
+    <p> Paso inductivo: Veamos que la propiedad se cumple para cuando $|E|=n+1$</p>
+
+    <p>
+    Sean $a < x_1 < x_2 < \cdots < x_n < x_{n+1} < b$ tales que $F$ es diferenciable en todo 
+    $x \in (a,b)\setminus \{ x_{1}, x_{2}, \ldots, x_{n}, x_{n+1} \}$. Consideremos 
+    las funciones $H_{1} \colon [a,x_{n+1}] \to \mathbb{R}$ y 
+    $H_{2} \colon [x_{n+1}, b] \to \mathbb{R}$, definidas como 
+    \begin{equation}
+    H_{1}(x)\colon=F(x), \,\,\forall x \in [a,x_{n+1}]
+   \end{equation}    
+   y 
+   \begin{equation}
+    H_{2}(x)\colon=F(x), \,\,\forall x \in [x_{n+1},b]
+   \end{equation}    
+    </p>
+
+    <p>
+        Observemos que $H_{1}\colon [a,x_{n+1}]\to \mathbb{R}$ es una función continua en $[a,x_{n+1}]$ y   
+        es una antiderivada de $F$ en $(a,x_{n+1})$, y similarmente la funcion
+        $H_2\colon [x_{n+1},b] \to \mathbb{R}$ es continua en $[x_{n+1},b]$ y es una antiderivada de 
+        $f$ en $(x_{n+1},b)$. Más aún, dado que la función
+        $f(x)$ es monotona en el intervalo $(a,b)$,  lo es en cualquier subintervalo 
+        $(c,d) \subseteq (a,b)$ y por lo tanto $f$ es integrable en todo subintervalo 
+        de $(a,b)$, particularmente en los subintervalos $[a,x_{n+1}]$ y $[x_{n+1},b]$. 
+        Luego de la aditividad de la integral se tiene que:
+        \begin{align*}
+        \int_{a}^{b} f(x) dx &= \int_{a}^{x_{n+1}} f(x) dx   + \int_{x_{n+1}}^{b} f(x) dx \\
+        &= (H(x_{n+1}) - H(a)) + (H(b) - F(x_{n+1}))\\
+        &= F(b) - F(a) 
+        \end{align*}
+    </p>
+    <p>
+        La segunda igualdad se obtiene de aplicar la hipótesis 
+        inductiva y el  <a href="#Teo:TF-2">Segundo Teorema Fundamental</a> a 
+        las funciones $H_{1}\colon [a,x_{n+1}]\to \mathbb{R}$ 
+        y $H_2\colon [x_{n+1},b] \to \mathbb{R}$ respectivamente.
+    </p>
+
+    <p>
+        Por lo tanto, si $f:[a,b] \to \mathbb{R}$ es monótona en $[a,b]$ y   
+         $F:[a,b]\to \mathbb{R}$ es una función continua en $[a,b]$, diferenciable en $(a,b)$ 
+        excepto en $E \subset (a,b)$, un conjunto finito de $(a,b)$ con $F'(x)=f(x)$ para 
+        todo $x\in (a,b)\setminus E$. Entonces
+        $$
+        \int_a^bf(x)dx=F(b)-F(a).
+        $$
+        
+    </p>
+</div>
+</div>
+
+
+
+ 
+  <h1 class="flexbox"> Primer Teorema Fundamental  </h1>
+  <h2 class="flexbox">Derivadas</h2>
+
+
+<div class="definicion-box">
+    <h2 class="number-title"> Definición </h2>
+    <p>
+        Supongamos que $f:[a,b] \to \mathbb{R}$ es una función integrable y que $f(x) \geq 0$, para toda $x\in [0,1]$. La función area bajo la 
+        gráfica de $f$ es la función $F:[a,b]\to \mathbb{R}$ dada por
+        $$
+        F(x):=\int_a^xf(t)dt
+        $$
+        
+    </p>
+    <p>
+        Nota que $F(x_0)$ se puede interpretar como el área bajo la gráfica de $f$ entre las rectas $x=a$ y $x=x_0$.
+    </p>
+
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Define $f:[0,\infty) \to \mathbb{R}$ dada por
+        $$
+        f(x)=\left\{
+        \begin{array}{cc}
+        x &  0 \leq x \leq 1 \\
+        1 & 1< x \leq 2 \\
+        2x-3 & 2< x
+        \end{array}
+        \right.
+        $$
+    </p>
+<ol>
+    <li>
+        Sea $F(x)$ la función area dada por $f$. Prueba que:
+        $$
+        F(x)=\left\{
+        \begin{array}{cc}
+        \frac{x^2}{2} &  0 \leq x \leq 1 \\
+        x - \frac{1}{2} & 1< x \leq 2 \\
+        x^2-3x+\frac{7}{2} & 2< x
+        \end{array}
+        \right.
+        $$
+    </li> 
+    <li>
+        Demuestra que $F$ es diferenciable en todo punto de 
+        $(0,\infty)$ y que $F'(x)=f(x)$, para toda $x\in (0,\infty)$.
+    </li> 
+
+</ol>
+
+
+<button class="respButton hvr-grow "> Solución inciso 1  </button>
+     <div class="resp-box flexbox">
+
+
+<p>
+    Es claro que \( f\) es una función continua y por lo tanto integrable, 
+    además \(f\geq 0\), entonces consideremos \(F(x)\) la función area dada por \(f\).  
+    Sea \(x\in [0,1]\), entonces \[F(x) = \int_0^xf(y)dy = \int_0^xy dy = \frac{x^2}{2} \] 
+</p>
+<p>
+    Sea \(x \in (1, 2]\), entonces por la linealidad con respecto a intervalos tenemos: 
+    \begin{equation*}
+    \begin{split}
+    F(x) & = \int_0^xf(y)dy  = \int_0^1f(y)dy + \int_1^xf(y)dy \\
+     &  = \int_0^1ydy + \int_1^xdy \\
+     &  = \frac{1}{2} + (x-1) = x -\frac{1}{2}
+     \end{split}
+     \end{equation*} 
+            
+</p>
+<p>
+    Sea \(x > 2\) , entonces: 
+    \begin{equation*}
+    \begin{split}
+    F(x) & = \int_0^xf(y)dy  = \int_0^1f(y)dy + \int_1^2f(y)dy + \int_2^xf(y)dy  \\
+     &  = \int_0^1ydy + \int_1^2dy + \int_2^x(2y -3)dy \\
+     &  = \frac{1}{2} + (2-1) + 2\int_2^xydy -3\int_2^x dy \\
+     & = \frac{3}{2} + 2\cdot\left(\frac{x^2- 2^2}{2}\right) -3(x-2) \\
+     & = x^2 -3x +\frac{7}{2}
+     \end{split}
+    \end{equation*} 
+    
+    
+    Por lo tanto: 
+    \begin{equation*}
+    F(x) =  \left\{
+    \begin{array}{cccc}
+    \frac{x^2}{2}  &   0 \leq  x \leq 1 \\
+    x-\frac{1}{2} &  1 < x \leq 2 \\
+    x^2 -3x +\frac{7}{2} & 2 < x
+    \end{array} \right.
+    \end{equation*}
+        
+</p>
+</div>
+
+
+
+<button class="respButton hvr-grow "> Solución inciso 2  </button>
+     <div class="resp-box flexbox">
+<p>
+    Solución inciso 2.
+</p>
+<p>
+    Observamos que \(F\) es diferenciable en \((0,1)\cup(1,2)\cup(2,\infty)\) y  
+    \(F^\prime(x) = f(x)\), para toda \(x \in (0,1)\cup(1,2)\cup(2,\infty)\). 
+    Por demostrar que \(F\) es diferenciable en 1 y 2. Veamos primero que \(F\) es diferenciable en 1. 
+</p>
+<p>
+    Procederemos a calcular primero el límite por la derecha, 
+    \begin{equation*}
+    \begin{split}
+    \lim_{h\rightarrow 0^+}\frac{F(1+h) -F(1)}{h} = \lim_{h\rightarrow 0^+}\frac{1}{h}\left(\left(1 + 
+    h -\frac{1}{2}\right) -\frac{1}{2}\right) =  \lim_{h\rightarrow 0^+}\frac{h}{h} = 1
+    \end{split}
+    \end{equation*} 
+    
+</p>
+<p>
+    Y el límite por la izquierda es, 
+    \begin{equation*}
+    \begin{split}
+    \lim_{h\rightarrow 0^-}\frac{F(1+h) -F(1)}{h} &= 
+    \lim_{h\rightarrow 0^-}\frac{1}{h}\left(\frac{(1+h)^2}{2} -\frac{1}{2}\right) \\
+    &=  \lim_{h\rightarrow 0^-}\frac{h^2+2h}{h} =  \lim_{h\rightarrow 0^-}\frac{h}{2} +1 = 1
+    \end{split}
+    \end{equation*} 
+
+</p>
+
+
+<p>
+    Como los \(\lim_{h\rightarrow 0^+}\frac{F(1+h) -F(1)}{h}\) y 
+    \( \lim_{h\rightarrow 0^-}\frac{F(1+h) -F(1)}{h}\) existen y son iguales 
+    tenemos que \(\lim_{h\rightarrow 0}\frac{F(1+h) -F(1)}{h}\) existe y por lo tanto 
+    \(F\) es diferenciable en 1 y \(F^\prime(1) = 1 = f(1)\), es decir \(F^\prime(1) = f(1)\).
+</p>
+<p>
+    Ahora veamos que \(F\) es diferenciable en 2. Procederemos de la misma manera calculando primero el 
+    límite por la derecha, 
+</p>
+<p>
+
+\begin{equation*}
+\begin{split}
+\lim_{h\rightarrow 0^+}\frac{F(2+h) -F(2)}{h} & = \lim_{h\rightarrow 0^+}\frac{1}{h}\left((2 +h)^2 -3(2+h) 
++\frac{7}{2} -\frac{3}{2}\right) \\
+ & =  \lim_{h\rightarrow 0^+}\frac{1}{h}\left( 4 + 4h +h^2 -6 -3h +2\right) \\
+ & = \lim_{h\rightarrow 0^+}\frac{h^2 +h}{h} =  \lim_{h\rightarrow 0^+} h+1 = 1
+ \end{split}
+ \end{equation*} 
+
+
+</p>
+<p>
+    Y el límite por la izquierda es, 
+    \begin{eqnarray}
+    \begin{split}
+    \lim_{h\rightarrow 0^-}\frac{F(2+h) -F(2)}{h} &= \lim_{h\rightarrow 0^-}\frac{1}{h}\left(\left(2 +
+    h -\frac{1}{2}\right) -\frac{3}{2}\right) \\
+    &=  \lim_{h\rightarrow 0^-}\frac{h^2+2h}{h} \\
+    &=  \lim_{h\rightarrow 0^-}\frac{h}{h} = 1
+    \end{split}
+    \end{eqnarray} 
+    
+    
+</p>
+<p>
+    Por lo tanto los dos límites \(\lim_{h\rightarrow 0^+}\frac{F(2+h) -F(2)}{h}\) y 
+    \( \lim_{h\rightarrow 0^-}\frac{F(2+h) -F(2)}{h}\) existen y son iguales, entonces 
+    \(F\) es diferenciable en 2 y \(F^\prime(2) = 1 = f(2)\), es decir \(F^\prime(2) = f(2)\).
+</p>
+<p>
+    Concluimos que \(F\) es diferenciable en todo punto de \((0,\infty)\) y \(F^\prime(x) = f(x)\), 
+    para toda \(x \in (0, \infty)\).
+</p>
+</div>
+
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sea $I$ un intervalo y fija  una función integrable 
+        $f: I \to \mathbb{R}$. Con estos datos  crea una nueva función 
+    </p>
+    <p>
+        $$
+        \tilde{F}(x):=\int_a^x f(t)dt,
+        $$
+        donde $a\in I$ es fijo y arbitrario.   
+     </p>
+     <p>
+        Para cada una de las funciones dadas $f$, encuentra la regla de correspondencia 
+        de $\tilde{F}$ y después calcula $\tilde{F}'(x)$.
+     </p>
+
+
+<ol>
+    <li>$f(x)=x^2$,  con $a=0$;</li> 
+    <li>$f(x)=x^2$, con $a=1$;</li> 
+    <li>$f(x)=e^x$, con $a=0$;</li> 
+    <li>$f(x)=e^{5x+2}$, con $a=-1$.</li> 
+    <li>$f(x)=\cos(x)$, $a=0$;</li> 
+    <li>$f(x)=\sen(x)$, $a=0$; </li> 
+</ol>
+</div>
+
+
+<div class="teorema-box">
+    <h2 class="number-title"> Teorema </h2>
+    <h3> Primer Teorema Fundamental</h3>
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ continua en todo punto de $[a,b]$.
+
+        $$
+        \frac{d}{dx}\left( \int_a^x f(t)dt  \right)=f(x)
+        $$
+        
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+     <div class="resp-box flexbox">
+    <p>
+        Definimos \(F:[a,b]\to \mathbb{R}\) por 
+        \[
+        F(x)=\int_a^x f(t)dt
+        \]
+        Ya que \(f\) es continua en \([a,b]\) también es integrable en 
+        \([a,b]\) y pot lo tanto la integral anterior existe para todo \(x\in [a,b]\)
+        y \(F\) está bien definida.
+
+    </p>
+    <p>
+        Usando la definción de derivada lo que debemos de probar es que 
+        para todo \(x_0\in (a,b)\):
+        \begin{equation}\label{Eqn:Aux1TFC2}
+        \lim_{x\to x_0}\frac{F(x)-F(x_0)}{x-x_0}=f(x_0)
+        \end{equation}
+        Usando la definición de \(F\) tenemos que el cociente diferencial es 
+        \[
+        \frac{F(x)-F(x_0)}{x-x_0}=\frac{\int_a^x f(t)dt-\int_a^{x_0}f(t)dt}{x-x_0}
+        \]
+        el cual vamos a analizar tomando dos casos.
+    </p>
+    <p>
+        Si \(x< x_0 \) usamos  linealidad con respecto a intervalos 
+        para obtener \(\int_{a}^{x_0}f(t)dt=\int_{a}^xf(t)dt+\int_x^{x_0}f(t)dt\),
+        por lo que el cociente diferencial se simplifica a 
+        \[
+        \frac{F(x)-F(x_0)}{x-x_0}=\frac{-\int_{x}^{x_0}f(t)dt}{x-x_0}=\frac{\int_{x}^{x_0}f(t)dt}{x_0-x}
+        \]
+    </p>
+    <p>
+        Si \(x_0< x\) aplicando nuevamente la linealidad con respecto a intervalos obtenemos 
+        \[
+        \frac{F(x)-F(x_0)}{x-x_0}=\frac{\int_{x_0}^{x}f(t)dt}{x-x_0}
+        \]
+    </p>
+    <p>
+        Así, para probar la igualdad en \eqref{Eqn:Aux1TFC2} es suficiente probar  a probar 
+        \begin{eqnarray}
+        \lim_{x\to x_0^{-}} \frac{\int_{x}^{x_0}f(t)dt}{x_0-x}=f(x_0)  \label{Eqn:Aux2TFC2}\\
+        \lim_{x\to x_0^+} \frac{\int_{x_0}^{x}f(t)dt}{x-x_0}=f(x_0) \label{Eqn:Aux3TFC2}
+        \end{eqnarray}
+    </p>
+        <p>
+            Probemos \eqref{Eqn:Aux2TFC2}.
+        </p>
+        <p>
+            Ya que $f$ es continua por la izquierda en $x_0$ dado un número $\varepsilon>0$, 
+            existe $\delta >0$ tal que $|f(x)-f(x_0)|< \varepsilon$ para todo $x$ 
+            con $x_0-\delta < x < x_0$. Abriendo el valor absoluto y despejando \(f(x)\) podemos escrbiri lo 
+            anterior como 
+            $$
+            f(x_0)- \varepsilon \leq f(x) \leq f(x_0)+\varepsilon
+            $$
+            para toda $x\in (x_0-\delta, x_0)$.
+            Ahora, si integramos las desigualdades anteriores obtenemos 
+            \[
+            \int_x^{x_0} (f(x_0)-\varepsilon) dt \leq \int_{x}^{x_0}f(t)dt \leq \int_{x}^{x_0}(f(x_0)+
+            \varepsilon)dt
+            \]
+            Notamos que los extremos de las desigualdades son iguales a 
+            \begin{eqnarray*}
+            \int_x^{x_0} (f(x_0)-\varepsilon) dt= (f(x_0)-\varepsilon)(x_0-x)\\
+            \int_{x}^{x_0}(f(x_0)+\varepsilon)dt=(f(x_0)+\varepsilon)(x_0-x)
+            \end{eqnarray*}
+            por lo cual, dividiendo entre \(x_0-x\), podemos reescribir las desigualdades anteriores como 
+            $$
+            -\varepsilon \leq \frac{\int_{x}^{x_0} f(t)dt }{x_0-x} -f(x_0) \leq \varepsilon 
+            $$
+            para todo $x\in (x_0-\delta, x_0)$. Lo cual prueba precisamente 
+            \eqref{Eqn:Aux2TFC2}.
+        </p> 
+        <p>
+            A continuación probemos \eqref{Eqn:Aux3TFC2}, cuya prueba es muy similar 
+            a la anterior.
+        </p>
+        <p>
+            Si $f$ es continua por la derecha en $x_0$, dada $\varepsilon>0$, 
+            existe $\delta>0$ tal que $|f(x)-f(x_0)|< \varepsilon$ siempre que 
+            \(x_0 < x < x_0+\delta\). Abriendo el valor absoluto y despejando 
+            \(f(x)\) lo anterior es equivalente a 
+            \[
+            f(x_0)-\varepsilon < f(x) < f(x_0)+\varepsilon
+            \]
+            e integrando obtenemos 
+            $$
+            (f(x_0)-\varepsilon)(x-x_0) \leq \int_{x_0}^x f(t)dt \leq (f(x_0)+\varepsilon )(x-x_0)
+            $$
+            para todo $x\in (x_0, x_0+\delta)$ lo cual se puede reescribir como 
+            \[
+            -\varepsilon \leq \frac{\int_{x}^{x_0}f(t)dt}{x-x_0} -f(x_0) \leq \varepsilon
+            \]
+            para todo \(x\in (x_0,x_0+\delta)\), lo cual prueba \eqref{Eqn:Aux3TFC2}.
+        </p> 
+    </div>
+    
+    
+</div>
+
+
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2>
+    <p>
+        Sea $f:[a,b] \to \mathbb{R}$ una función continua en $[a,b]$. 
+        Usando el Primer Teorema Fundamental demuestra que
+        $f$ tiene una antiderivada.
+    </p>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Este ejercicio demuestra que el Primer Teorema Fundamental implica el segundo Teorema Fundamental.
+    </p>
+    <p>
+        Sea $f:[a,b] \to \mathbb{R}$ una función continua  y sea $F:[a,b] \to \mathbb{R}$ 
+        cualquier antiderivada para $f$ en $(a,b)$. 
+    </p>
+<ol>
+    <li>
+        Define $\tilde{F}:[a,b] \to \mathbb{R}$ por 
+        $$
+        \tilde{F}(x)=\int_a^x f(t)dt
+        $$
+        Demuestra que existe una constante tal que $F(x)=\tilde{F}(x)+c$, para toda $x\in [a,b]$.
+    </li> 
+    <li>U
+        sando el inciso anterior y la función $\tilde{F}$ demuestra que
+        $$
+        \int_a^b f(t)dt=F(a)-F(b).
+        $$
+    </li> 
+</ol>
+</div>
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sin calcular las siguientes integrales, encuentra $F'(x)$, si $F(x)$ está dada por
+    </p>
+<ol>
+    <li>$F(x)=\int_0^x (1+t^2)^{-4}dt$.</li> 
+    <li>$F(x)=\int_0^{x^2} (1+t^2)^{-4}dt$.</li> 
+    <li>$F(x)=\int_{x}^{x^3} (1+t^2)^{-4}dt$.</li> 
+    <li>$F(x)=\int_{\cos(x)}^{\sen(x)} \sen(x)dx$.</li> 
+</ol>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Encontrar una función continua $f(x)$, que satisface la ecuación
+        $$
+        \int_0^x f(t)dt=x+2x^2+\frac{1}{3}x^3, \quad \forall x\in \mathbb{R}.
+        $$
+        Calcular $f(0)$ y $f(1)$.
+        
+    </p>
+    <button class="respButton hvr-grow "> Demostración  </button>
+<div class="resp-box flexbox">
+
+    <p>
+        Supongamos que existe una función continua $f(x)$ tal que: 
+         $$
+         \int_0^x f(t) dt = x+2x^2+\frac{1}{3}x^3, \hspace{3pt} \forall x \in \mathbb{R}.
+         $$ 
+    </p>
+    <p>
+        Entonces por el <i>Primer Teorema Fundamental</i> tenemos: 
+        \begin{align*}
+        f(x) &= \frac{d}{dx}\left(\int_0^xf(t) dt\right)\\
+             &= \frac{d}{dx}\left(x+2x^2+\frac{1}{3}x^3 \right) \\
+             &=1+4x+x^2
+        \end{align*}     
+    </p>
+    <p>
+       Entonces, dado $x\in \mathbb{R}$ arbitrario pero fijo.   Definiendo
+     $F: [0, x]\rightarrow \mathbb{R}$ dada por $F(y) =y+2y^2+\frac{1}{3}y^3  $ 
+        tenemos que $F$ es una antiderivada de $f$ en $(0,x)$. Entonces por el 
+        <i>Segundo Teorema Fundamental </i> se sigue que: 
+        $$
+         \int_0^xf(t) dt = F(x) - F(0) = x+2x^2 + \frac{1}{3} x^3
+         $$
+    </p>
+    <p>
+        Por lo tanto, la función continua  $f(x)= 3\cos (3x)$ es tal que se   satisface la ecuación 
+       $$
+       \int_0^x f(t)dt=x+2x^2+\frac{1}{3}x^3, \quad \forall x\in \mathbb{R}.
+       $$
+    </p>
+<p>
+    Finalmente calculemos $f(0)$ y $f(1)$:
+    <ul>
+<li>
+    $f(0)=1+4(0)+(0)^2=1$
+</li>
+<li>
+    $f(1)=1+4(1)+(1)^2=6$
+</li>
+    </ul>
+</p>
+</div>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p> 
+        Encontrar una función continua $f(x)$, y una valor constante $c$, que satisface la ecuación
+        $$
+        \int_c^x f(t)dt= \sen(3x)+\frac{1}{3}, \quad \forall x\in \mathbb{R}.
+        $$
+    </p>    
+    <button class="respButton hvr-grow "> Solución  </button>
+    <div class="resp-box flexbox">
+
+    <p>
+        Supongamos que existe una función continua \(f(x)\), y un valor constante \(c\) 
+        tal que:  \[ \int_c^xf(t) dt = \sen (3x) + \frac{1}{3}, \hspace{3pt} \forall x \in \mathbb{R}. \] 
+    </p>
+    <p>
+        Entonces por el <i>Primer Teorema Fundamental</i> tenemos: 
+        \[ f(x) = \frac{d}{dx}\left(\int_c^xf(t) dt\right) = \frac{d}{dx}\left(\sen (3x) 
+        + \frac{1}{3}\right) = 3\cos (3x) . \]
+    </p>
+    <p>
+        Y si definimos \(F: [c, x]\rightarrow \mathbb{R}\) dada por \(F(y) = \sen (3y)\) 
+        tenemos que \(F\) es una antiderivada de \(f\) en \((c,x)\). Entonces por el 
+        <i>Segundo Teorema Fundamental </i> tenemos : 
+        \[  \int_c^xf(t) dt = F(x) - F(c) = \sen (3x) - \sen (3c). \]
+    </p>
+    <p>
+        Esto implica que \( \sen (3x) + \frac{1}{3} = \sen (3x) - \sen (3c) \) para 
+        toda \(x \in \mathbb{R}\). Por lo tanto, \(\sen (3c) = -\frac{1}{3}\),  como 
+        la función \(\sen(\cdot)\) es invertible en \([-\frac{\pi}{2}, \frac{\pi}{2}] \) y 
+        su inversa es \(\arcsen : [-1, 1] \rightarrow [-\frac{\pi}{2}, \frac{\pi}{2}] \), 
+        entonces se tiene que \( 3c = \arcsen\left(-\frac{1}{3}\right)\), es decir 
+        \(c = \frac{1}{3}\arcsen\left(-\frac{1}{3}\right)\).
+    </p>
+
+    <p>
+        Por lo tanto, la función continua \(f(x)= 3\cos (3x)\) y el valor 
+        \(c = \frac{1}{3}\arcsen\left(-\frac{1}{3}\right)\) satisfacen la ecuación 
+        \[ \int_c^xf(t) dt = \sen (3x) + \frac{1}{3}, \hspace{3pt} \forall x \in \mathbb{R}. \] 
+    </p>
+
+</div>
+
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Existe una función continua $f:\mathbb{R} \to \mathbb{R}$ que satisface
+        $$
+        \int_0^x f(t)dt=\int_x^2 t^2f(t)dt+  x-\frac{1}{5}x^5 +c,  \quad \forall x \in \mathbb{R}
+        $$
+        donde $c$ es una constante. Encontrar una fórmula explícita para $f$ y el valor de $c$.
+    </p>
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        Sea $f:[a,b]\to \mathbb{R}$ una función continua en $[a,b]$.
+    </p>
+<ol>
+    <li>
+        Demuestra que $f(x)=0$ para toda $x\in [a,b]$ si y sólo si $\int_c^d f(x)dx=0$ para todos
+        $c,d \in [a,b]$.
+    </li> 
+    <li>
+        Da un ejemplo de una función continua $f:[a,b]\to \mathbb{R}$, distinta de cero, pero que cumple
+        $\int_a^b f(x)dx=0$. Es decir, para que el ejercicio anterior sea válido se debe de tener 
+        $\int_c^d f(t)dt=0$,
+        para <b>todos</b> los subintervalos $[c,d]$.
+    </li> 
+</ol> 
+</div>
+
+
+<div class="ejercicio-box">
+    <h2 class="number-title"> Ejercicio</h2> 
+    <p>
+        El  Primer Teorema Fundamental tiene aplicaciones a ecuaciones diferenciales. En ecuaciones 
+        diferenciales el problema fundamental es encontrar funciones cuya derivada satisgafa ciertas 
+        condiciones dadas. Por ejemplo, usando el Primer Teorema Fundamental 
+        encuentra una función diferenciable $f(x)$, que satisfaga
+        $$
+        f'(x)=e^{3x}+\cos(4x)+2
+        $$
+        y tal que $f(0)=1$.        
+    </p>
+    <p>
+        En otras palabras, tenemos como dato las pendientes de la función y queremos recobrar la función.
+    </p>
+    <p>
+        Nota: más en general el problema anterior se puede plantear como sigue: encontrar una función $y=y(x)$ que satisfaga
+        \begin{eqnarray*}
+        y'&=&H(x,y)	\\
+        y(x_0)&=&y_0
+        \end{eqnarray*}
+        el cual se conoce como un problema de ecuaciones ordinarias con valor inicial (donde se piensa $y=f$).
+    </p>
+    <p>
+        Por ejemplo, en el ejercicio se tiene $H(x,y)=e^{3x}+\cos(4x)+2$, $x_0=0$ y $y_0=1$; el problema  
+        para $H(x,y)=y$
+        y $y(0)=1$ se  puede resolver usando el ejercicio \ref{Ejer:ODEMasImportante}.
+    </p>
+</div>
+
+</body>

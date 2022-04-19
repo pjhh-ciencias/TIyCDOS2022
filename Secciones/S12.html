@@ -1,0 +1,233 @@
+
+
+
+
+\section*{Trabajo}
+
+
+<div class="definicion-box">[Trabajo, fuerza constante]
+El trabajo (denotado por $W$) realizado al mover un objeto (a lo largo de una linea recta) una distancia $d$, aplicando una fuerza constante $F$ esta dado por
+$$
+W=F\times d
+$$
+Una nota sobre las unidades. Substituyendo directamente tenemos 
+$$
+W=(m/s^2)(kg)(m)=kg (m/s)^2= J
+$$
+que se denomina Jouls y es la unidad de trabajo en el sistema internacional.
+
+
+</div>
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> Calcular el trabajo realizado por una persona que pesa 60kg para subir una escalera de 4 metros.
+
+
+
+Sugerencia: para calcular  $F$ usa
+$$
+F=ma
+$$
+donde  la aceleración es $a=g=9.8m/s^2$.
+
+
+
+
+<div class="definicion-box">[Trabajo, fuerza variable]
+
+Como estamos tratando cálculo uno-dimensional,  siempre vamos a pensar a la fuerza aplicada a lo largo de  una direcci'on fija (una linea recta), como un eje de desplazamiento o el eje de las $x$.
+
+Si la fuerza no es constante, pero esta dada por una función continua, $F(x)$, durante el desplazamiento de $x_{i-1}$ a $x_i$, el trabajo realizado es aproximadamente
+$$
+W_i\sim F(x_i)\Delta x_i
+$$
+
+donde  $\Delta x_i=x_i-x_{i-1}$ es la distancia recorrida.
+
+Tomando una partición homogenea de longitud $n$,  $P=\{x_i\}_{i=0}^n$, y suponiendo la continuidad de la función ferza,  el trabajo ejercido para mover una particula, que se mueve a lo largo del  eje $x$, del punto $a$ al $b$,  ejerciendo una fuerza $F(x)$ en el punto $x$, como: 
+$$
+W=\lim_{n\to \infty } W_i = \int_a^b F(x)dx.
+$$
+</div>
+
+
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> La pirámide del faraon Kufh fue  construida en un periodo de 20 a\~nos, utulizando piedra caliza, tiene  una altura de $h=146 m$  y  una base cuadrada de $L=230 m$.  La densidad de la piedra  caliza  es $\rho=2560 kg/m^3$.   Este ejercicio estima el trabajo necesario para construirla.
+
+Vamos a simplificar el problema. Imagina la piramide con el eje central sobre el eje $x$ y la base en $x=0$. Ahora, vamos a discretizar el problema; divide el intervalo $[0,h]$ en $n$-invervalos homogeneos (con la partición $P=\{x_i\}_{i=0}^n$) y aproxima el volumen por la suma de los volumenes de rectángulos  $V_i$, con
+$$
+V_i=  l^2(x_i^*)\Delta x_i
+$$
+donde $l(x^*)$ denota la longitud del lado del cuadrado que se obtiene al  cortar al pirámide con un plano perpedicular al eje $x$ a la altura $x^*$. 
+
+
+<ol>
+    <li>Usando triángulos semejantes encuentra $l(x)$.</li>  
+
+    <li>Denota por  $W_i$ a el trabajo necesario para subir la $i$-ésima rebanada de piedra caliza. Suponiendo que 
+        $F_i$, la fuerza que se necesita para subir la $i$-ésima rebanada a una altura $x_i$, se tiene que $W_i=F_i x_i$. Usando
+        $F=ma$ y el inciso anterior encuantra una expresión para $W_i$.
+           </li>  
+<li>Usando la integrabilidad de las funciones continuas calcula
+    $$
+   W=\lim_{n\to \infty} W_i
+    $$  
+   mediante una integral.</li> 
+
+<li>Si cada trabajador laboraba 10 horas diarias,  340 días por 20 a\~nos, haciendo $9576 J/h$ de trabajo, levantando piedra caliza, aproximadamente \textquestiondown cuantos trabajadores se necesitarón para construir la pirámide ?  Sólo para tener un punto de comparación, para correr 4 kilómetros se gastan 134,400 J.</li> 
+
+ 
+ </ol>
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> 
+<ol>
+    <li>La ley gravedad de Newton establece que, dados dos cuerpos con masas $m_1.m_2$, éstos se atraen entre ellos con una fuerza
+        $$
+        F=G\frac{m_1m_2}{r}
+        $$
+        donde $r$ es la distancia entre los cuerpos y $G$ es la constante de gravitación. Si uno de los cuerpos está fijo, encuentra el trabajo necesario para mover el otro desde $r=a$ hasta $r=b$.</li> 
+<li>Calcula el trabajo requerido para lanzar un satélite de 1000kg, de manera vertical, a una altura de 1000km. Asume que la masa de la tierra es $5.98(10^{24})kg$ y que dicha masa está concentrada en el centro. Toma el radio de la tierra como $6.37(10^6)m$ y $G=6.67(10^{-11})Nm^2/kg^2$.</li> 
+</ol>
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> El tanque que se muestra en la figura está lleno de agua. Calcula el trabajo requerido para bombear afuera todoa el agua, a través del tubo. Usar que el agua pesa $62.5lb/ft^3$.
+
+\begin{center}
+\includegraphics[scale=0.5]{Tanque.jpeg}
+\end{center}
+
+
+\section*{Area en coordenadas polares}
+
+
+<div class="definicion-box">
+
+De polares a cartesianas. $r\geq 0$, $\theta \in \mathbb{R}$
+\begin{eqnarray*}
+x&=&r\cos(\theta)\\
+y&=&r\sen(\theta)
+\end{eqnarray*}
+
+Nota: el cero puede tener cualquier $\theta$.
+
+De cartesianas a polares. El ángulo se mide con respecto al eje $x$ en sentido contrario 
+a las manecillas del reloj.
+\begin{eqnarray*}
+r&=&\sqrt{x^2+y^2}\\
+\theta &=& \left\{
+\begin{array}{cc}
+\arctan(x/y) &  y\not=0 \\
+0 & y=0
+\end{array}
+\right. 
+\end{eqnarray*}
+</div>
+
+
+<div class="definicion-box">
+Definimos $\pi$ como el cociente de la longitd de una circunferencia de un círculo entre su diámetro.
+</div>
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> El area de un círculo de radio $R$ es $\pi R^2$. En particular, la longitud de una circunferencia de radio
+$R$ es $2\pi R$.
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> El area del un círculo de radio $R$ es $\pi R^2$. 
+
+<div class="definicion-box">
+Considera un círculo de radio $R$ y un ángulo $\measuredangle AOB$ mide $a$ radianes si 
+$$
+a=\frac{L}{R}
+$$
+donde $L$ es la longitud del arco que subtiende $\measuredangle AOB$ .
+</div>
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> Este ejercicio  relaciona radianes con area.
+
+<ol>
+    <li>Divide el criculo de radio $R$ en $n$ partes iguales. Demuestra que el área de cada parte es
+        $$
+        A=\frac{a}{2}R^2
+        $$
+        donde $a$ es la medida del ángulo, en radianes,  de cada parte. </li> 
+
+<li>Considera un segmento circular, con ángulo $a$, medido en radianes y supon que $a=\frac{p}{q}2\pi$, donde $p$ y $q$ son enteros positivos con $p/q < 1$.  Demuestra que el área del segmento es
+    $$
+    A=\frac{a}{2}R^2
+    $$
+    
+    Sugerencia: denota por $A$ a el area del segmento y por $\tilde{A}$ el area de un segmento
+     circular con angulo  $\frac{2pi}{q}$. Nota que  $A=p\tilde{A}$ y usa el inciso anterior.</li> 
+
+ <li>Usando la densidad de los racionales  y la continuidad de la función area se puede argumentar que el area de un segmento circular, con ángulo $a$ (en radianes) y radio $R$ es
+    $$
+    \frac{a}{2}R^2
+    $$
+    </li> 
+</ol>
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> Este ejercicio demuestra el siguiente teorema.
+
+<div class="teorema-box">
+Sea $f:[a,b]\to \mathbb{R}$ una función no negativa, con $b-a< 2\pi$ y supongamos
+que $f^2$ es integrable. Sea $D$ la región descrita en coordenadas polares por $r(\theta)\leq f(\theta)$.
+
+Entonces el área de $D$ esta dada por
+$$
+\frac{1}{2}\int_a^b f^2(\theta)d\theta.
+$$ 
+</div>
+<ol>
+
+    <li>Fijemos $\varepsilon >0$. Demuestra que existen funciones escalonadas, $\tilde{s}$ y $\tilde{t}$ tal que:
+        $$
+        \tilde{s} \leq f^2 \leq \tilde{t}
+        $$
+        y
+        $$
+        \int_a^b (\tilde{s}-\tilde{t})<  \varepsilon
+        $$</li> 
+
+
+<li>Define $s:=\sqrt{\tilde{s}}$ y $t:=\sqrt{\tilde{t}}$. Demuestra que:
+
+    $$
+    \frac{1}{2}\int_a^b s^2(\theta)d\theta
+    $$
+    representa al area de una región formada por segmentos circulares, contenida en $D$ y 
+    $$
+    \frac{1}{2}\int_a^b t^2(\theta)d\theta
+    $$ 
+    representa el área de una región formada por segmentos circulares, que contiene a $D$.</li> 
+
+<li>Demuestra que:
+    $$
+    \frac{1}{2}\int_a^b s^2 \leq  \textrm{Area}(D) \leq \frac{1}{2}\int_a^b t^2
+    $$
+    
+    y
+    
+    $$
+    \frac{1}{2}\int_a^b\tilde{s}\leq  \frac{1}{2} \int_a^b f^2 \leq \frac{1}{2}\int_a^b \tilde{t}
+    $$</li> 
+
+<li>De los incisos anteriores concluye que:
+
+    $$
+    \left| \int_a^b f^2 - \textrm{Area}(D)   \right| <\frac{\varepsilon}{2}
+    $$
+    Como $\varepsilon >0$ es arbitraria, acabamos.
+    </li> 
+</ol>
+
+
+<div class="ejercicio-box"><h2 class="number-title">Ejercicio</h2> En cada una de las siguientes funciones, haz un bosquejo (con ayudad de una computadora o celular) y calcula el area dada en coordenadas polares.
+    <ol>
+        <li>La espiral de Arquímides: $r(\theta)=\theta$, $0\leq \theta \leq 2\pi$.</li> 
+        <li>Dos circulos tangentes en el eje $y$: $r(\theta)=2|\cos(\theta)|$, $0\leq \theta \leq 2\pi$.</li> 
+        <li>Rosa de cuatro hojas: $r(\theta)=|\sen(2\theta)|$, $0\leq \theta \leq 2\pi$.</li> 
+        <li>Cardioide: $r(\theta)=1+\cos(\theta)$, $0\leq \theta \leq 2\pi$.</li> 
+    
+    </ol>
