@@ -12,7 +12,7 @@ html, body{
 }
 
 .fondo-body{
-  background:  rgb(253, 253, 253);
+  background:  rgb(224, 243, 255);
   color: black;
 }
 
@@ -40,7 +40,6 @@ html, body{
 .main-header{
   text-align: center;
   width: 100%;
-  font-size: 25px;
   margin-bottom: 50px;
   }
  
@@ -52,7 +51,7 @@ html, body{
   margin:10px;
   padding: 10px;
   border-radius: 25px;
-  background-color: rgb(34, 130, 255);
+  background-color: rgb(191, 207, 243);
 }
 
 
@@ -72,12 +71,10 @@ html, body{
   padding: 10px;
   font-size: 30px;
   text-decoration: none;
-  color:    rgb(255, 255, 255);
 }
 
 .top-nav a:hover{
-  background-color: #0329ff;
-  border-radius: 15px;
+  background-color: #d9f8d6;
 }
 
 .small-nav button{
@@ -149,11 +146,11 @@ h2.number-title:before{
 
 
 .info-box{
-    background:  rgb(222, 233, 249);
+    background:  rgb( 255, 249, 205 );
     color: black;
     border-radius: 25px;
     padding: 20px;
-    border: 2px solid  rgba(0, 110, 255, 0.727);
+    border: 10px solid  rgba( 190, 236, 172 ,0.5);
     margin: auto;
     margin-bottom: 50px;
     margin-top: 50px;
