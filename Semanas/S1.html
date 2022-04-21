@@ -98,14 +98,65 @@
                 <li>Carrera</li>
                 <li>Genero</li>
                 <li>Fecha de nacimiento</li>
-                <li>Beca</li>
+                <li>Becas: Alimentos, colegiatura</li>
                 <li>Creditos acumulados</li>
                 <li>Alumno regular</li>
             </ol>
         </p>
-        
+        <button class="respButton hvr-grow "> Procedamos ahora con el diseño de nuestra base de datos  
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">
+        <ol>
+            <li> Access ya proporcionó un campo llamado "ID", de acuerdo con el procedimiento estándar de cada tabla,
+                 que incluye un atributo de clave principal cuyo valor identifica de 
+                 manera única cada fila de una tabla.</li>
+            </ol>
+      </div>
+            
+        </div>
     </div>
+
+    <div class="info-box">
+        <h4 class="number-title"> Cuando  diseñamos una base de datos, debemos
+            tomar en cuenta las siguientes aspectos: </h4>
+            <ol>
+                <li>Trate de planificar para el futuro e incluya todos los datos que probablemente necesite.</li>
+                <!--
+                En Access, es posible cambiar los tipos de datos de los atributos o agregar atributos más tarde,
+                pero si la base de datos ya es grande o muchas personas la están usando simultáneamente, 
+                agregar atributos o modificar los tipos de datos podría ser lento o interrumpir 
+                el uso de su sistema.
+                -->
+                <li>Tenga un campo separado para cada división de los datos que anticipe necesitar.</li>
+                    <!-- Como regla general, es mucho más fácil juntar datos que separarlos. Por ejemplo, 
+                    si almacenamos los nombres de los estudiantes como tres campos diferentes (nombre, segundo nombre y apellido),
+                    entonces podemos formar fácilmente el nombre completo de un estudiante concatenando (colocando de extremo a extremo)
+                    el contenido de estos campos. Si solo almacenamos el nombre como un campo grande, entonces ciertas tareas, 
+                    como ordenar a los estudiantes por su nombre o apellido, pueden volverse innecesariamente difíciles y propensas a errores.
+                    -->
+                <li>  Evite almacenar campos calculados</li>
+                <!-- 
+                Si ya ha almacenado el total de créditos y puntos de calificación acumulados,
+                puede calcular fácilmente el GPA. No hay necesidad de almacenar de forma redundante 
+                los GPA de los estudiantes. Eso ocupará espacio innecesario y creará una oportunidad 
+                para que los campos de la base de datos se vuelvan inconsistentes entre sí. 
+                En bases de datos relacionales como Access, generalmente debe usar objetos de tabla 
+                solo para sus datos "base". Los cálculos basados en esos datos residen en otros objetos, 
+                como consultas, formularios e informes. Esta separación de datos base y calculados es otra
+                 forma en la que las bases de datos relacionales son diferentes de las hojas de cálculo,
+                  en las que todos los datos "base" coexisten con los cálculos dentro de la misma cuadrícula bidimensional 
+                  de celdas.
+                -->
+            </ol>
+    </div>
+
     
+
+    <div class="nota-box">
+       
+
+    </div>
 <!-- 
 <div class="info-box">
     <h2 class="number-title"> La noción de  área </h2>
