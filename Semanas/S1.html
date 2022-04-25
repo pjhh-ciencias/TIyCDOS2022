@@ -264,32 +264,224 @@ respectivamente.
     </ol>
 </div>
 
+
+
+
+<div class="info-box">
+    <h4 class="number-title"> Cuando  diseñamos una base de datos, debemos
+        tomar en cuenta las siguientes aspectos: </h4>
+        <ol>
+            <li>Trate de planificar para el futuro e incluya todos los datos que probablemente necesite.</li>
+            <!--
+            En Access, es posible cambiar los tipos de datos de los atributos o agregar atributos más tarde,
+            pero si la base de datos ya es grande o muchas personas la están usando simultáneamente, 
+            agregar atributos o modificar los tipos de datos podría ser lento o interrumpir 
+            el uso de su sistema.
+            -->
+            <li>Tenga un campo separado para cada división de los datos que anticipe necesitar.</li>
+                <!-- Como regla general, es mucho más fácil juntar datos que separarlos. Por ejemplo, 
+                si almacenamos los nombres de los estudiantes como tres campos diferentes (nombre, segundo nombre y apellido),
+                entonces podemos formar fácilmente el nombre completo de un estudiante concatenando (colocando de extremo a extremo)
+                el contenido de estos campos. Si solo almacenamos el nombre como un campo grande, entonces ciertas tareas, 
+                como ordenar a los estudiantes por su nombre o apellido, pueden volverse innecesariamente difíciles y propensas a errores.
+                -->
+            <li>  Evite almacenar campos calculados</li>
+            <!-- 
+            Si ya ha almacenado el total de créditos y puntos de calificación acumulados,
+            puede calcular fácilmente el GPA. No hay necesidad de almacenar de forma redundante 
+            los GPA de los estudiantes. Eso ocupará espacio innecesario y creará una oportunidad 
+            para que los campos de la base de datos se vuelvan inconsistentes entre sí. 
+            En bases de datos relacionales como Access, generalmente debe usar objetos de tabla 
+            solo para sus datos "base". Los cálculos basados en esos datos residen en otros objetos, 
+            como consultas, formularios e informes. Esta separación de datos base y calculados es otra
+             forma en la que las bases de datos relacionales son diferentes de las hojas de cálculo,
+              en las que todos los datos "base" coexisten con los cálculos dentro de la misma cuadrícula bidimensional 
+              de celdas.
+            -->
+        </ol>
+</div>
+
+
+
   <div class="ejercicio-box"> 
     <h2 class="number-title"> Ejercicio</h2>
     <p>Supongamos que se desea almacenar información sobre estudiantes en una universidad pequeña.
-     Queremos mantener la siguiente información para cada estudiante:</p>
+     Se desea almacenar y administar  la información mas relevante  de los alumnos</p>
     
         
-       
+     <button class="respButton hvr-grow ">   Construya una tabla en Access de nombre Alumnos con la siguiente estructura 
+    </button>
+<div class="resp-box flexbox">
+  <div class="flexbox">
         <p>
            
             <ol>
                 <li>Matrícula </li>
-                <li>Nombre completo: Nombre(s), apellidos.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+                <li>Nombre(s)</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>Tipo de Sangre</li>
-                <li>Dirección: Calle, número interior, número exterior, colonia,  municipio, estado y código postal </li>
-                <li>Carrera</li>
-                <li>Tutor académico</li>
-                <li>Alumno regular</li>
-                <li>Creditos acumulados</li>
-                <li>Becas: Alimentos, colegiatura</li>
-                <li>Correo electrónico</li>
-                <li>Numero celular</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Carrera</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 30</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Tutor académico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 60</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Alumno regular</li>
+                <ul>
+                    <li>Formato: Si/No</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Creditos acumulados</li>
+                <ul>
+                    <li>Tipo de dato: Número</li>
+                        <li>Requerido: Si</li>
+                    </ul>
+                <li>Becas de Alimentos</li>
+                <ul>
+                    <li>Formato: Si/No</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                    </ul>
+                <li>Beca de  Colegiatura</li>
+                <ul>
+                    <li>Formato: Si/No</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                </ul>
+
+                <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
+                <li>Numero celular</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 10</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (sin duplicados)</li>
+            </ul>
+            
                 
                 
                 
@@ -309,43 +501,11 @@ respectivamente.
       </div>
       </div>
     -->
+
+  </div>
+</div>
     </div>
 
-    <div class="info-box">
-        <h4 class="number-title"> Cuando  diseñamos una base de datos, debemos
-            tomar en cuenta las siguientes aspectos: </h4>
-            <ol>
-                <li>Trate de planificar para el futuro e incluya todos los datos que probablemente necesite.</li>
-                <!--
-                En Access, es posible cambiar los tipos de datos de los atributos o agregar atributos más tarde,
-                pero si la base de datos ya es grande o muchas personas la están usando simultáneamente, 
-                agregar atributos o modificar los tipos de datos podría ser lento o interrumpir 
-                el uso de su sistema.
-                -->
-                <li>Tenga un campo separado para cada división de los datos que anticipe necesitar.</li>
-                    <!-- Como regla general, es mucho más fácil juntar datos que separarlos. Por ejemplo, 
-                    si almacenamos los nombres de los estudiantes como tres campos diferentes (nombre, segundo nombre y apellido),
-                    entonces podemos formar fácilmente el nombre completo de un estudiante concatenando (colocando de extremo a extremo)
-                    el contenido de estos campos. Si solo almacenamos el nombre como un campo grande, entonces ciertas tareas, 
-                    como ordenar a los estudiantes por su nombre o apellido, pueden volverse innecesariamente difíciles y propensas a errores.
-                    -->
-                <li>  Evite almacenar campos calculados</li>
-                <!-- 
-                Si ya ha almacenado el total de créditos y puntos de calificación acumulados,
-                puede calcular fácilmente el GPA. No hay necesidad de almacenar de forma redundante 
-                los GPA de los estudiantes. Eso ocupará espacio innecesario y creará una oportunidad 
-                para que los campos de la base de datos se vuelvan inconsistentes entre sí. 
-                En bases de datos relacionales como Access, generalmente debe usar objetos de tabla 
-                solo para sus datos "base". Los cálculos basados en esos datos residen en otros objetos, 
-                como consultas, formularios e informes. Esta separación de datos base y calculados es otra
-                 forma en la que las bases de datos relacionales son diferentes de las hojas de cálculo,
-                  en las que todos los datos "base" coexisten con los cálculos dentro de la misma cuadrícula bidimensional 
-                  de celdas.
-                -->
-            </ol>
-    </div>
-
-    
 
     
 <!-- 

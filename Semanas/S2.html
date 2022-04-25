@@ -82,27 +82,164 @@
   </head>
 
   <body class="fondo-body" >
-    <h1 class="number-title flexbox">Creación y modificación de tablas</h1>
+    <h1 class="number-title flexbox">Semana del 25 de abril</h1>
     
     <div class="ejercicio-box"> 
-        <h2 class="number-title"> Tarea</h2>
-        <p>Crea una tabla con el nombre Profesores  que tenga  la siguiente estructura:</p>
-            
+        <h2 class="number-title"> Ejercicio</h2>
+        <p>Dentro de la misma pequeña universidad se desea almacenar y administrar  la información más relevante de los profesores:</p>
+
+        <button class="respButton hvr-grow ">   Crea una tabla con el nombre Profesores  que tenga  la siguiente estructura: 
+        </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">       
         <p>
                
             <ol>
                 <li>Número de trabajador </li>
-                <li>Nombre completo: Nombre(s), apellidos.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 5</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
+
+                <li>Nombre(s)</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Primer apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 25</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Segundo apellido.</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 <li>Fecha de nacimiento</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>Genero</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 1</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 <li>CURP</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 18</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>NSS</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 12</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 <li>Tipo de Sangre</li>
-                <li>Dirección: Calle, número interior, número exterior, colonia,  municipio, estado y código postal </li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Calle</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                <li>Número interior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 4</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Número exterior</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: No</li>
+                    <li>Indexado: No</li>
+                </ul>
+                <li>Colonia</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 50</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                  <li>Municipio</li>
+                  <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                   <li>código postal</li>
+                   <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                <li>Estado</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                
+                    <li>Tamaño de campo: 20</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
                 <li>Instituto de adscripcion</li>
+                <ul>
+                <li>Tipo de dato: Texto</li>
+                <li>Tamaño de campo: 50</li>
+                <li>Requerido: Si</li>
+                <li>Indexado: Si (con duplicados)</li>
+                 </ul>
                 <li>Correo electrónico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                    </ul>
                 <li>Página web</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 100</li>
+                        <li>Requerido: No</li>
+                        <li>Indexado: No</li>
+                    </ul>
+
                 <li>Número celular</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 10</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (sin duplicados)</li>
+                </ul>
                 
                 
                 
@@ -111,7 +248,166 @@
         </p>
             </div>
 
-    
+            <div class="ejercicio-box"> 
+                <h2 class="number-title"> Tarea</h2>
+                <p>Crea una tabla con el nombre Profesores  que tenga  la siguiente estructura:</p>
+                    
+                <p>
+                       
+                    <ol>
+                        <li>Número de trabajador </li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 5</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+        
+                        <li>Nombre(s)</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 20</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Primer apellido.</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 25</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Segundo apellido.</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Fecha de nacimiento</li>
+                        <ul>
+                            <li>Tipo de dato: Fecha/Hora</li>
+                            <li>Formato: Fecha corta </li>
+                            <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>Genero</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 1</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>CURP</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 18</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>NSS</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 12</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        <li>Tipo de Sangre</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 4</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Calle</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 30</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        
+                        <li>Número interior</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 4</li>
+                            <li>Requerido: No</li>
+                            <li>Indexado: No</li>
+                        </ul>
+                        <li>Número exterior</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: No</li>
+                            <li>Indexado: No</li>
+                        </ul>
+                        <li>Colonia</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 50</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                          <li>Municipio</li>
+                          <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 30</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                           <li>código postal</li>
+                           <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Estado</li>
+                        <ul>
+                        <li>Tipo de dato: Texto</li>
+                        
+                            <li>Tamaño de campo: 20</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (con duplicados)</li>
+                        </ul>
+                        <li>Instituto de adscripcion</li>
+                        <ul>
+                        <li>Tipo de dato: Texto</li>
+                        <li>Tamaño de campo: 50</li>
+                        <li>Requerido: Si</li>
+                        <li>Indexado: Si (con duplicados)</li>
+                         </ul>
+                        <li>Correo electrónico</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                                <li>Tamaño de campo: 50</li>
+                                <li>Requerido: Si</li>
+                                <li>Indexado: Si (con duplicados)</li>
+                            </ul>
+                        <li>Página web</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                                <li>Tamaño de campo: 100</li>
+                                <li>Requerido: No</li>
+                                <li>Indexado: No</li>
+                            </ul>
+        
+                        <li>Número celular</li>
+                        <ul>
+                            <li>Tipo de dato: Texto</li>
+                            <li>Tamaño de campo: 10</li>
+                            <li>Requerido: Si</li>
+                            <li>Indexado: Si (sin duplicados)</li>
+                        </ul>
+                        
+                        
+                        
+                        
+                    </ol>
+                </p>
+                    </div>
+        
     
     <div class="nota-box">
         
