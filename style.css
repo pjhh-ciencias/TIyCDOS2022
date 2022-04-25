@@ -126,6 +126,13 @@ h1.number-title{
   counter-reset: sectionCounter  cardCounter ;
   font-family: "Muli";
 }
+
+
+h1.number-subtitle:before{
+  font-family: "Muli";
+ }
+ 
+
 h1.number-title:before{
  counter-increment: sectionCounter;
  content:"Semana " counter(sectionCounter) " ";
