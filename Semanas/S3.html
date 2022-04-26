@@ -87,8 +87,9 @@
 
 <h1 class="number-title flexbox"></h1>
 
-<div class="nota-box"> tipos de datos y las propiedades de los campos en  Access
-    <h2 class="number-title"> </h2>
+<div class="info-box"> 
+    <h2 class="number-title"> Tipos de datos y  propiedades de los campos en  Access</h2>
+
     <p>Todas las tablas de Access se componen de campos. Al crear tablas en Access, 
         necesitas seleccionar un tipo de datos para cada campo (columna). El tipo de
         datos de un campo es la propiedad más importante porque determina qué tipo de
@@ -98,7 +99,17 @@
     
 
 <div class="nota-box">
-    <h2 class="number-title">  </h2>
+    <h2 class="number-title"> Tipos de datos en  Access </h2>
+<p> 
+    El tipo de datos de un campo determina otras muchas cualidades importantes del mismo,
+    como las siguientes:
+<ol>
+<li>Los formatos que se pueden usar con el campo.</li>
+<li>El tamaño máximo de un valor del campo.</li>
+<li>Cómo se puede usar el campo en expresiones.<li></li>
+<li>Si el campo se puede indizar.</li>
+</ol>
+</p>
     <p>
     El tipo de datos Texto  permite escribir/almacenar casi cualquier carácter (letra, símbolo o número).
     Pero un campo cuyo tipo de datos es número solo puede almacenar datos numéricos.
@@ -116,38 +127,202 @@
 
             <tr>
               <td style="width:110px">Texto</td>
-              <td  style="width:400px"> Datos alfanuméricos (nombres, títulos, etc.)</td>
+              <td  style="width:400px"> Datos alfanuméricos cortos como nombres, apellidos, títulos,  
+                  una dirección, etc. Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</td>
               <td>Hasta 255 caracteres.</td>
             </tr>
           
             <tr>
               <td>Memo</td>
-              <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.</td>
+              <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
+                  Bloques extensos de texto. Un uso típico de un campo Memo sería 
+                una descripción detallada de un producto.
+                 <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p>
+              </td>
               <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto largo se limitan a los primeros 64 000 caracteres.</td>
             </tr>
           
             
             <tr>
-                <td></td>
-                <td></td>
-                <td></td>
+                <td>Número</td>
+                <td>Valores numéricos, como distancias. 
+                    Nota: Hay un tipo de datos independiente para moneda.</td>
+                <td>1, 2, 4, 8 o 16 bytes.</td>
               </tr>
 
               
             <tr>
-                <th></th>
-                <td></td>
-                <td></td>
+                <td>Fecha y hora</td>
+                <td>Fechas y horas.</td>
+                <td>8 bytes.</td>
               </tr>
 
               
             <tr>
-                <th></th>
-                <td></td>
-                <td></td>
+                <th>Moneda</th>
+                <td>Datos monetarios, almacenados con 4 posiciones decimales de precisión.</td>
+                <td>8 bytes</td>
               </tr>
+
+              <tr>
+                  <td>Autonumeración</td>
+                  <td>Valor único generado por Access para cada registro nuevo.</td>
+                  <td>4 bytes (16 bytes para el Id. de replicación).</td>
+              </tr>
+
+
+              <tr>
+                <td>Sí/no</td>
+                <td>Datos booleanos (verdadero/falso); 
+                    Access almacena el valor numérico cero (0) para Falso 
+                    y -1 para Verdadero. Los valores y los campos Sí y No
+                    solo pueden contener uno de los dos valores.</td>
+                <td>1 byte.</td>
+            </tr>
+
+
+            <tr>
+                <td>Objeto OLE/td>
+                <td>Imágenes, gráficos u otros objetos de ActiveX 
+                    desde otra aplicación basada en Windows.</td>
+                <td>Hasta unos 2 GB.</td>
+            </tr>
+
+            <tr>
+                <td>Hipervínculo</td>
+                <td>Una dirección de vínculo a un documento o archivo 
+                    en Internet, en una intranet, en una red de área
+                     local (LAN) o en el equipo local</td>
+                <td>Hasta 8192 (cada parte de un tipo de datos Hipervínculo 
+                    puede contener un máximo de 2048 caracteres).</td>
+            </tr>
+
+            <tr>
+                <td>Datos adjuntos</td>
+                <td>Puede adjuntar archivos como imágenes, documentos, 
+                    hojas de cálculo o gráficos; cada campo Datos adjuntos
+                    puede contener una cantidad ilimitada de datos adjuntos por registro,
+                    hasta el límite de almacenamiento del tamaño de un archivo de base de datos.
+                    Tenga en cuenta que el tipo de datos Datos adjuntos no está disponible 
+                    en los formatos de archivo MDB.</td>
+                <td>Hasta unos 2 GB.</td>
+            </tr>
+
+            <tr>
+                <td>Calculado</td>
+                <td>Puede crear una expresión que use datos de uno o varios campos. 
+                    Los resultados de un cálculo. El cálculo debe referirse a otros campos en la misma tabla.
+                    Para crear el cálculo se usa el Generador de expresiones.
+                    Nota: Los campos calculados aparecieron por primera vez en Access 2010.
+                </td>
+                <td>Depende del tipo de datos de la propiedad Tipo de resultado.
+                    El resultado de tipo de datos de texto corto puede tener hasta 243 caracteres.
+                     Texto largo, número, Sí/No y la fecha y hora debe coincidir con sus
+                    respectivos tipos de datos.</td>
+            </tr>
+
+            <tr>
+                <td>Asistente para búsquedas</td>
+                <td>La entrada del Asistente para búsquedas en la columna de tipo de datos en la vista
+                    Diseño no es realmente un tipo de datos. Al elegir esta entrada, inicie 
+                    el Asistente para ayudarle a definir un campo de búsqueda simple o complejo. 
+                    Un campo de búsqueda simple usa el contenido de otra tabla o una lista de valores 
+                    para validar el contenido de un único valor por fila. Un campo de búsqueda compleja 
+                    permite almacenar varios valores del mismo tipo de datos en cada fila.
+                <p>
+                    Muestra una lista de valores que se recuperan de una tabla o consulta,
+                    o un conjunto de valores especificados al crear el campo. Se inicia el Asistente para búsquedas 
+                    y se puede crear un campo de búsqueda. El tipo de datos de un campo de búsqueda es Texto o Número,
+                     dependiendo de las opciones que se seleccionen en el asistente. Los campos de búsqueda tienen un 
+                     conjunto adicional de propiedades de campo, que se encuentran en la pestaña Búsqueda del panel 
+                     Propiedades del campo.
+                </p>
+                </td>
+
+                <td>Depende del tipo de datos del campo de búsqueda.</td>
+            </tr>
           </table>
     </p>
+</div>
+
+
+<div class="nota-box">
+    <h2 class="number-title"> Propiedades de los tipos de datos en  Access </h2>
+    
+    <table  border="2">
+
+        <thead>
+      
+          <tr>
+            <th colspan="2">Fecha y hora</th>
+          </tr>
+      
+          <tr>
+      
+      
+            <th style="width:110px"> Formato</th>
+      
+            <th style="width:400px"> Se usa para</th>
+      
+          </tr>
+      
+        </thead>
+      
+        <tbody>
+      
+          <tr>
+      
+            <td>Fecha corta</td>
+      
+            <td>Mostrar la fecha en un formato corto. 
+                Depende de la configuración regional de fecha y hora.
+                Por ejemplo, 3/14/2001 para Estados Unidos.</td>
+      
+          </tr>
+      
+          <tr>
+      
+            <td>Fecha Mediana</td>
+      
+            <td>Mostrar la fecha en un formato mediano.
+                Por ejemplo, 3-Abr-09 para Estados Unidos.</td>
+      
+          </tr>
+      
+          <tr>
+      
+            <td>Fecha larga</td>
+      
+            <td>Mostrar la fecha en un formato largo. 
+                Depende de la configuración regional de fecha y hora.
+                 Por ejemplo, Miércoles 14 de marzo, 2001 para Estados Unidos.</td>
+      
+          </tr>
+      
+          <tr>
+      
+            <td>Hora a.m. o p.m.</td>
+      
+            <td>Mostrar la hora solo con un formato de 12 horas que responderá a 
+                los cambios en la configuración regional de fecha y hora.</td>
+      
+          </tr>
+      
+          <tr>
+            <td>Hora mediana</td>
+            <td>Mostrar la hora seguida A.M. o P.M.</td>
+          </tr>
+
+          <tr>
+            Mostrar la hora solo con un formato de 24 horas que responderá a los cambios en 
+            la configuración regional de fecha y hora.
+          </tr>
+      
+        </tbody>
+      
+     
+      
+      </table>
 </div>
     
     <!--
