@@ -758,9 +758,117 @@
         Entre estas propiedades una de las importantes es el formato. 
           
     </p>
-
+    <button class="respButton hvr-grow ">   Propiedades de tipos de datos en Access </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+        <p>
+        <table  border="2">
+    
+            <thead>    
+              <tr>
+                <th colspan="2"><h2>Propiedades comunes en algunos tipos de datos</h2></th>
+              </tr>
+          
+              <tr>
+                <th style="width:110px"> Propiedad</th>
+                <th style="width:800px"> Uso </th>
+              </tr>
+            </thead>
+            
+            <tbody>
+    
+    
+            <tr>
+                <td> Formato</td>
+              <td>Determina la forma en que aparece el campo cuando se visualiza o imprime en hojas de datos o en formularios 
+                  o informes enlazados al campo. Se puede definir un formato personalizado para un campo de hipervínculo.</td>
+            </tr>
+    
+          
+              <tr>
+                <td>Si/No</td>
+                <td>Opciones de Sí o No. </td>
+              </tr>
+          
+              <tr>
+                <td>Titulo</td>
+                <td> El texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
+                     informes y consultas. Si esta propiedad está vacía, se usa el nombre del campo. 
+                     Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
+                </td>
+              </tr>
+          
+              <tr>
+                <td>Valor predeterminado</td>
+                <td>Asigna de forma automática el valor especificado a un campo cuando se agrega un nuevo registro.</td>
+              </tr>
+          
+              <tr>
+                  <td>Regla de validación</td>
+                  <td>Proporciona una expresión que debe ser verdadera al agregar o cambiar el valor en este campo. 
+                      Se usa junto con la propiedad Texto de validación.</td>
+              </tr>
+    
+              <tr>
+                  <td>Texto de validación</td>
+                  <td>Escribir un mensaje que aparezca cuando un valor especificado infrinja la expresión en la propiedad Regla de validación.</td>
+              </tr>
+             
+    
+              <tr>
+                <td>Requerido</td>
+                <td>Requiere que los datos se introduzcan en un campo.</td>
+            </tr>
+    
+              <tr>
+                <td>Permitir longitud cero</td>
+                <td>Permite escribir (al establecerla en Sí) una cadena de longitud cero ("") en un campo Hipervínculo, Texto o Memo.</td>
+              </tr>
+    
+              <tr>
+               <td>Indexado</td>
+               <td>
+                   <p>Especifica si el campo tiene un índice. Hay tres valores disponibles:</p>
+                   <ol>
+                       <li>Sí (sin duplicados)   Crea un índice exclusivo en el campo.</li>
+                       <li>Sí (con duplicados)   Crea un índice no exclusivo en el campo. </li>
+                       <li>No,   quita cualquier índice del campo. </li>
+                    
+                   </ol>
+                <p>Nota: No cambie esta propiedad en un campo que se use como clave principal.</p>
+            </td>
+              </tr>
+    <tr>
+        <td>Compresión Unicode</td>
+        <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
+    </tr>
+    
+              <tr>
+                <td>Modo IME</td>
+                <td>Controla la conversión de caracteres en las versiones asiáticas de Windows.</td>
+              </tr>
+            
+              <tr>
+                  <td>Compresión Unicode</td>
+                  <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
+              </tr>
+    
+              <tr>
+                  <td>Alinear texto</td>
+                  <td>Especifica la alineación de texto predeterminada dentro de un control.</td>
+              </tr>
+          
+            </tbody>    
+          </table>
+        </p>
+        
+       
+    </div>
+    
+    </div>
    <p> 
-    Enseguida se presentan los formatos para  los tipos de datos mas usados mas frecuentemente:
+    Enseguida se presentan los atributos para la propiedad formato de algunos tipos de datos usados mas
+     frecuentemente durante el diseño de una base de datys:
     </p>
     <button class="respButton hvr-grow ">  Número </button>
 <div class="resp-box flexbox">
@@ -940,118 +1048,14 @@
    
     </div>
 
-
+<!--
+    
 <div class="nota-box">
     <h2 class="number-title"> Propiedades comunes de algunos  tipos de datos en  Access </h2> 
-    <button class="respButton hvr-grow ">   Propiedades de tipos de datos en Access </button>
-<div class="resp-box flexbox">
-  <div class="flexbox">   
-    <p>
-    <table  border="2">
-
-        <thead>    
-          <tr>
-            <th colspan="2"><h2>Propiedades comunes en algunos tipos de datos</h2></th>
-          </tr>
-      
-          <tr>
-            <th style="width:110px"> Propiedad</th>
-            <th style="width:800px"> Uso </th>
-          </tr>
-        </thead>
-        
-        <tbody>
-
-
-        <tr>
-            <td> Formato</td>
-          <td>Determina la forma en que aparece el campo cuando se visualiza o imprime en hojas de datos o en formularios 
-              o informes enlazados al campo. Se puede definir un formato personalizado para un campo de hipervínculo.</td>
-        </tr>
-
-      
-          <tr>
-            <td>Si/No</td>
-            <td>Opciones de Sí o No. </td>
-          </tr>
-      
-          <tr>
-            <td>Titulo</td>
-            <td> El texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
-                 informes y consultas. Si esta propiedad está vacía, se usa el nombre del campo. 
-                 Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
-            </td>
-          </tr>
-      
-          <tr>
-            <td>Valor predeterminado</td>
-            <td>Asigna de forma automática el valor especificado a un campo cuando se agrega un nuevo registro.</td>
-          </tr>
-      
-          <tr>
-              <td>Regla de validación</td>
-              <td>Proporciona una expresión que debe ser verdadera al agregar o cambiar el valor en este campo. 
-                  Se usa junto con la propiedad Texto de validación.</td>
-          </tr>
-
-          <tr>
-              <td>Texto de validación</td>
-              <td>Escribir un mensaje que aparezca cuando un valor especificado infrinja la expresión en la propiedad Regla de validación.</td>
-          </tr>
-         
-
-          <tr>
-            <td>Requerido</td>
-            <td>Requiere que los datos se introduzcan en un campo.</td>
-        </tr>
-
-          <tr>
-            <td>Permitir longitud cero</td>
-            <td>Permite escribir (al establecerla en Sí) una cadena de longitud cero ("") en un campo Hipervínculo, Texto o Memo.</td>
-          </tr>
-
-          <tr>
-           <td>Indexado</td>
-           <td>
-               <p>Especifica si el campo tiene un índice. Hay tres valores disponibles:</p>
-               <ol>
-                   <li>Sí (sin duplicados)   Crea un índice exclusivo en el campo.</li>
-                   <li>Sí (con duplicados)   Crea un índice no exclusivo en el campo. </li>
-                   <li>No,   quita cualquier índice del campo. </li>
-                
-               </ol>
-            <p>Nota: No cambie esta propiedad en un campo que se use como clave principal.</p>
-        </td>
-          </tr>
-<tr>
-    <td>Compresión Unicode</td>
-    <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
-</tr>
-
-          <tr>
-            <td>Modo IME</td>
-            <td>Controla la conversión de caracteres en las versiones asiáticas de Windows.</td>
-          </tr>
-        
-          <tr>
-              <td>Compresión Unicode</td>
-              <td>Comprime el texto que se almacena en este campo cuando se almacenan menos de 4.096 caracteres.</td>
-          </tr>
-
-          <tr>
-              <td>Alinear texto</td>
-              <td>Especifica la alineación de texto predeterminada dentro de un control.</td>
-          </tr>
-      
-        </tbody>    
-      </table>
-    </p>
     
-   
 </div>
 
-</div>
-</div>
+-->
 <!--
     <div class="ejercicio-box"> 
         <h2 class="number-title"> Ejercicio. Tabla Calificaciones</h2>
