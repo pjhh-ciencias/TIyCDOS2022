@@ -77,7 +77,7 @@
 
       </header>
       <!-- This part is for title in tab-->
-      <title> § 2 </title>
+      <title> § Semana  2 </title>
     
   </head>
 
@@ -122,7 +122,7 @@
                 <li>Segundo apellido.</li>
                 <ul>
                     <li>Tipo de dato: Texto</li>
-                    <li>Tamaño de campo: 10</li>
+                    <li>Tamaño de campo: 25</li>
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
@@ -198,7 +198,7 @@
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
-                   <li>código postal</li>
+                   <li>Código postal</li>
                    <ul>
                     <li>Tipo de dato: Texto</li>
                     <li>Tamaño de campo: 10</li>
@@ -329,7 +329,7 @@
                 <li>Segundo apellido.</li>
                 <ul>
                     <li>Tipo de dato: Texto</li>
-                    <li>Tamaño de campo: 10</li>
+                    <li>Tamaño de campo: 25</li>
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
@@ -405,10 +405,10 @@
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
-                   <li>código postal</li>
+                   <li>Código postal</li>
                    <ul>
                     <li>Tipo de dato: Texto</li>
-                    <li>Tamaño de campo: 10</li>
+                    <li>Tamaño de campo: 5</li>
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
@@ -420,7 +420,7 @@
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (con duplicados)</li>
                 </ul>
-                <li>Instituto de adscripcion</li>
+                <li>Instituto de adscripción</li>
                 <ul>
                 <li>Tipo de dato: Texto</li>
                 <li>Tamaño de campo: 50</li>
@@ -449,6 +449,26 @@
                     <li>Requerido: Si</li>
                     <li>Indexado: Si (sin duplicados)</li>
                 </ul>
+                
+                <li>Grado académico</li>
+                <ul>
+                    <li>Tipo de dato: Texto</li>
+                    <li>Tamaño de campo: 30</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+
+                
+                <li>Fecha de ingreso</li>
+                <ul>
+                    <li>Tipo de dato: Fecha/Hora</li>
+                    <li>Formato: Fecha corta </li>
+                    <li>Mascara de entrada: Aspecto 26/01/1990</li>
+                    <li>Requerido: Si</li>
+                    <li>Indexado: Si (con duplicados)</li>
+                </ul>
+                
+                
         
             </ol>
         </p>
@@ -486,7 +506,7 @@
                     <li>Tipo de dato: Texto</li>
                     <li>Tamaño de campo: 5</li>
                     <li>Requerido: Si </li>
-                    <li>Indexado: Si (sin duplicados)</li>
+                    <li>Indexado: Si (con duplicados)</li>
                 </ul>
                 <li>Fecha de  inicio</li>
                 <ul>
@@ -527,8 +547,365 @@
     </div>
     </div>
 
-  </body>
+    <div class="info-box"> 
+        <h2 class="number-title"> Tipos de datos y  propiedades de los campos en  Access</h2>
+    
+        <p>Todas las tablas de Access se componen de campos. Al crear tablas en Access, 
+            necesitas seleccionar un tipo de datos para cada campo (columna). El tipo de
+            datos de un campo es la propiedad más importante porque determina qué tipo de
+            datos puede almacenar el campo. Las propiedades de un campo  describen las 
+            características y el comportamiento de los datos agregados a dicho campo. 
+        </p>
+    </div>
 
+        
+    
+    <div class="nota-box">
+        <h2 class="number-title"> Tipos de datos en  Access </h2>
+    <p> 
+        El tipo de datos de un campo determina otras muchas cualidades importantes del mismo,
+        como las siguientes:
+    <ol>
+    <li>Los formatos que se pueden usar con el campo.</li>
+    <li>El tamaño máximo de un valor del campo.</li>
+    <li>Cómo se puede usar el campo en expresiones.</li>
+    <li>Si el campo se puede indizar.</li>
+    </ol>
+    </p>
+        <p>
+        El tipo de datos Texto  permite escribir/almacenar casi cualquier carácter (letra, símbolo o número).
+        Pero un campo cuyo tipo de datos es número solo puede almacenar datos numéricos.
+        Sin embargo, una cuidada selección de tipos de datos puede ayudarle a aprovecharse de características
+        adicionales de Access (como la validación de datos y las funciones) y a mejorar la precisión de la información 
+        que está almacenando.
+        </p>
+        <p>
+
+            <table border="2">
+                <tr>
+                  <th style="width:120px">Tipo de datos</th>
+                  <th style="width:500px" >Uso</th>
+                  <th style="width:300px">Tamaño</th>
+                </tr>
+    
+
+                 <tr>
+                  <td >Texto</td>
+                  <td  > Datos alfanuméricos cortos como nombres, apellidos, títulos,  
+                      una dirección, etc. En general se utiliza para introducir datos que incluyan
+                       texto y/o valores numéricos que no requieran cálculos matemáticos.
+                     <p> Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</p>
+
+                      </td>
+                  <td>Hasta 255 caracteres.</td>
+                </tr>
+                <tr>
+                  <td >Texto</td>
+                  <td  > Datos alfanuméricos cortos como nombres, apellidos, títulos,  
+                      una dirección, etc. En general se utiliza para introducir datos que incluyan
+                       texto y/o valores numéricos que no requieran cálculos matemáticos.
+                     <p> Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</p>
+
+                      </td>
+                  <td>Hasta 255 caracteres.</td>
+                </tr>
+              
+                <tr>
+                  <td>Memo</td>
+                  <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
+                      Un uso típico de un campo Memo sería  una descripción detallada de un producto.
+                     <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p>
+                  </td>
+                  <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto largo se limitan a los primeros 64 000 caracteres.</td>
+                </tr>
+              
+                
+                <tr>
+                    <td>Número</td>
+                    <td>Datos numéricos que vayan a ser utilizados para realizar cálculos matemáticos. 
+                       <p> Nota: Hay un tipo de datos independiente para moneda. </p>
+                       </td>
+                    <td>1, 2, 4, 8 o 16 bytes.</td>
+                  </tr>
+    
+                  
+                <tr>
+                    <td>Fecha y hora</td>
+                    <td>Se utiliza este tipo de dato para introducir datos de fechas y horas.
+
+                        <p>Nota: Se recomienda utilizar en formato (propiedades del campo) la fecha corta. 
+                            Y  una mascara de entrada (propiedades del campo).</p>
+                    </td>
+                    <td>8 bytes.</td>
+                  </tr>
+    
+                  
+                <tr>
+                    <td>Moneda</td>
+                    <td>Ideal para almacenar datos numéricos que representen valores monetarios, 
+                        que vayan a utilizarse para cálculos matemáticos 
+                        y que necesitemos que lo preceda el signo de moneda. 
+                        
+                        <p>Nota:Acepta hasta 15 dígitos para la parte entera del número y hasta 4 dígitos en su parte decima </p>
+                    </td>
+                    <td>8 bytes</td>
+                  </tr>
+    
+                  <tr>
+                      <td>Autonumeración</td>
+                      <td>Valor único generado por Access para cada registro nuevo. 
+                          El valor que contenga este campo se va a ir incrementando
+                          cada vez que se agregue un registro a la tabla, este tipo de datos es utilizado para llevar una secuencia 
+                          de los registros ingresados a una tabla. </td>
+                      <td>4 bytes (16 bytes para el Id. de replicación).</td>
+                  </tr>
+    
+    
+                  <tr>
+                    <td>Sí/no</td>
+                    <td>Util para almacena  datos booleanos (verdadero/falso); 
+                        Access almacena el valor numérico cero (0) para Falso 
+                        y -1 para Verdadero. Los valores y los campos Sí y No
+                        solo pueden contener uno de los dos valores.</td>
+                    <td>1 byte.</td>
+                </tr>
+    
+    
+                <tr>
+                    <td>Objeto OLE</td>
+                    <td> Este tipo de datos es usado para enlazar o adjuntar archivos 
+                        creados en otros programas, como pueden ser archivos word, excel, etc.
+                        Solo admite un sólo archivo y el archivo ocupa espacio en la base de datos.</td>
+                    <td>Hasta unos 2 GB.</td>
+                </tr>
+    
+                <tr>
+                    <td>Hipervínculo</td>
+                    <td>Es usado para campos que contienen enlaces a páginas web, direcciones de correo, o archivos que abren con un navegador web. </td>
+                    <td>Hasta 8192 (cada parte de un tipo de datos Hipervínculo 
+                        puede contener un máximo de 2048 caracteres).</td>
+                </tr>
+    
+                <tr>
+                    <td>Datos adjuntos</td>
+                    <td>A diferencia del tipo Objeto OLE, cada documento, gráfico, hoja de cálculo, etc 
+                        que se adjunte a un campo de este tipo se ejecutará en el programa que fue creado, 
+                        sin requerir más espacio adicional en la base de datos del que necesita el solo enlace. 
+                        Admite varios archivos. 
+                        <p>El tipo de datos Datos adjuntos no está disponible 
+                        en los formatos de archivo MDB.
+                        </p>
+                </td>
+                    <td>Hasta unos 2 GB.</td>
+                </tr>
+    
+                <tr>
+                    <td>Calculado</td>
+                    <td>Este tipo de datos usa datos en la misma tabla para hacer cálculos.
+                        
+                        <p>Nota: Los campos calculados aparecieron por primera vez en Access 2010.</p>
+                    </td>
+                    <td>Depende del tipo de datos de la propiedad Tipo de resultado.
+                        El resultado de tipo de datos de texto corto puede tener hasta 243 caracteres.
+                         Texto largo, número, Sí/No y la fecha y hora debe coincidir con sus
+                        respectivos tipos de datos.</td>
+                </tr>
+    
+                <tr>
+                    <td>Asistente para búsquedas</td>
+                    <td>La entrada del Asistente para búsquedas en la columna de tipo de datos en la vista
+                        Diseño no es realmente un tipo de datos.el cual usa datos en la misma tabla para hacer cálculos.
+                
+                    </td>
+    
+                    <td>Depende del tipo de datos del campo de búsqueda.</td>
+                </tr>
+              </table>
+        </p>
+Determina la cantidad de espacio que está asignado para cada valor. Para los campos Autonumeración, solo se permiten dos valores:
+
+
+    </div>
+    
+    
+    <div class="nota-box">
+    <h2 class="number-title"> Propiedades de los tipos de datos en  Access </h2>
+
+    <p>
+        Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.
+        El tipo de datos del campo determina qué otras propiedades se pueden establecer.
+        Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad Tamaño del campo.
+        Entre estas propiedades una de las importantes es el formato. 
+          
+    </p>
+
+   <p> 
+    Enseguida se presentan los formatos para  los tipos de datos mas usados mas frecuentemente:
+    </p>
+
+        <p>
+        <table  border="2">
+    
+            <thead>
+              <tr>
+              <th colspan="2">Número</th>
+              </tr>
+          
+              <tr>
+              <th style="width:110px"> Formato</th>
+              <th style="width:800px"> Se usa para mostrar</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr>
+                <td>General</td>
+                <td>Números sin formato adicional exactamente como se almacenan.</td>
+              </tr>
+          
+              <tr>
+                <td>Moneda</td>
+                <td>Valores monetarios generales. </td>
+              </tr>
+          
+              <tr>
+                <td>Euro</td>
+                <td>Valores monetarios generales almacenados en el formato de la UE.
+                </td>
+          
+              </tr>
+          
+              <tr>
+                <td>Estandar    </td>
+                <td>Datos numéricos con decimales.</td>
+          
+              </tr>
+          
+              <tr>
+                <td>Porcentaje</td>
+                <td>Porcentajes.</td>
+              </tr>
+    
+              <tr>
+               <td>Científico</td>
+               <td>Cálculos.</td>
+              </tr>
+          
+            </tbody>
+          
+         
+          
+          </table>
+        </p>
+
+<p>
+
+        <table  border="2">
+    
+            <thead>
+              <tr>
+                <th colspan="2">Fecha y hora</th>
+              </tr>
+          
+              <tr>
+              <th style="width:110px"> Formato</th>
+                <th style="width:800px"> Se usa para mostrar</th>
+              </tr>
+            </thead>
+          
+            <tbody>
+              <tr>
+                <td>Fecha corta</td>
+                <td>Mostrar la fecha en un formato corto. Por ejemplo, 26/04/2022</td>
+              </tr>
+          
+              <tr>
+                <td>Fecha Mediana</td>
+                <td>Mostrar la fecha en un formato mediano. Por ejemplo, 3-Abr-09 </td>
+              </tr>
+          
+              <tr>
+                <td>Fecha larga</td>
+                <td>Mostrar la fecha en un formato largo. Por ejemplo, Miércoles 14 de marzo.
+                </td>
+              </tr>
+          
+              <tr>
+                <td>Hora a.m. o p.m.</td>
+                <td>Mostrar la hora solo con un formato de 12 horas que responderá a 
+                    los cambios en la configuración regional de fecha y hora.</td>
+              </tr>
+          
+              <tr>
+                <td>Hora mediana</td>
+                <td>Mostrar la hora seguida A.M. o P.M.</td>
+              </tr>
+    
+
+              <tr>
+                <td>Hora de 24 horas</td>
+                <td>Mostrar la hora solo con un formato de 24 horas que responderá a los cambios
+                     en la configuración regional de fecha y hora.</td>
+              </tr>
+            </tbody>
+          </table>
+    
+        
+</p>
+
+<p>
+    <table  border="2">
+
+        <thead>    
+          <tr>
+            <th colspan="2">Si/No</th>
+          </tr>
+      
+          <tr>
+            <th style="width:110px"> Formato</th>
+            <th style="width:800px"> Se usa para mostrar</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td>Casilla</td>
+            <td>Introducción a los tipos de datos y las propiedades de los campos</td>
+          </tr>
+      
+          <tr>
+            <td>Si/No</td>
+            <td>Opciones de Sí o No. </td>
+          </tr>
+      
+          <tr>
+            <td>Verdader/Falso</td>
+            <td>Opciones de Verdadero o Falso.
+            </td>
+          </tr>
+      
+          <tr>
+            <td>Activar/Desactivar</td>
+            <td>Opciones de Activar o Desactivar</td>
+          </tr>
+      
+          <tr>
+            <td>Porcentaje</td>
+            <td>Porcentajes.</td>
+          </tr>
+
+          <tr>
+           <td>Científico</td>
+           <td>Cálculos.</td>
+          </tr>
+      
+        </tbody>    
+      </table>
+    </p>
+    
+   
+</div>
+<!--
     <div class="ejercicio-box"> 
         <h2 class="number-title"> Ejercicio. Tabla Calificaciones</h2>
         <p>Así tambien se desea almacenar y administrar  la  información histórica de los cursos impartidos</p>
@@ -542,7 +919,7 @@
       </div>
     </div>
     </div>
-
+-->
 
 <!--
     <div class="ejercicio-box"> 
