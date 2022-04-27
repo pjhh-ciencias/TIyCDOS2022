@@ -550,20 +550,48 @@
     <div class="info-box"> 
         <h2 class="number-title"> Tipos de datos y  propiedades de los campos en  Access</h2>
     
-        <p>Todas las tablas de Access se componen de campos. Al crear tablas en Access, 
-            necesitas seleccionar un tipo de datos para cada campo (columna). El tipo de
-            datos de un campo es la propiedad más importante porque determina qué tipo de
-            datos puede almacenar el campo. Las propiedades de un campo  describen las 
-            características y el comportamiento de los datos agregados a dicho campo. 
+        <p>
+            Cuando se diseña y crea una base de datos, tenemos que planificar una o más tablas 
+            así como los campos (columnas) para cada tabla (recordemos que todas las tablas 
+            de Access se componen de campos), y ademas es necesario  elegir un tipo de
+            datos para cada campo.
         </p>
+            
+
+
+
+
+
     </div>
 
-        
-    
+
     <div class="nota-box">
         <h2 class="number-title"> Tipos de datos en  Access </h2>
+        <p>
+            El tipo de datos de un campo es la propiedad más importante porque determina qué tipo de
+            datos puede almacenar el campo. Luego, una vez elegido el tipo de datos adecuado a la informacion 
+            que almacenaremos en dicho campo. Las propiedades de un campo  describen las 
+            características y el comportamiento de los datos agregados a dicho campo. 
+        </p>
+            
+        <p>
+            Por ejemplo, si necesita almacenar fechas y horas, establezca un campo cuyo tipo  de dato sea
+            Fecha y Hora. Si necesita almacenar nombres y direcciones, establezca uno o varios
+            campos en el tipo de datos Texto y así respectivamente. Access ofrece muchos tipos de datos diferentes
+            y cada tipo tiene una finalidad concreta. 
+        </p>
+        
+        <p>
+        
+            Por último, los tipos de datos proporcionan una forma básica de validación de datos porque ayudan a garantizar 
+            que los usuarios escriben los tipos de datos adecuados en los campos de tabla. Por ejemplo, no se puede escribir 
+            texto en un campo configurado para aceptar solo números.
+        
+
+        </p>
+    
     <p> 
-        El tipo de datos de un campo determina otras muchas cualidades importantes del mismo,
+        El tipo de datos de un campo determina  multiples cualidades importantes del mismo,
         como las siguientes:
     <ol>
     <li>Los formatos que se pueden usar con el campo.</li>
@@ -736,10 +764,42 @@
   </div>
 </div>
 
-    </div>
+<h2 class="number-title"> Propiedades de los tipos de datos: Permitir longitud cero y requerido  </h2>
+Cuando creamos nuevas tablas en Access, es mucho mas fácil  realizarlo a través de la vista diseño de la tabla.
+Para modificar y/o agregar información también podemos acceder a dicha vista.
+<ol>
+    <li>Permitir longitud cero</li>
+    <p>Permitir longitud cero admite dos posibles valores, Sí y No. Si está con valor Sí significa que podemos
+     introducir una cadena de longitud cero en el campo. Esta cadena se puede puede representar como "" 
+     sin nada dentro de las comillas. Con el valor No no se admitiría esta cadena.
+    </p>
     
-    
-    <div class="nota-box">
+     <li>Requerido</li>
+    <p>
+     La propiedad Requerido indica que ese campo no se puede dejar en blanco, sin datos. 
+    </p>
+     <p>Observación: Todos los campos pertenecientes a la clave principal de una tabla tienen 
+         la obligación de poseer datos, no pueden estar vacíos. 
+     </p>    
+     <p>
+          El resto de campos no tienen, en principio, porque ser requerido.
+           Pero si la propiedad Requerido de un campo está a Sí, significa que no podemos dejar de introducir datos
+           en ese campo. Necesariamente introduciremos información para cumplir con la exigencia de esta propiedad.
+        </p>
+        
+</ol>
+
+<p>Sin embargo, puede ocurrir que, en ciertas ocasiones, no tenemos el dato para ese campo y 
+    resulta que con Requerido activado, Access nos obliga a introducir información en el mismo.
+     ¿Qué podemos hacer? Si la propiedad permitir longitud cero está activada (valor Sí), que hacemos es pulsar la barra espaciadora, y de esta forma podemos pasar a otro campo sin problemas. Más tarde, con la información en nuestras manos, introducimos el dato sin problemas.
+</p>
+
+<p>
+    En resumen: Con permitir longitud cero y requerido a sí podemos dejar la introducción de datos para más tarde. Si tuviésemos requerido a si y permitir longitud cero a no, entonces Access no permite introducir una cadena de longitud cero en el campo,
+     y estaremos obligados a introducir información, dar a la barra espaciadora no se permite.
+</p>
+
+   
     <h2 class="number-title"> Propiedades de los tipos de datos en  Access: Formato </h2>
 
     <p>Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.</p>
@@ -859,6 +919,7 @@
     </div>
     
     </div>
+
    <p> 
     Entre estas propiedades de campo, una de las importantes es el formato.    
     Enseguida se presentan los propiedeades de campo para algunos los tipos de dato usados mas
@@ -1039,45 +1100,9 @@
     </p>
   </div>
 </div>
+ 
    
-    </div>
-
-
-    <div class="nota-box">
-        <h2 class="number-title"> Propiedades: Permitir longitud cero y requerido  </h2>
-        Cuando creamos nuevas tablas en Access, es mucho mas fácil  realizarlo a través de la vista diseño de la tabla.
-        Para modificar y/o agregar información también podemos acceder a dicha vista.
-        <ol>
-            <li>Permitir longitud cero</li>
-            <p>Permitir longitud cero admite dos posibles valores, Sí y No. Si está con valor Sí significa que podemos
-             introducir una cadena de longitud cero en el campo. Esta cadena se puede puede representar como "" 
-             sin nada dentro de las comillas. Con el valor No no se admitiría esta cadena.
-            </p>
-            
-             <li>Requerido</li>
-            <p>
-             La propiedad Requerido indica que ese campo no se puede dejar en blanco, sin datos. 
-            </p>
-             <p>Observación: Todos los campos pertenecientes a la clave principal de una tabla tienen 
-                 la obligación de poseer datos, no pueden estar vacíos. 
-             </p>    
-             <p>
-                  El resto de campos no tienen, en principio, porque ser requerido.
-                   Pero si la propiedad Requerido de un campo está a Sí, significa que no podemos dejar de introducir datos
-                   en ese campo. Necesariamente introduciremos información para cumplir con la exigencia de esta propiedad.
-                </p>
-                
-        </ol>
-
-        <p>Sin embargo, puede ocurrir que, en ciertas ocasiones, no tenemos el dato para ese campo y 
-            resulta que con Requerido activado, Access nos obliga a introducir información en el mismo.
-             ¿Qué podemos hacer? Si la propiedad permitir longitud cero está activada (valor Sí), que hacemos es pulsar la barra espaciadora, y de esta forma podemos pasar a otro campo sin problemas. Más tarde, con la información en nuestras manos, introducimos el dato sin problemas.
-        </p>
-
-        <p>
-            En resumen: Con permitir longitud cero y requerido a sí podemos dejar la introducción de datos para más tarde. Si tuviésemos requerido a si y permitir longitud cero a no, entonces Access no permite introducir una cadena de longitud cero en el campo,
-             y estaremos obligados a introducir información, dar a la barra espaciadora no se permite.
-        </p>
+      
     </div>
 <!--
     
