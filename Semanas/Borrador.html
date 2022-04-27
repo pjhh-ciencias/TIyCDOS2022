@@ -88,235 +88,688 @@
 
 <div class="nota-box">
     <h2 class="number-title"> Tipos de datos en  Access </h2>
-<p> 
-    El tipo de datos de un campo determina otras muchas cualidades importantes del mismo,
-    como las siguientes:
-<ol>
-<li>Los formatos que se pueden usar con el campo.</li>
-<li>El tamaño máximo de un valor del campo.</li>
-<li>Cómo se puede usar el campo en expresiones.<li></li>
-<li>Si el campo se puede indizar.</li>
-</ol>
-</p>
-    <p>
-    El tipo de datos Texto  permite escribir/almacenar casi cualquier carácter (letra, símbolo o número).
-    Pero un campo cuyo tipo de datos es número solo puede almacenar datos numéricos.
-    Sin embargo, una cuidada selección de tipos de datos puede ayudarle a aprovecharse de características
-    adicionales de Access (como la validación de datos y las funciones) y a mejorar la precisión de la información 
-    que está almacenando.
-    </p>
-    <p>
-        <table border="2">
-            <tr>
-              <th style="width:110px">Tipo de datos</th>
-              <th>Uso</th>
-              <th>Tamaño</th>
-            </tr>
-
-            <tr>
-              <td style="width:110px">Texto</td>
-              <td  style="width:400px"> Datos alfanuméricos cortos como nombres, apellidos, títulos,  
-                  una dirección, etc. Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</td>
-              <td>Hasta 255 caracteres.</td>
-            </tr>
-          
-            <tr>
-              <td>Memo</td>
-              <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
-                  Bloques extensos de texto. Un uso típico de un campo Memo sería 
-                una descripción detallada de un producto.
-                 <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p>
-              </td>
-              <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto largo se limitan a los primeros 64 000 caracteres.</td>
-            </tr>
-          
-            
-            <tr>
-                <td>Número</td>
-                <td>Valores numéricos, como distancias. 
-                    Nota: Hay un tipo de datos independiente para moneda.</td>
-                <td>1, 2, 4, 8 o 16 bytes.</td>
-              </tr>
-
-              
-            <tr>
-                <td>Fecha y hora</td>
-                <td>Fechas y horas.</td>
-                <td>8 bytes.</td>
-              </tr>
-
-              
-            <tr>
-                <th>Moneda</th>
-                <td>Datos monetarios, almacenados con 4 posiciones decimales de precisión.</td>
-                <td>8 bytes</td>
-              </tr>
-
-              <tr>
-                  <td>Autonumeración</td>
-                  <td>Valor único generado por Access para cada registro nuevo.</td>
-                  <td>4 bytes (16 bytes para el Id. de replicación).</td>
-              </tr>
-
-
-              <tr>
-                <td>Sí/no</td>
-                <td>Datos booleanos (verdadero/falso); 
-                    Access almacena el valor numérico cero (0) para Falso 
-                    y -1 para Verdadero. Los valores y los campos Sí y No
-                    solo pueden contener uno de los dos valores.</td>
-                <td>1 byte.</td>
-            </tr>
-
-
-            <tr>
-                <td>Objeto OLE/td>
-                <td>Imágenes, gráficos u otros objetos de ActiveX 
-                    desde otra aplicación basada en Windows.</td>
-                <td>Hasta unos 2 GB.</td>
-            </tr>
-
-            <tr>
-                <td>Hipervínculo</td>
-                <td>Una dirección de vínculo a un documento o archivo 
-                    en Internet, en una intranet, en una red de área
-                     local (LAN) o en el equipo local</td>
-                <td>Hasta 8192 (cada parte de un tipo de datos Hipervínculo 
-                    puede contener un máximo de 2048 caracteres).</td>
-            </tr>
-
-            <tr>
-                <td>Datos adjuntos</td>
-                <td>Puede adjuntar archivos como imágenes, documentos, 
-                    hojas de cálculo o gráficos; cada campo Datos adjuntos
-                    puede contener una cantidad ilimitada de datos adjuntos por registro,
-                    hasta el límite de almacenamiento del tamaño de un archivo de base de datos.
-                    Tenga en cuenta que el tipo de datos Datos adjuntos no está disponible 
-                    en los formatos de archivo MDB.</td>
-                <td>Hasta unos 2 GB.</td>
-            </tr>
-
-            <tr>
-                <td>Calculado</td>
-                <td>Puede crear una expresión que use datos de uno o varios campos. 
-                    Los resultados de un cálculo. El cálculo debe referirse a otros campos en la misma tabla.
-                    Para crear el cálculo se usa el Generador de expresiones.
-                    Nota: Los campos calculados aparecieron por primera vez en Access 2010.
-                </td>
-                <td>Depende del tipo de datos de la propiedad Tipo de resultado.
-                    El resultado de tipo de datos de texto corto puede tener hasta 243 caracteres.
-                     Texto largo, número, Sí/No y la fecha y hora debe coincidir con sus
-                    respectivos tipos de datos.</td>
-            </tr>
-
-            <tr>
-                <td>Asistente para búsquedas</td>
-                <td>La entrada del Asistente para búsquedas en la columna de tipo de datos en la vista
-                    Diseño no es realmente un tipo de datos. Al elegir esta entrada, inicie 
-                    el Asistente para ayudarle a definir un campo de búsqueda simple o complejo. 
-                    Un campo de búsqueda simple usa el contenido de otra tabla o una lista de valores 
-                    para validar el contenido de un único valor por fila. Un campo de búsqueda compleja 
-                    permite almacenar varios valores del mismo tipo de datos en cada fila.
-                <p>
-                    Muestra una lista de valores que se recuperan de una tabla o consulta,
-                    o un conjunto de valores especificados al crear el campo. Se inicia el Asistente para búsquedas 
-                    y se puede crear un campo de búsqueda. El tipo de datos de un campo de búsqueda es Texto o Número,
-                     dependiendo de las opciones que se seleccionen en el asistente. Los campos de búsqueda tienen un 
-                     conjunto adicional de propiedades de campo, que se encuentran en la pestaña Búsqueda del panel 
-                     Propiedades del campo.
-                </p>
-                </td>
-
-                <td>Depende del tipo de datos del campo de búsqueda.</td>
-            </tr>
-          </table>
-    </p>
-</div>
-
+<p>
+</p></div>
 
 <div class="nota-box">
-    <h2 class="number-title"> Propiedades de los tipos de datos en  Access </h2>
-    
-    <table  border="2">
-
-        <thead>
-      
-          <tr>
-            <th colspan="2">Fecha y hora</th>
-          </tr>
-      
-          <tr>
-      
-      
-            <th style="width:110px"> Formato</th>
-      
-            <th style="width:400px"> Se usa para</th>
-      
-          </tr>
-      
-        </thead>
-      
-        <tbody>
-      
-          <tr>
-      
-            <td>Fecha corta</td>
-      
-            <td>Mostrar la fecha en un formato corto. 
-                Depende de la configuración regional de fecha y hora.
-                Por ejemplo, 3/14/2001 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Fecha Mediana</td>
-      
-            <td>Mostrar la fecha en un formato mediano.
-                Por ejemplo, 3-Abr-09 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Fecha larga</td>
-      
-            <td>Mostrar la fecha en un formato largo. 
-                Depende de la configuración regional de fecha y hora.
-                 Por ejemplo, Miércoles 14 de marzo, 2001 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Hora a.m. o p.m.</td>
-      
-            <td>Mostrar la hora solo con un formato de 12 horas que responderá a 
-                los cambios en la configuración regional de fecha y hora.</td>
-      
-          </tr>
-      
-          <tr>
-            <td>Hora mediana</td>
-            <td>Mostrar la hora seguida A.M. o P.M.</td>
-          </tr>
-
-          <tr>
-            Mostrar la hora solo con un formato de 24 horas que responderá a los cambios en 
-            la configuración regional de fecha y hora.
-          </tr>
-      
-        </tbody>
-      
-     
-      
+    <h2 class="number-title">Propiedad de los tipos de datos: Regla de validación para validar los datos de un campo </h2>
+ 
       </table>
 </div>
     
 
 <div class="nota-box">
 
-  
+    <!--https://support.microsoft.com/es-es/office/modificar-o-cambiar-el-tipo-de-datos-de-un-campo-1334e8b4-ee5c-48df-9ba1-8d0e1e9c114c#bm3-->
+
+
+    Como regla, se puede  cambiar el tipo de datos de todos los campos, excepto para:
+    <ul>
+    <li>El número de campos con la propiedad Id. de replicación habilitada.</li>
+    <li>Campos de Objeto OLE.</li>
+    <li>Campos de datos adjuntos.</li>
+    </ul>
+
+
+    <p>
+      Además, puede cambiar la mayoría de los tipos de datos cuando un campo contiene datos.
+      Sin embargo, dependiendo del tipo de datos original y del nuevo tipo de datos que desea usar,
+      Access podría truncar o eliminar algunos datos, o no permitir la conversión en absoluto.
+    </p>
+
+    <p>
+       La siguiente tabla enumera las conversiones de tipo de datos que puede realizar en Access 
+       y describen las restricciones que Access puede imponer en la conversión.
+    </p>
+
+    <table  <table border="2">
+        <thead>
+          <tr>
+            <th>
+              <p>
+                <b class="ocpLegacyBold">Conversión a este tipo</b>
+              </p>
+            </th>
+            <th>
+              <p>
+                <b class="ocpLegacyBold">De este tipo</b>
+              </p>
+            </th>
+            <th>
+              <p>
+                <b class="ocpLegacyBold">Cambios o restricciones</b>
+              </p>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>Access elimina todos los caracteres, salvo los primeros 255.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>No hay restricciones para fecha y hora.</p>
+              <p>No está permitido para fecha y hora extendida.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>El valor -1 (Sí en un campo Sí/No) se convierte en Sí. El valor 0 (No en un campo Sí/No) se convierte en No.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>Access trunca los vínculos de más de 255 caracteres.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>No hay restricciones para fecha y hora.</p>
+              <p>No está permitido para fecha y hora extendida.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>El valor -1 (Sí en un campo Sí/No) se convierte en Sí. El valor 0 (No en un campo Sí/No) se convierte en No.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>El texto debe componerse de números, así como de separadores decimales y de moneda válidos. El número de caracteres en el campo Texto debe ajustarse al tamaño configurado para el campo Número.</p>
+              <p>Para obtener más información sobre el tamaño de varios campos, consulte el artículo <a href="/es-es/office/crear-o-eliminar-un-campo-n%C3%BAmero-o-moneda-e29877e8-0246-4b8b-b089-6d77c732985a" class="ocpArticleLink">Insertar, crear o eliminar un campo que almacena valores numéricos</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>El campo Memo debe contener únicamente texto así como separadores decimales y de moneda válidos. El número de caracteres en el campo Memo debe ajustarse al tamaño configurado para el campo de tipo Número.</p>
+              <p>Para obtener más información sobre el tamaño de varios campos, consulte el artículo <a href="/es-es/office/crear-o-eliminar-un-campo-n%C3%BAmero-o-moneda-e29877e8-0246-4b8b-b089-6d77c732985a" class="ocpArticleLink">Insertar, crear o eliminar un campo que almacena valores numéricos</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número, pero con otro tamaño de campo u otra precisión</p>
+            </td>
+            <td>
+              <p>El tamaño de los valores no puede ser menor o mayor que lo que el nuevo tamaño de campo puede almacenar. Al cambiar la precisión, puede que Access redondee algunos valores.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>Fecha y hora:</p>
+              <p>Las fechas que se pueden convertir dependen del tamaño del campo numérico. Recuerde que Access almacena todas las fechas como fechas de serie y almacena los valores de fecha como enteros de punto flotante y de precisión doble.</p>
+              <p>Access usa el 30 de diciembre de 1899 como fecha 0. Las fechas que no pertenecen al intervalo del 18 de abril de 1899 al 11 de septiembre de 1900 superan el tamaño de un campo Byte. Las fechas que no pertenecen al intervalo del 13 de abril de 1810 al 16 de septiembre de 1989 superan el tamaño de un campo Entero.</p>
+              <p>Para poder alojar todas las posibles fechas, establezca la propiedad <b class="ocpLegacyBold">Tamaño del campo</b> del campo de tipo Número en <b class="ocpLegacyBold">Entero largo</b> o mayor.</p>
+              <p>Para obtener más información sobre las fechas de serie y cómo Access usa y almacena los valores de fecha, vea el artículo Formato de un campo de fecha <a href="/es-es/office/aplicar-formato-a-un-campo-de-fecha-y-hora-47fbbdc1-52fa-416a-b8d5-ba24d881b698" class="ocpArticleLink">y hora.</a></p>
+              <p>Fecha y hora extendida:</p>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Los valores no pueden superar ni quedar por debajo del límite de tamaño configurado para el campo. Por ejemplo, se puede convertir un campo de tipo Moneda en un campo de tipo Entero solo cuando esos valores son mayores que 255 y no superan 32.767.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Los valores no pueden superar ni quedar por debajo del límite de tamaño configurado para el campo.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>Los valores "Sí" se convierten en -1. Los valores "No" se convierten en 0.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Fecha/Hora</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>El texto original debe ser una fecha o una combinación de fecha y hora reconocible. Por ejemplo, 18.01.2006.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>El texto original debe ser una fecha o una combinación de fecha y hora reconocible. Por ejemplo, 18.01.2006.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>El valor debe estar comprendido entre -657.434 y 2.958.465,99998843.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora extendida</p>
+            </td>
+            <td>
+              <p>Sin restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>El valor debe estar comprendido entre -657.434 $ y 2.958.465,9999 $.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>El valor debe ser mayor que -657.434 y menor que 2.958.466.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>El valor -1 (Sí) se convierte en 29 de diciembre de 1899. El valor 0 (No) se convierte en medianoche (12:00:00).</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Fecha y hora extendida</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>Se pierden los segundos fraccionales y, si el año está fuera del rango admitido por Fecha y hora, se eliminará el valor. Para obtener más información, vea Usar el tipo de datos <a href="/es-es/office/usar-el-tipo-de-datos-de-fecha-y-hora-extendida-708c32da-a052-4cc2-9850-9851042e0024" class="ocpArticleLink">Fecha y hora extendida.</a></p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>No está permitido.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>El texto debe constar de números y separadores válidos.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>El texto debe constar de números y separadores válidos.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>Sin restricciones</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>Fecha y hora: no hay restricciones, pero Access puede redondear el valor.</p>
+              <p>Fecha y hora extendida: no se permite.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Sin restricciones</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>El valor -1 (Sí) se convierte en 1 $. El valor 0 (No) se convierte en 0$.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>No se permite si el campo Autonumeración sirve como clave principal.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>No se permite si el campo Autonumeración sirve como clave principal.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>No se permite si el campo Autonumeración sirve como clave principal.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>Fecha y hora: no se permite si el campo Autonumeración sirve como clave principal.</p>
+              <p>Fecha y hora extendida: no se permite.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>No se permite si el campo Autonumeración sirve como clave principal.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>No se permite si el campo Autonumeración sirve como clave principal.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>El texto original debe constar únicamente de Sí, No, Verdadero, Falso, Activado o Desactivado.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>El texto original debe constar únicamente de Sí, No, Verdadero, Falso, Activado o Desactivado.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>Cero o Nulo se convierte en No, todos los demás valores se convierten en Sí.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha y hora</p>
+            </td>
+            <td>
+              <p>Fecha/hora: Null o 12:00:00 a.m. se convierte en No, todos los demás valores se convierten en Sí.</p>
+              <p>Fecha y hora extendida: no se permite.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Cero y Nulo se convierten en No, todos los demás valores en Sí.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>Access convierte todos los valores en Sí.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>No aplicable.</p>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              <p>Hipervínculo</p>
+            </td>
+            <td>
+              <p>Texto</p>
+            </td>
+            <td>
+              <p>Si el texto original contiene una dirección web válida, como adatum.com, www.adatum.com o http://www.adatum.com, Access lo convierte en un hipervínculo. Access intenta convertir otros valores, por lo que se ve texto subrayado, y el cursor cambia cuando se elige el vínculo, pero los vínculos no funcionan. El texto puede contener cualquier protocolo web válido: http://, gopher://, telnet://, ftp://, wais:// y así sucesivamente.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Memo</p>
+            </td>
+            <td>
+              <p>Vea la entrada anterior. Se aplican las mismas restricciones.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Número</p>
+            </td>
+            <td>
+              <p>No se permite cuando un campo de tipo Número forma parte de una relación. Si el valor original tiene forma de dirección IP válida (cuatro números de tres dígitos separados por un punto: nnn.nnn.nnn.nnn) y los números coinciden con una dirección Web, la conversión genera un vínculo válido. En caso contrario, Access agrega <b class="ocpLiteral">http://</b> al principio de cada valor y los vínculos resultantes no son válidos.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Fecha/Hora</p>
+            </td>
+            <td>
+              <p>Access agrega <b class="ocpLiteral">http://</b> al principio de cada dirección, pero los vínculos resultantes casi nunca funcionan.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Moneda</p>
+            </td>
+            <td>
+              <p>Access agrega <b class="ocpLiteral">http://</b> al principio de cada valor pero, al igual que en el caso de las fechas, los vínculos resultantes casi nunca funcionan.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Autonumeración</p>
+            </td>
+            <td>
+              <p>No se permite cuando un campo Autonumeración forma parte de una relación. Access agrega <b class="ocpLiteral">http://</b> al principio de cada valor, pero los vínculos resultantes casi nunca funcionan.</p>
+            </td>
+          </tr>
+          <tr>
+            <td></td>
+            <td>
+              <p>Sí/No</p>
+            </td>
+            <td>
+              <p>Access convierte todos los valores Sí en -1 y todos los valores No en 0, y agrega <b class="ocpLiteral">http://</b> al principio de cada valor. Los vínculos resultantes no funcionan.</p>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 </div>
 
 
