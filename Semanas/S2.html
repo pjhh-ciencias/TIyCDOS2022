@@ -725,7 +725,9 @@
     
                 <tr>
                     <td>Calculado</td>
-                    <td>Este tipo de datos usa datos en la misma tabla para hacer cálculos.
+                    <td>Este tipo de datos usa datos de  la misma tabla para hacer cálculos. Practicamente puede ser de
+                        cualquiera de los formatos indicados anteriormente, ya que el cálculo puede ser tanto sobre
+                        fechas, como sobre valores monetarios u operaciones lógicas de verdadero/falso.
                         
                         <p>Nota: Los campos calculados aparecieron por primera vez en Access 2010.</p>
                     </td>
@@ -749,6 +751,16 @@
             </table>
         </div>
         </div>
+
+        
+
+    <p>
+     Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.
+     Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad Tamaño del campo,
+    entre otras muchas propiedades.
+    </p>
+
+    <p>Enseguida se describen  algunas  propiedades de campo y su uso para  distintos tipos de datos:  </p>
 
         
 
@@ -781,21 +793,30 @@
           
               <tr>
                 <td>Titulo</td>
-                <td> El texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
-                     informes y consultas. Si esta propiedad está vacía, se usa el nombre del campo. 
-                     Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
+                <td> Se utiliza esta propiedad para indicar cómo queremos que se visualice la cabecera del campo.
+                    Por ejemplo, si un campo se llama Fecha_nac e indicamos Fecha de nacimiento como valor 
+                    en la propiedad Título, en la cabecera del campo Fecha_nac veremos Fecha de nacimiento. Es tambien eñ
+                    el texto de etiqueta que se muestra para este campo de forma predeterminada en formularios,
+                     informes y consultas. Si esta propiedad está vacía, se usa como vaalor predeterminado 
+                     el nombre del campo. Se permite cualquier cadena de texto. Un título eficaz suele ser breve.
                 </td>
               </tr>
           
               <tr>
                 <td>Valor predeterminado</td>
-                <td>Asigna de forma automática el valor especificado a un campo cuando se agrega un nuevo registro.</td>
+                <td>El valor predeterminado es el valor que se almacenará automáticamente en el campo si no introducimos 
+                    ningún valor. Se suele emplear cuando se sabe que un determinado campo va a tener la mayoría de las
+                    veces el mismo valor, se utiliza esta propiedad para indicar o especificar cuál va a ser ese valor 
+                    y así que se introduzca automáticamente en el campo a la hora de introducir los datos de la tabla.
+                </td>
               </tr>
           
               <tr>
                   <td>Regla de validación</td>
                   <td>Proporciona una expresión que debe ser verdadera al agregar o cambiar el valor en este campo. 
-                      Se usa junto con la propiedad Texto de validación.</td>
+                      Se usa junto con la propiedad Texto de validación. Esta propiedad nos permite controlar 
+                      la entrada de datos según el criterio que se especifique.
+                 </td>
               </tr>
     
               <tr>
@@ -887,21 +908,13 @@
     </b>
     
 
+
+
+
     <h2 class="number-title"> Propiedades de campo: Formato </h2>
-
-    <p>Después de crear un campo y establecer su tipo de datos, se pueden establecer otras propiedades del campo.</p>
-     
-    <p>
-        El tipo de datos del campo determina qué otras propiedades se pueden establecer.
-        Por ejemplo, se puede controlar el tamaño de un campo de texto estableciendo su propiedad Tamaño del campo.
-    </p>
-
-    <p>Enseguida se describe el uso de algunas de las propiedades de campo presentes en distintos tipos de datos  </p>
-
-   
-
-   <p> 
-    Entre estas propiedades de campo, una de las importantes es el formato.    
+    <p> 
+    Entre estas propiedades de campo, una de las más importantes es la propiedad de campo formato.
+    Esta propiedad se utiliza para personalizar la forma de presentar los datos en pantalla o en un informe. 
     Enseguida se presentan los propiedeades de campo para algunos los tipos de dato usados mas
      frecuentemente durante el diseño de una base de datos:
     </p>
@@ -1066,8 +1079,16 @@
 </div>
  
    
+
+
+
+
 <h2 class="number-title"> Propiedades de campo: Mascara de entrada </h2> 
  
+<p>Se puede usar una máscara de entrada para validar los datos, lo que obliga a los usuarios a escribir los valores
+    de una manera específica. Por ejemplo, una máscara de entrada permite obligar a los usuarios a escribir las
+     fechas en un formato como 14/04/2007.</p>
+
 <p>Una máscara de entrada está formada por caracteres literales (como espacios, puntos, guiones y
  paréntesis) que separan los espacios en blanco para rellenar. La configuración de la
  propiedad Máscara de entrada (InputMask) está formada por caracteres literales
