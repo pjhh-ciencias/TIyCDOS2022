@@ -601,14 +601,11 @@
         <button class="respButton hvr-grow ">  Tipos de datos en Access </button>
         <div class="resp-box flexbox">
         <div class="flexbox">   
-        <p>
-
-            <table border="2">
-
+            <h3>Tipos de datos en Access </h3>
+            <table>
             <thead>
     <tr>
-        <th colspan="3"><h2>Tipos de datos en Access </h2></th>
-        </tr>
+                </tr>
                 <tr>
                   <th style="width:120px">Tipo de datos</th>
                   <th style="width:500px" >Uso</th>
@@ -750,23 +747,18 @@
             </tbody>
               
             </table>
-        </p>
         </div>
         </div>
-    
 
-
-
+        
 
     <button class="respButton hvr-grow ">   Propiedades de  campo  </button>
     <div class="resp-box flexbox">
       <div class="flexbox">   
-        <p>
-        <table  border="2">
-    
-            <thead>    
+        <h3>Propiedades comunes en algunos tipos de datos</h3>
+        <table>
+           <thead>    
               <tr>
-                <th colspan="2"><h2>Propiedades comunes en algunos tipos de datos</h2></th>
               </tr>
           
               <tr>
@@ -774,11 +766,8 @@
                 <th style="width:800px"> Uso </th>
               </tr>
             </thead>
-            
             <tbody>
-    
-    
-            <tr>
+               <tr>
                 <td> Formato</td>
               <td>Determina la forma en que aparece el campo cuando se visualiza o imprime en hojas de datos o en formularios 
                   o informes enlazados al campo. Se puede definir un formato personalizado para un campo de hipervínculo.</td>
@@ -857,12 +846,8 @@
           
             </tbody>    
           </table>
-        </p>
-        
-       
-    </div>
-    
-    </div>
+        </div>
+        </div>
     
 
     <h2 class="number-title"> Propiedades de campo: Permitir longitud cero y requerido  </h2>
@@ -924,14 +909,9 @@
     <button class="respButton hvr-grow ">  Número </button>
 <div class="resp-box flexbox">
   <div class="flexbox">      
-        <p>
-        <table  border="2">
-    
+        <h3>Número</h3>
+        <table>
             <thead>
-              <tr>
-              <th colspan="2"><h2>Número </h2></th>
-              </tr>
-          
               <tr>
               <th style="width:110px"> Formato</th>
               <th style="width:800px"> Se usa para mostrar</th>
@@ -977,23 +957,16 @@
          
           
           </table>
-        </p>
-  </div>
+         </div>
 </div>
 
 <button class="respButton hvr-grow ">  Fecha y hora </button>
 <div class="resp-box flexbox">
   <div class="flexbox">   
-
-<p>
-
-        <table  border="2">
+        <h3>Fecha y hora</h3>
+        <table>
     
-            <thead>
-              <tr>
-                <th colspan="2"><h2>Fecha y hora</h2></th>
-              </tr>
-          
+            <thead>        
               <tr>
               <th style="width:110px"> Formato</th>
                 <th style="width:800px"> Se usa para mostrar</th>
@@ -1036,23 +1009,17 @@
               </tr>
             </tbody>
           </table>
-    
-        
-</p>
   </div>
-
-</div>
+  </div>
 
 <button class="respButton hvr-grow ">  Si/No </button>
 <div class="resp-box flexbox">
   <div class="flexbox">   
-<p>
-    <table  border="2">
+    <h3>Si/No</h3>
+    <table>
 
         <thead>    
-          <tr>
-            <th colspan="2"><h2>  Si/No </h2></th>
-          </tr>
+         
       
           <tr>
             <th style="width:110px"> Formato</th>
@@ -1094,7 +1061,7 @@
       
         </tbody>    
       </table>
-    </p>
+    
   </div>
 </div>
  
@@ -1146,22 +1113,28 @@
  
      <ul>
          <li>
-            <b> La primera sección es obligatoria.</b> Incluye los caracteres o la cadena (serie de caracteres) 
-             de máscara junto con marcadores de posición y datos literales, como paréntesis, puntos y guiones.
+            <b> La primera sección es obligatoria.</b> Incluye los caracteres o la cadena de caracteres 
+             que especifican propiamente a la mascara de entrada junto con marcadores de posición tales como 
+              como paréntesis, puntos y guiones. Para ver una lista de los caracteres que puedes utilizar 
+              para definir la máscara de entrada, mira la tabla que aparece a continuación.
          </li>
 
          <li>
              <b>La segunda sección</b> es opcional y hace referencia a los caracteres de máscara insertados y
-              al modo en que se almacenan dentro del campo. Si la segunda sección se establece en 0, 
-              los caracteres se almacenan con los datos; si se establece en 1, los caracteres solo se muestran,
-               pero no se almacenan. Si la segunda sección se establece en 1, puede ahorrarse espacio 
-               de almacenamiento en la base de datos.
+              al modo en que se almacenan dentro del campo, esto es, en esta seccion se  especifica
+              si Access 2016 almacena los caracteres de visualización literales en la tabla al introducir datos.
+              Si utilizas 0 para esta sección, todos los caracteres de visualización literales (por ejemplo, 
+              el paréntesis de una máscara de entrada de un número de teléfono) se almacenan con el valor; 
+              si introduces 1 o dejas esta sección en blanco, sólo se almacenan los caracteres introducidos.
          </li>
 
          <li>
              <b>La tercera sección</b> también es opcional e indica un solo carácter o espacio que se usa como marcador de posición. 
              De forma predeterminada, Access usa el carácter de subrayado (_). Si desea usar otro carácter, escríbalo en la 
-             tercera sección de la máscara.
+             tercera sección de la máscara. En otras palabras, en esta sección se especifica el carácter que Access 
+              muestra para el espacio en el que el usuario debe escribir un carácter en la máscara de entrada.
+             Para esta sección puedes utilizar casi cualquier  carácter; para mostrar una cadena en blanco, utiliza 
+             un espacio entre comillas (" ").
          </li>
      </ul>
  
@@ -1179,7 +1152,7 @@
 
 
 
-<table border="2">
+<table>
  <thead>
    <tr>
      <td>
@@ -1331,10 +1304,8 @@ la tabla, incluidos espacios y símbolos. Para definir uno de los siguientes car
  <div class="resp-box flexbox">
    <div class="flexbox">   
 
- <h4>Describe algunos ejemplos de datos que podrias almacenar bajo las siguientes mascaras de entrada:</h4>
+ <b>Describe algunos ejemplos de datos que podrias almacenar bajo las siguientes mascaras de entrada:</b>
 
- <p>
-     
      <ol>
          <li>
              La siguiente máscara de entrada para números de teléfono: (999) 000-0000;0;-:
@@ -1361,7 +1332,6 @@ la tabla, incluidos espacios y símbolos. Para definir uno de los siguientes car
      <li>00000-9999</li>
      <li>ISBN 0-&&&&&&&&&-0</li>
  </ol>
- </p>
    </div>
  </div>
     </div>
