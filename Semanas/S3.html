@@ -94,57 +94,44 @@
 
     <p>Access ofrece varias formas de restringir la entrada de datos:</p>
 
-    <ol>
+    <ol> 
         <li>Tipos de datos:</li>
         <p>
             Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir los usuarios.
             Por ejemplo, un campo de fecha y hora solo acepta valores de fecha y hora, un campo de moneda solo acepta
              datos de moneda, etc.
         </p>
-        <li>Propiedades de campo  </li>
+        <li>Propiedades de campo:</li>
         <p>
             Algunas propiedades de campo restringen la entrada de datos.
-             Por ejemplo, la propiedad Tamaño del campo de un campo restringe la entrada al limitar la cantidad de datos.
+            Por ejemplo, la propiedad Tamaño del campo restringe la entrada al limitar 
+            la cantidad de caracteres a recibir.
         </p>
-        <p>También puede usar la propiedad Regla de validación para que sea necesario escribir valores específicos, 
-            y la propiedad Texto de validación para informar de errores a los usuarios. 
-            Por ejemplo, si se escribe la regla >100 Y < 1000 en la propiedad Regla de validación,
-            se obliga a los usuarios a especificar valores comprendidos entre 100 y 1000. 
-            
-            Una regla como [FechaFin]>=[FechaInicio] obliga a los usuarios a escribir una fecha de 
-            finalización igual o posterior a una fecha de inicio. Si se escribe el texto
-            “Especifique valores entre 100 y 1000” o “Especifique una fecha de finalización igual o 
-            posterior a la fecha de inicio” en la propiedad Texto de validación, se indica
-             a los usuarios que cometieron un error y se explica cómo corregirlo.
 
+        <p>La propiedad de campo Mascara de entrada se puede usar también para validar los datos, lo que obliga
+            a los usuarios a escribir los valores de una manera específica. Por ejemplo, una máscara de entrada permite obligar a los usuarios a escribir las
+             fechas en un formato como 14/04/2007</p>
+
+        <p>También es posible usar la propiedad <b>Regla de validación</b> para que sea necesario escribir 
+            valores específicos, y la propiedad texto de validación para informar de errores a los usuarios. 
         </p>
         </ol>
 
-    Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. Los tipos de datos no son opcionales
-     y reportan la validación de tipo de datos más básica.
-
+    Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. 
+    Los tipos de datos no son opcionales y reportan la validación de tipo de datos más básica.
 
 
 
 
 <p>
-        La propiedad <b>Regla de validación</b> permite
-        establecer las condiciones que deben cumplir
-        los datos para ser aceptados o no en un campo.
-        Por ejemplo, podemos indicar que únicamente
-        se admitan los valores inferiores a 400 a través
-        de la expresión <400, valores superiores a 200
-        a través de >200 o valores inferiores o iguales a
-        800 a través de <=800. Las expresiones se pueden
-        componer de diversas formas: con valores
-        numéricos, signos matemáticos, nombres de
-        campos, nombres de tabla, etcétera. Cuando
-        deseamos nombrar un campo en una expresión,
-        debemos hacerlo entre corchetes, por ejemplo: [Cantidad].
-        Si bien podemos escribir sintaxis con expresiones complejas,
-        también podemos hacerlo a través del botón … situado sobre el
-        extremo derecho del campo, que abre el cuadro Generador de expresiones
-        y explicaremos en la siguiente Guía visual.
+        Particularmente la propiedad <b>Regla de validación</b> permite establecer las condiciones que deben cumplir 
+        los datos para ser aceptados o no en un campo. Por ejemplo, podemos indicar que únicamente se admitan los
+        valores inferiores a 400 a través de la expresión <400, valores superiores a 200 a través de >200 o valores
+        inferiores o iguales a 800 a través de <=800. Las expresiones se pueden componer de diversas formas: 
+        con valores numéricos, signos matemáticos, nombres de campos, nombres de tabla, etcétera. Cuando
+        deseamos nombrar un campo en una expresión, debemos hacerlo entre corchetes, por ejemplo: [Cantidad].
+        Si bien podemos escribir sintaxis con expresiones complejas, también podemos hacerlo a través del botón
+        ... situado sobre el extremo derecho del campo, que abre el cuadro <b>Generador de expresiones</b>
     </p>
     
 
