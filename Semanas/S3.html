@@ -79,252 +79,119 @@
       </header>
 
       <!-- This part is for title in tab-->
-      <title> § 3 </title>
+      <title> § Semana  3 </title>
     
   </head>
 
+
 <body class="fondo-body" >
 
-<h1 class="number-title flexbox"></h1>
+<h1 class="number-title flexbox">Semana del 1 de mayo</h1>
 
-<div class="info-box"> 
-    <h2 class="number-title"> Tipos de datos y  propiedades de los campos en  Access</h2>
+    <div class="nota-box">
+    <h2 class="number-title"> Propiedades de campo: Regla de validación</h2>
 
-    <p>Todas las tablas de Access se componen de campos. Al crear tablas en Access, 
-        necesitas seleccionar un tipo de datos para cada campo (columna). El tipo de
-        datos de un campo es la propiedad más importante porque determina qué tipo de
-        datos puede almacenar el campo. Las propiedades de un campo  describen las 
-        características y el comportamiento de los datos agregados a dicho campo. </p>
-</div>
-    
 
-<div class="nota-box">
-    <h2 class="number-title">Prueba Tipos de datos en  Access </h2>
-<p> 
-    El tipo de datos de un campo determina otras muchas cualidades importantes del mismo,
-    como las siguientes:
-<ol>
-<li>Los formatos que se pueden usar con el campo.</li>
-<li>El tamaño máximo de un valor del campo.</li>
-<li>Cómo se puede usar el campo en expresiones.<li></li>
-<li>Si el campo se puede indizar.</li>
-</ol>
-</p>
-    <p>
-    El tipo de datos Texto  permite escribir/almacenar casi cualquier carácter (letra, símbolo o número).
-    Pero un campo cuyo tipo de datos es número solo puede almacenar datos numéricos.
-    Sin embargo, una cuidada selección de tipos de datos puede ayudarle a aprovecharse de características
-    adicionales de Access (como la validación de datos y las funciones) y a mejorar la precisión de la información 
-    que está almacenando.
-    </p>
-    <p>
-        <table border="2">
-            <tr>
-              <th style="width:110px">Tipo de datos</th>
-              <th>Uso</th>
-              <th>Tamaño</th>
-            </tr>
+    <p>Access ofrece varias formas de restringir la entrada de datos:</p>
 
-            <tr>
-              <td style="width:110px">Texto</td>
-              <td  style="width:400px"> Datos alfanuméricos cortos como nombres, apellidos, títulos,  
-                  una dirección, etc. Nota: Desde Access 2013, se ha cambiado el nombre del tipo de datos Texto por Texto corto.</td>
-              <td>Hasta 255 caracteres.</td>
-            </tr>
-          
-            <tr>
-              <td>Memo</td>
-              <td>Grandes cantidades de datos alfanuméricos: oraciones y párrafos.
-                  Bloques extensos de texto. Un uso típico de un campo Memo sería 
-                una descripción detallada de un producto.
-                 <p>Nota: Desde Access 2013, se ha cambiado el nombre de los tipos de datos Memo por Texto largo.</p>
-              </td>
-              <td>Hasta 1 gigabyte (GB) aproximadamente, pero los controles para mostrar un texto largo se limitan a los primeros 64 000 caracteres.</td>
-            </tr>
-          
+    <ol>
+        <li>Tipos de datos:</li>
+        <p>
+            Todos los campos de una tabla tienen un tipo de datos que restringe lo que pueden escribir los usuarios.
+            Por ejemplo, un campo de fecha y hora solo acepta valores de fecha y hora, un campo de moneda solo acepta
+             datos de moneda, etc.
+        </p>
+        <li>Propiedades de campo  </li>
+        <p>
+            Algunas propiedades de campo restringen la entrada de datos.
+             Por ejemplo, la propiedad Tamaño del campo de un campo restringe la entrada al limitar la cantidad de datos.
+        </p>
+        <p>También puede usar la propiedad Regla de validación para que sea necesario escribir valores específicos, 
+            y la propiedad Texto de validación para informar de errores a los usuarios. 
+            Por ejemplo, si se escribe la regla >100 Y < 1000 en la propiedad Regla de validación,
+            se obliga a los usuarios a especificar valores comprendidos entre 100 y 1000. 
             
-            <tr>
-                <td>Número</td>
-                <td>Valores numéricos, como distancias. 
-                    Nota: Hay un tipo de datos independiente para moneda.</td>
-                <td>1, 2, 4, 8 o 16 bytes.</td>
-              </tr>
+            Una regla como [FechaFin]>=[FechaInicio] obliga a los usuarios a escribir una fecha de 
+            finalización igual o posterior a una fecha de inicio. Si se escribe el texto
+            “Especifique valores entre 100 y 1000” o “Especifique una fecha de finalización igual o 
+            posterior a la fecha de inicio” en la propiedad Texto de validación, se indica
+             a los usuarios que cometieron un error y se explica cómo corregirlo.
 
-              
-            <tr>
-                <td>Fecha y hora</td>
-                <td>Fechas y horas.</td>
-                <td>8 bytes.</td>
-              </tr>
+        </p>
+        </ol>
 
-              
-            <tr>
-                <th>Moneda</th>
-                <td>Datos monetarios, almacenados con 4 posiciones decimales de precisión.</td>
-                <td>8 bytes</td>
-              </tr>
-
-              <tr>
-                  <td>Autonumeración</td>
-                  <td>Valor único generado por Access para cada registro nuevo.</td>
-                  <td>4 bytes (16 bytes para el Id. de replicación).</td>
-              </tr>
+    Estos métodos de validación de datos se pueden usar de forma aislada o combinados entre sí. Los tipos de datos no son opcionales
+     y reportan la validación de tipo de datos más básica.
 
 
-              <tr>
-                <td>Sí/no</td>
-                <td>Datos booleanos (verdadero/falso); 
-                    Access almacena el valor numérico cero (0) para Falso 
-                    y -1 para Verdadero. Los valores y los campos Sí y No
-                    solo pueden contener uno de los dos valores.</td>
-                <td>1 byte.</td>
-            </tr>
 
 
-            <tr>
-                <td>Objeto OLE/td>
-                <td>Imágenes, gráficos u otros objetos de ActiveX 
-                    desde otra aplicación basada en Windows.</td>
-                <td>Hasta unos 2 GB.</td>
-            </tr>
 
-            <tr>
-                <td>Hipervínculo</td>
-                <td>Una dirección de vínculo a un documento o archivo 
-                    en Internet, en una intranet, en una red de área
-                     local (LAN) o en el equipo local</td>
-                <td>Hasta 8192 (cada parte de un tipo de datos Hipervínculo 
-                    puede contener un máximo de 2048 caracteres).</td>
-            </tr>
-
-            <tr>
-                <td>Datos adjuntos</td>
-                <td>Puede adjuntar archivos como imágenes, documentos, 
-                    hojas de cálculo o gráficos; cada campo Datos adjuntos
-                    puede contener una cantidad ilimitada de datos adjuntos por registro,
-                    hasta el límite de almacenamiento del tamaño de un archivo de base de datos.
-                    Tenga en cuenta que el tipo de datos Datos adjuntos no está disponible 
-                    en los formatos de archivo MDB.</td>
-                <td>Hasta unos 2 GB.</td>
-            </tr>
-
-            <tr>
-                <td>Calculado</td>
-                <td>Puede crear una expresión que use datos de uno o varios campos. 
-                    Los resultados de un cálculo. El cálculo debe referirse a otros campos en la misma tabla.
-                    Para crear el cálculo se usa el Generador de expresiones.
-                    Nota: Los campos calculados aparecieron por primera vez en Access 2010.
-                </td>
-                <td>Depende del tipo de datos de la propiedad Tipo de resultado.
-                    El resultado de tipo de datos de texto corto puede tener hasta 243 caracteres.
-                     Texto largo, número, Sí/No y la fecha y hora debe coincidir con sus
-                    respectivos tipos de datos.</td>
-            </tr>
-
-            <tr>
-                <td>Asistente para búsquedas</td>
-                <td>La entrada del Asistente para búsquedas en la columna de tipo de datos en la vista
-                    Diseño no es realmente un tipo de datos. Al elegir esta entrada, inicie 
-                    el Asistente para ayudarle a definir un campo de búsqueda simple o complejo. 
-                    Un campo de búsqueda simple usa el contenido de otra tabla o una lista de valores 
-                    para validar el contenido de un único valor por fila. Un campo de búsqueda compleja 
-                    permite almacenar varios valores del mismo tipo de datos en cada fila.
-                <p>
-                    Muestra una lista de valores que se recuperan de una tabla o consulta,
-                    o un conjunto de valores especificados al crear el campo. Se inicia el Asistente para búsquedas 
-                    y se puede crear un campo de búsqueda. El tipo de datos de un campo de búsqueda es Texto o Número,
-                     dependiendo de las opciones que se seleccionen en el asistente. Los campos de búsqueda tienen un 
-                     conjunto adicional de propiedades de campo, que se encuentran en la pestaña Búsqueda del panel 
-                     Propiedades del campo.
-                </p>
-                </td>
-
-                <td>Depende del tipo de datos del campo de búsqueda.</td>
-            </tr>
-          </table>
+<p>
+        La propiedad <b>Regla de validación</b> permite
+        establecer las condiciones que deben cumplir
+        los datos para ser aceptados o no en un campo.
+        Por ejemplo, podemos indicar que únicamente
+        se admitan los valores inferiores a 400 a través
+        de la expresión <400, valores superiores a 200
+        a través de >200 o valores inferiores o iguales a
+        800 a través de <=800. Las expresiones se pueden
+        componer de diversas formas: con valores
+        numéricos, signos matemáticos, nombres de
+        campos, nombres de tabla, etcétera. Cuando
+        deseamos nombrar un campo en una expresión,
+        debemos hacerlo entre corchetes, por ejemplo: [Cantidad].
+        Si bien podemos escribir sintaxis con expresiones complejas,
+        también podemos hacerlo a través del botón … situado sobre el
+        extremo derecho del campo, que abre el cuadro Generador de expresiones
+        y explicaremos en la siguiente Guía visual.
     </p>
-</div>
-
-
-<div class="nota-box">
-    <h2 class="number-title"> Propiedades de los tipos de datos en  Access </h2>
     
-    <table  border="2">
 
-        <thead>
-      
-          <tr>
-            <th colspan="2">Fecha y hora</th>
-          </tr>
-      
-          <tr>
-      
-      
-            <th style="width:110px"> Formato</th>
-      
-            <th style="width:400px"> Se usa para</th>
-      
-          </tr>
-      
-        </thead>
-      
-        <tbody>
-      
-          <tr>
-      
-            <td>Fecha corta</td>
-      
-            <td>Mostrar la fecha en un formato corto. 
-                Depende de la configuración regional de fecha y hora.
-                Por ejemplo, 3/14/2001 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Fecha Mediana</td>
-      
-            <td>Mostrar la fecha en un formato mediano.
-                Por ejemplo, 3-Abr-09 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Fecha larga</td>
-      
-            <td>Mostrar la fecha en un formato largo. 
-                Depende de la configuración regional de fecha y hora.
-                 Por ejemplo, Miércoles 14 de marzo, 2001 para Estados Unidos.</td>
-      
-          </tr>
-      
-          <tr>
-      
-            <td>Hora a.m. o p.m.</td>
-      
-            <td>Mostrar la hora solo con un formato de 12 horas que responderá a 
-                los cambios en la configuración regional de fecha y hora.</td>
-      
-          </tr>
-      
-          <tr>
-            <td>Hora mediana</td>
-            <td>Mostrar la hora seguida A.M. o P.M.</td>
-          </tr>
+    <p>Puede prohibir o validar datos mediante reglas de validación al escribirlos en bases de datos de escritorio 
+    de Access. Puede usar el generador de expresiones para ayudarle a dar formato a la regla correctamente. 
+    Puede establecer reglas de validación en la vista de diseño de tabla o en la de hoja de datos de tabla. 
+   </p>
 
-          <tr>
-            Mostrar la hora solo con un formato de 24 horas que responderá a los cambios en 
-            la configuración regional de fecha y hora.
-          </tr>
-      
-        </tbody>
-      
+<h4> Regla de validación de campo:</h4>
+
+    <p>  
+    Puede usar una regla de validación de campo para especificar un criterio que deben cumplir todos
+     los valores de campo válidos. No debería tener que especificar el campo actual como parte de la regla 
+     a no ser que use el campo en una función.  Las restricciones sobre los tipos de caracteres que se 
+     escriban en un campo pueden aplicarse más fácilmente con una máscara de entrada. 
+     Por ejemplo, un campo de fecha podría tener una regla de validación que no permita valores del pasado.
+    </p>
+    <p>
+      <h4>Ejemplos:</h4>
+        <ul>
+        <li>Impedir valores de fecha del pasado: >=Fecha()</li>
+        <li>Número inferior o igual a cinco: <=5</li>
+        <li>El campo Divisa no puede ser negativo: >=0</li>
+        <li>Restringir la longitud de caracteres de una cadena: Len([NombreCampoCadena])<100 </li>
+        <li> Escribir fechas que coincidan con el 1 de enero de 2010 o sean posteriores:  >=#01/01/2010# </li>
+        <p>. Si especifica una fecha anterior a 2010 e intenta colocar el foco en otro campo, 
+            Access no le permitirá abandonar el campo actual hasta que corrija el problema.</p>
+
+         
+        </ul>
+    </p>
+
+
+    <p>
+        Una regla de validación es una forma de limitar la información que se escribe en un campo de tabla
+       o en un control (como un cuadro de texto) de un formulario. Con el texto de validación se puede
+        incluir un mensaje que sirva de ayuda a los usuarios que escriben datos no válidos.
+    </p>
+
+
+    <p>
+        Cuando se escriben datos, Access comprueba si se ha infringido alguna regla de validación y, si así es,
+         los datos escritos no se aceptan y Access muestra un mensaje.
+    </p>
+
+    </div>
      
-      
-      </table>
-</div>
-    
     <!--
     
     <p>
