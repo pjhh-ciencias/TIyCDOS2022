@@ -231,49 +231,212 @@
             
     </div>
     </div>
-
-
-    <button class="respButton hvr-grow ">  Ejemplo: Validación de Correo electrónico </button>
+    
+    <button class="respButton hvr-grow "> Ejemplos de sintaxis de operadores de regla de validación comunes</button>
     <div class="resp-box flexbox">
-      <div class="flexbox">   
+    <div class="flexbox"> 
 
-        El formato de correo electrónico es:
-
-        <ul>
-        <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
-        <li>el símbolo @</li>
-        <li>más de un carácter(y más de tres)</li>
-        <li>un punto (.)</li>
-        <li>varios caracteres alfabéticos (como mínimo 2)</li>
-        </ul>
-        Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
-
-        <p><b>Como "[A-Z]??*@???*.??*"</b></p>
-      </div>
+            
+          <table>
+            <thead>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Operador</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Función</b>
+                  </p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">Ejemplo</b>
+                  </p>
+                </td>
+              </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">Y</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Especifica que todas las partes de la regla de validación deben cumplirse.</p>
+                    </td>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
+                      </p>
+                      <div class="ocpAlert">
+              <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
+            </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">O</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</p>
+                    </td>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">enero O febrero</b>
+                      </p>
+                    </td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Menor que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Menor o igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Mayor que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&gt;=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Mayor o igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">=</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Igual que.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+                  <tr>
+                    <td>
+                      <p>
+                        <b class="ocpLegacyBold">&lt;&gt;</b>
+                      </p>
+                    </td>
+                    <td>
+                      <p>Distinto de.</p>
+                    </td>
+                    <td></td>
+                  </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p><b class="ocpLegacyBold">EN</b></p>
+                </td>
+                <td>
+                  <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">EN ("Tokio","París","Moscú")</b>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">ENTRE</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">COMO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">COMO "Geo*"</b>
+                  </p>
+                </td>
+              </tr>
+              <tr>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO ES NULO</b>
+                  </p>
+                </td>
+                <td>
+                  <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
+                </td>
+                <td>
+                  <p>
+                    <b class="ocpLegacyBold">NO ES NULO</b>
+                  </p>
+                </td>
+              </tr>
+              
+            </tbody>
+          </table>
+            
+    </div>
     </div>
 
 
-
-    <button class="respButton hvr-grow ">  Ejemplo: Validación por longitud </button>
-    <div class="resp-box flexbox">
-      <div class="flexbox">   
-          <p>Supongamos que tenemmos un campo <p>Contraseña</p> y queremos que este tenga una 
-           longitud mínima de 8 caracteres:</p>
-<p>
-    <b>Como "????????*""
-
-    </b>
-</p>
-Cuando se entre la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
- y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
- que se consideren conveniente
-
-        </div>
-    </div>
-     
-
-
-
+    
     
     <button class="respButton hvr-grow ">  Ejemplos de regla de validación y texto de validación</button>
     <div class="resp-box flexbox">
@@ -297,7 +460,7 @@ Cuando se entre la información, cada ? representa una posición que deberá rel
             <tbody>
               <tr>
                 <td>
-                  <p>&lt;&gt;0</p>
+                  <p>&lt;&gt; 0</p>
                 </td>
                 <td>
                   <p>Especifique un valor que no sea cero.</p>
@@ -380,6 +543,14 @@ Cuando se entre la información, cada ? representa una posición que deberá rel
               </tr>
               <tr>
                 <td>
+                  <p>COMO "S*"</p>
+                </td>
+                <td>
+                  <p>El dato introducido debe comenzar con S</p>
+                </td>
+              </tr>
+              <tr>
+                <td>
                   <p>COMO "[A-Z]*@[A-Z].com" O "[A-Z]*@[A-Z].net" O "[A-Z]*@[A-Z].org"</p>
                 </td>
                 <td>
@@ -407,209 +578,47 @@ Cuando se entre la información, cada ? representa una posición que deberá rel
     </div>
     </div>
 
-    
-    <button class="respButton hvr-grow "> Ejemplos de sintaxis de operadores de regla de validación comunes</button>
+    <button class="respButton hvr-grow ">  Ejemplo: Validación por longitud </button>
     <div class="resp-box flexbox">
-    <div class="flexbox"> 
+      <div class="flexbox">   
+          <p>Supongamos que tenemmos un campo <b>Contraseña</b> y queremos que este tenga una 
+           longitud mínima de 8 caracteres. Entonces podemos usar: </p>
+<p>
+    <b>Como "????????*""
 
-            
-          <table>
-            <thead>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">Operador</b>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">Función</b>
-                  </p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">Ejemplo</b>
-                  </p>
-                </td>
-              </tr>
-            </thead>
-            <tbody>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">NO</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Comprueba si hay valores opuestos. Se puede usar delante de cualquier operador de comparación, salvo NO ES NULO.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">NO &gt; 10</b> (es lo mismo que <b class="ocpLegacyBold">&lt;=10</b>).</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>E<b class="ocpLegacyBold">N</b></p>
-                </td>
-                <td>
-                  <p>Comprueba si hay valores iguales a los elementos de una lista. El valor de comparación debe ser una lista de valores separados por comas que aparece entre paréntesis.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">EN ("Tokio","París","Moscú")</b>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">ENTRE</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Comprueba si hay un intervalo de valores. Debe haber dos valores de comparación (un valor alto y un valor bajo) y esos valores deben ir separados por el separador Y.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">ENTRE 100 Y 1000</b> (es lo mismo que <b class="ocpLegacyBold">&gt;=100 Y &lt;=1000</b>)</p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">COMO</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Busca cadenas modelo coincidentes en los campos de tipo Texto y Memo.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">COMO "Geo*"</b>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">NO ES NULO</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Obliga a los usuarios a escribir valores en el campo. Equivale a establecer el valor de la propiedad de campo <b class="ocpLegacyBold">Requerido</b> en <b class="ocpLegacyBold">Sí</b>. Sin embargo, cuando se habilita la propiedad <b class="ocpLegacyBold">Requerido</b> y un usuario no especifica un valor, Access muestra un mensaje de error poco descriptivo. En general, el uso de las bases de datos resulta más fácil si se utiliza NO ES NULO y se escribe un mensaje descriptivo en la propiedad <b class="ocpLegacyBold">Texto de validación</b>.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">NO ES NULO</b>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">Y</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Especifica que todas las partes de la regla de validación deben cumplirse.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&gt;= #01/01/2007# Y &lt;=#06/03/2008#</b>
-                  </p>
-                  <div class="ocpAlert">
-          <p class="ocpAlertSection"><b class="ocpNote">Nota: </b>Se puede usar <b class="ocpLegacyBold">Y</b> también para combinar reglas de validación. Por ejemplo: <b class="ocpLegacyBold">NO "Reino Unido" Y COMO "R*"</b>.</p>
+    </b>
+</p>
+Cuando ingrese la información, cada ? representa una posición que deberá rellenarse obligatoriamente,
+ y el * del final, nos indica que una vez cumplida la longitud mínima, ya se pueden indicar los caracteres 
+ que se consideren conveniente
+
         </div>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">O</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Especifica que algunas partes (no todas) de la regla de validación deben cumplirse.</p>
-                </td>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">enero O febrero</b>
-                  </p>
-                </td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&lt;</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Menor que.</p>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&lt;=</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Menor o igual que.</p>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&gt;</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Mayor que.</p>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&gt;=</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Mayor o igual que.</p>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">=</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Igual que.</p>
-                </td>
-                <td></td>
-              </tr>
-              <tr>
-                <td>
-                  <p>
-                    <b class="ocpLegacyBold">&lt;&gt;</b>
-                  </p>
-                </td>
-                <td>
-                  <p>Distinto de.</p>
-                </td>
-                <td></td>
-              </tr>
-            </tbody>
-          </table>
-            
-    </div>
     </div>
 
+    
+    <button class="respButton hvr-grow ">  Ejemplo: Validación de Correo electrónico </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+
+        Supongamos que el formato requerido del campo correo electrónico es:
+
+        <ul>
+        <li>Más de 1 caracter(podemos suponer mas de tres, y empezando por letra)</li>
+        <li>el símbolo @</li>
+        <li>más de un carácter(y más de tres)</li>
+        <li>un punto (.)</li>
+        <li>varios caracteres alfabéticos (como mínimo 2)</li>
+        </ul>
+        Para comprobar esas condiciones, podríamos escribir en la «Regla de validación de ese campo:
+
+        <p><b>Como "[A-Z]??*@???*.??*"</b></p>
+      </div>
+    </div>
+
+
+
+    
+     
     <!--
     
     <p>
