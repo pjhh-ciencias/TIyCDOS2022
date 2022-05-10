@@ -222,27 +222,12 @@
     <p>El poder de una base de datos relacional reside en la combinación de datos entre tablas.
        Para ello, primero debe establecer relaciones entre las tablas.</p>
 
-  
-    <p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
-       relaciones uno a uno y relaciones uno a muchos:</p>
-
-  <ol>
-  <li> <b>Relación Uno a Uno:</b></li>
- Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
-
-  <p> <b>Ejemplo:</b>  Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
-  entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
-  puede ser director de un solo instituto</p>
-
-
-  <li> <b>Relación Uno a Uno:</b></li>
-
+       <p>La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
+         de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
+          y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.</p>
 
   
-
-
-  </ol>
-
+   
   <h2 class="number-title"> Vista relaciones</h2>
 
   <p>Para ver todas las relaciones existentes definidas para una base de datos,
@@ -251,13 +236,57 @@ a continuación, seleccione Relaciones.
 </p>
 
 Las líneas en la vista Relaciones indican las conexiones entre las tablas.
-En la siguiente imagen, la tabla a la izquierda es la tabla primaria. 
-La tabla a la derecha es la tabla secundaria. La línea entre ellas conecta
-los campos (en este caso, Id. de pedido e Id. de producto) usados para emparejar los datos.
+En la siguiente imagen, la tabla a la izquierda es la <b>tabla primaria</b>. 
+La tabla a la derecha es la <p>tabla secundaria</p>. La línea entre ellas conecta
+los campos (en este caso, Numero de trabajador,  Director) usados para emparejar los datos.
 
 <div class="flexbox">
     <img src="/Imagenes/S4/relaciones.png" alt="relacion" width="40%" height="auto">
   </div>
+<p>Las líneas y los símbolos muestran cómo se relacionan las tablas:</p>
+
+<ul>
+    <li>Una línea de conexión gruesa significa que exige integridad referencial de datos.
+         Eso es bueno. Mantiene sus datos sincronizados. </li>
+
+    <li>En la ilustración, el número 1 indica que puede haber un único registro coincidente en esa tabla. 
+        <!-- En la tabla pedidos que se muestra aquí, un único registro coincide con cada pedido. --></li>
+        
+    <li>El símbolo ∞ indica que muchos de los registros pueden incluir la misma Id. 
+        <!-- En la tabla Detalles de pedido que se muestra aquí, puede aparecer un pedido 
+        (indicado con su Id. de pedido) varias veces porque el mismo pedido puede incluir varios productos.-->
+    </li>
+
+</ul>
+
+
+<div class="number-title">Tipos de relaciones entre tablas</div>
+
+<p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
+    relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
+
+<ol>
+<li> <b>Relación Uno a Uno:</b></li>
+Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
+
+<p> <b>Ejemplo:</b>  Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
+entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
+puede ser director de un solo instituto</p>
+
+
+<li> <b>Relación Uno a Varios:</b></li> Cuando un elemento en una tabla puede tener una relación con varios elementos 
+de otra tabla. 
+
+<li><b>Varios a varios:</b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
+    de otra tabla. 
+</li>
+
+
+
+
+
+</ol>
+
 
 </div>
 <!-- 
