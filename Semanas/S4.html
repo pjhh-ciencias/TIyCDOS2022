@@ -258,17 +258,20 @@
         de un transportista que tiene pedidos en la tabla Pedidos. Para tales casos, lo que realmente necesita es
         que Access actualice automáticamente todas las filas afectadas como parte de una única operación. De ese modo, 
         Access se asegura de que la actualización es completa y la base de datos no tiene un estado incoherente, con 
-        algunas filas actualizadas y otras no. Por ello, Access incluye la opción <b>Actualizar en cascada
-        los campos relacionados</b>.
+        algunas filas actualizadas y otras no. Por ello, Access incluye la opción Actualizar/Eliminar en cascada
+        los campos relacionados.
         </p>
         
+
+      <ul>
+          <li> <b>Actualizar en cascada</b></li>
     <p>
     Cuando se aplica la integridad referencial, se selecciona la opción Actualizar
     en cascada los campos relacionados y, después, se actualiza una clave principal, Access actualiza 
     automáticamente todos los  campos que hagan referencia a la clave principal.
     </p>
         
- 
+    <li><b> Eliminar  en cascada</b></li>
 
     <p>
         También es posible que tenga la necesidad válida de eliminar una fila y todos los registros relacionados
@@ -278,7 +281,7 @@
         de la clave principal de la relación, Access eliminará automáticamente todos los registros que hagan referencia 
         a la clave principal.
     </p>
-   
+</ul>  
   <h2 class="number-title"> Vista relaciones</h2>
 
   <p>Para ver todas las relaciones existentes definidas para una base de datos,
@@ -312,7 +315,7 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
 </ul>
 
 
-<div class="number-title">Tipos de relaciones entre tablas</div>
+<h2 class="number-title"> Tipos de relaciones entre tablas</h2>
 
 <p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
     relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
