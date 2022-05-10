@@ -218,30 +218,81 @@
 <div class="nota-box">
     <h2 class="number-title"> Relaciones</h2>
 
+<p>
+    Uno de los objetivos de un buen diseño de base de datos es eliminar la redundancia de los datos (datos duplicados).
+    Para conseguirlo, conviene dividir  los datos/información  en muchas tablas basadas en temas para que cada hecho
+    esté representado solo una vez. Después, se debe proveer a Access de un medio para recopilar de nuevo 
+    la información desglosada  colocando campos comunes en tablas que estén relacionadas. De esta manera es posible 
+    crear consultas, formularios e informes que muestren a la vez la información de varias tablas.
+</p>
+    
+   
+   <p>El poder de una base de datos relacional reside en la combinación de datos entre tablas.
+      Para ello,  debemos establecer relaciones entre las tablas. Una relación en Access permite 
+      combinar datos de dos tablas distinta
+   </p>
 
-    <p>El poder de una base de datos relacional reside en la combinación de datos entre tablas.
-       Para ello, primero debe establecer relaciones entre las tablas.</p>
+   <h2 class="number-title"> Integridad referencial</h2>
 
        <p>La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
          de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
           y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.</p>
 
-  
+              
+      <p>
+        Supongamos que tenemos una relación de uno a varios entre las tablas Transportistas y Pedidos y vamos a
+        eliminar un
+        transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
+        <b>"huérfanos"</b> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
+         pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
+        </b>
+        
+        <p>
+        El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
+        sincronizadas para que esta situación similares a la expuesta arriba nunca ocurran. 
+        Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. 
+        Una vez habilitada, Access rechazará todas las operaciones 
+        que infrinjan la integridad referencial para esa relación de tabla. Esto significa que Access rechaza las 
+        actualizaciones que cambien el destino de una referencia, así como las eliminaciones que quiten el destino de
+        una referencia. Sin embargo, es posible que tenga la necesidad perfectamente válida de cambiar la clave principal
+        de un transportista que tiene pedidos en la tabla Pedidos. Para tales casos, lo que realmente necesita es
+        que Access actualice automáticamente todas las filas afectadas como parte de una única operación. De ese modo, 
+        Access se asegura de que la actualización es completa y la base de datos no tiene un estado incoherente, con 
+        algunas filas actualizadas y otras no. Por ello, Access incluye la opción <b>Actualizar en cascada
+        los campos relacionados</b>.
+        </p>
+        
+    <p>
+    Cuando se aplica la integridad referencial, se selecciona la opción Actualizar
+    en cascada los campos relacionados y, después, se actualiza una clave principal, Access actualiza 
+    automáticamente todos los  campos que hagan referencia a la clave principal.
+    </p>
+        
+ 
+
+    <p>
+        También es posible que tenga la necesidad válida de eliminar una fila y todos los registros relacionados
+        (por ejemplo, un registro Transportista y todos los pedidos relacionados de ese transportista). Por ello, 
+        Access incluye la opción Eliminar en cascada los registros relacionados. Si aplica la integridad referencial,
+         selecciona la opción Eliminar en cascada los registros relacionados y, después, elimina un registro en la parte
+        de la clave principal de la relación, Access eliminará automáticamente todos los registros que hagan referencia 
+        a la clave principal.
+    </p>
    
   <h2 class="number-title"> Vista relaciones</h2>
 
   <p>Para ver todas las relaciones existentes definidas para una base de datos,
-  abra la base de datos de Access, vaya a la pestaña Herramientas de base de datos y,
-a continuación, seleccione Relaciones.
+  abra la base de datos de Access, vaya a la pestaña <b>Herramientas de base de datos</b> y,
+   a continuación, seleccione <b>Relaciones</b>.
 </p>
 
 Las líneas en la vista Relaciones indican las conexiones entre las tablas.
 En la siguiente imagen, la tabla a la izquierda es la <b>tabla primaria</b>. 
-La tabla a la derecha es la <p>tabla secundaria</p>. La línea entre ellas conecta
+La tabla a la derecha es la <b>tabla secundaria</b>. La línea entre ellas conecta
 los campos (en este caso, Numero de trabajador,  Director) usados para emparejar los datos.
 
 <div class="flexbox">
-    <img src="Imagenes\S4\relaciones.png" alt="relacion" width="40%" height="auto">
+    <img src="\Imagenes\S4\relaciones.png" alt="relacion" width="40%" height="auto">
   </div>
   
 <p>Las líneas y los símbolos muestran cómo se relacionan las tablas:</p>
@@ -267,20 +318,41 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
 
 <ol>
-<li> <b>Relación Uno a Uno:</b></li>
-Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
+<b><li><h3> Relación Uno a Uno:</h3></li></b>
+<p>
+ Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
+</p>
+<p>
+    En una relación uno a uno, cada registro de la primera tabla solo puede tener un registro coincidente
+    en la segunda tabla y viceversa. Esta relación no es común porque la mayor parte de las veces la información
+    relacionada de este modo se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla 
+    con muchos campos, para aislar parte de una tabla por razones de seguridad o para almacenar información que solo 
+    se aplica a un subconjunto de la tabla principal. Cuando identifique esta relación, ambas tablas deben compartir 
+    un campo común.
+</p>
 
-<p> <b>Ejemplo:</b>  Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
+<button class="respButton hvr-grow ">Ejemplo: Relacion Uno a Uno </button>
+ <div class="resp-box flexbox">
+   <div class="flexbox">   
+
+Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
 entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
-puede ser director de un solo instituto</p>
+puede ser director de un solo instituto
+   </div>
+ </div>
 
 
-<li> <b>Relación Uno a Varios:</b></li> Cuando un elemento en una tabla puede tener una relación con varios elementos 
+ <b> <li><h3> Relación Uno a Varios: </h3></li></b> Cuando un elemento en una tabla puede tener una relación con varios elementos 
 de otra tabla. 
 
-<li><b>Varios a varios:</b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
+<b><li><h3>Varios a varios:</h3></li></b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
     de otra tabla. 
-</li>
+    <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
+       que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
+       una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
+       de la relación
+    </p>
+
 
 
 
