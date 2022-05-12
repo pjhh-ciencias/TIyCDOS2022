@@ -232,6 +232,54 @@
       combinar datos de dos tablas distinta
    </p>
 
+   <h2 class="number-title"> Tipos de relaciones entre tablas</h2>
+
+   <p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
+       relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
+   
+   <ol>
+   <b><li><h3> Relación Uno a Uno:</h3></li></b>
+   <p>
+    Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
+   </p>
+   <p>
+       En una relación uno a uno, cada registro de la primera tabla solo puede tener un registro coincidente
+       en la segunda tabla y viceversa. Esta relación no es común porque la mayor parte de las veces la información
+       relacionada de este modo se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla 
+       con muchos campos, para aislar parte de una tabla por razones de seguridad o para almacenar información que solo 
+       se aplica a un subconjunto de la tabla principal. Cuando identifique esta relación, ambas tablas deben compartir 
+       un campo común.
+   </p>
+   
+   <button class="respButton hvr-grow ">Ejemplo: Relacion Uno a Uno </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+   
+   Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
+   entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
+   puede ser director de un solo instituto
+      </div>
+    </div>
+   
+   
+    <b> <li><h3> Relación Uno a Varios: </h3></li></b> Cuando un elemento en una tabla puede tener una relación con varios elementos 
+   de otra tabla. 
+   
+   <b><li><h3>Varios a varios:</h3></li></b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
+       de otra tabla. 
+       <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
+          que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
+          una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
+          de la relación
+       </p>
+   
+   
+   
+   
+   
+   
+   </ol>
+   
    <h2 class="number-title"> Integridad referencial</h2>
 
        <p>La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
@@ -314,54 +362,6 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
 
 </ul>
 
-
-<h2 class="number-title"> Tipos de relaciones entre tablas</h2>
-
-<p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
-    relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
-
-<ol>
-<b><li><h3> Relación Uno a Uno:</h3></li></b>
-<p>
- Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
-</p>
-<p>
-    En una relación uno a uno, cada registro de la primera tabla solo puede tener un registro coincidente
-    en la segunda tabla y viceversa. Esta relación no es común porque la mayor parte de las veces la información
-    relacionada de este modo se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla 
-    con muchos campos, para aislar parte de una tabla por razones de seguridad o para almacenar información que solo 
-    se aplica a un subconjunto de la tabla principal. Cuando identifique esta relación, ambas tablas deben compartir 
-    un campo común.
-</p>
-
-<button class="respButton hvr-grow ">Ejemplo: Relacion Uno a Uno </button>
- <div class="resp-box flexbox">
-   <div class="flexbox">   
-
-Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
-entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
-puede ser director de un solo instituto
-   </div>
- </div>
-
-
- <b> <li><h3> Relación Uno a Varios: </h3></li></b> Cuando un elemento en una tabla puede tener una relación con varios elementos 
-de otra tabla. 
-
-<b><li><h3>Varios a varios:</h3></li></b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
-    de otra tabla. 
-    <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
-       que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
-       una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
-       de la relación
-    </p>
-
-
-
-
-
-
-</ol>
 
 
 </div>
