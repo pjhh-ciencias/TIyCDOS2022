@@ -59,21 +59,26 @@
     <!-- Top Menu  -->
 
 
-        <header class="main-header">
-          <h1> Cálculo DOS </h1>
-         <nav class="top-nav">
-           <ul>
-              <li> <a href="../Home.html"> Inicio  </a> </li>
-              <li> <a href="../InfoPrimerDia.html"> Información general </a> </li>
-              <li> <a href="../Secciones.html"> Secciones  </a> </li>
-              <li> <a href="../ExternalLinks.html"> Links </a> </li>
+    <header class="main-header">
+        <h1> Tecnolologías de la información y comunicación II  </h1>
+       <nav class="top-nav">
+        <ul>
+            <li> <a href="https://pjhh-ciencias.github.io/TIyCDOS/Home.html"> Inicio  </a> </li>
+            <li> <a href="https://pjhh-ciencias.github.io/TIyCDOS/Informacion_General.html"> Información general </a> </li>
+            <li> <a href="https://pjhh-ciencias.github.io/TIyCDOS/Notas.html"> Notas  </a> </li>
+            <li> <a href="https://pjhh-ciencias.github.io/TIyCDOS/Enlaces_externos.html"> Links </a> </li>
+           <!--  <li> <a href="./ExternalLinks.html"> Links </a> </li> -->
+          
               
             </ul>
-          </nav>
-          <nav class="small-nav" align=right>
-            <button onclick="myFunction()">Claro/Obscuro 
-          </nav>
-        </header>
+       </nav>
+       <!-- 
+        <nav class="small-nav" align=right>
+          <button onclick="myFunction()">Claro/Obscuro 
+        </nav> 
+      -->
+
+      </header>
 
       <!-- This part is for title in tab-->
       <title> § 5 </title>
@@ -82,8 +87,235 @@
 
 <body class="fondo-body" >
 
-<h1 class="number-title flexbox"> Integrabilidad de funciones continuas </h1>
+<h1 class="number-title flexbox"> Semana del 16 de mayo</h1>
 
+
+<div class="nota-box">
+    <h2 class="number-title"> Relaciones</h2>
+
+<p>
+    Uno de los objetivos de un buen diseño de base de datos es eliminar la redundancia de los datos (datos duplicados).
+    Para conseguirlo, conviene dividir  los datos/información  en muchas tablas basadas en temas para que cada hecho
+    esté representado solo una vez. Después, se debe proveer a Access de un medio para recopilar de nuevo 
+    la información desglosada  colocando campos comunes en tablas que estén relacionadas. De esta manera es posible 
+    crear consultas, formularios e informes que muestren a la vez la información de varias tablas.
+</p>
+    
+   
+   <p>El poder de una base de datos relacional reside en la combinación de datos entre tablas.
+      Para ello,  debemos establecer relaciones entre las tablas. Una relación en Access permite 
+      combinar datos de dos tablas distinta
+   </p>
+
+   <h2 class="number-title"> Tipos de relaciones entre tablas</h2>
+
+   <p> Recordemos que una <bf>clave principal</bf> es una columna (o combinación de columnas) que permite identificar 
+    de forma inequívoca cada fila de la tabla, por lo que no pueden haber en una tabla dos filas con el mismo 
+    valor en la columna definida como clave principal. Una <bf>clave foránea</bf> es una columna (o combinación de columnas)
+    que contiene un valor que hace referencia a una fila de otra tabla (en algunos casos puede ser la misma tabla).
+   </p>
+
+  
+   <p><b>Ejemplo:</b>  
+    Si tenemos dos tablas,  alumnos y cursos, en la tabla de alumnos pondríamos una columna curso: para saber en qué curso
+    está matriculado el alumno, la columna curso en la tabla de alumnos es clave foránea, mientras que la columna codigo 
+    de la tabla de cursos será clave primaria.
+    </p>
+
+
+    
+    <p>
+        Una tabla tiene una única clave primaria. Una tabla puede contener cero o más claves foráneas. Cuando se define una
+        columna como clave principal, ninguna fila de la tabla puede contener un valor nulo en esa columna ni tampoco 
+        se pueden repetir valores en la columna. Cuando se define una columna como clave foránea,
+        las filas de la tabla pueden contener en esa columna o bien el valor nulo, o bien un valor que existe en la otra tabla. 
+        Eso es lo que se denomina integridad referencial que consiste en que los datos que referencian otros (clave foránea)
+         deben ser correctos.
+        </p>
+
+   <p>
+    Entre dos tablas de cualquier base de datos relacional pueden haber tres tipos de relaciones entre tablas,
+    relaciones uno a uno, relaciones uno a mucho y relaciones varios a varios:
+   </p>
+   
+   <ol>
+   <b><li><h3> Relación Uno a Uno:</h3></li></b>
+   <p>
+    En este tipo de relación un registro de la tabla principal se relaciona con un solo registro
+    de la tabla secundaria y un registro de la tabla secundaria se relaciona con un solo registro de
+    la tabla principal.
+   </p>
+
+   <p>
+    Esta relación no es común porque la mayor parte de las veces la información relacionada de este modo 
+    se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla  con muchos campos,
+    para aislar parte de una tabla por razones de seguridad o para almacenar información que solo se aplica 
+    a un subconjunto de la tabla principal.
+   </p>
+   
+   <button class="respButton hvr-grow ">Ejemplo: Relacion Uno a Uno </button>
+    <div class="resp-box flexbox">
+      <div class="flexbox">   
+   
+   Entre las tablas  profesores e institutos queremos saber que profesor el el director del instituto
+   entonces, tenemos una relación uno a uno entre las dos tablas ya que un instituto tiene un solo director y un profesor 
+   puede ser director de un solo instituto
+      </div>
+    </div>
+   
+   
+    <b> <li><h3> Relación Uno a Varios: </h3></li></b> 
+    
+    <p>
+    Esta relación indica a Access que hay un registro en la tabla principal que se relaciona  con un solo registro de la tabla secundaria.
+    Este tipo de relación es el más frecuente en una base de datos relacional.
+   </p>
+
+
+
+
+   <b><li><h3>Varios a varios:</h3></li></b>
+   
+   <p>
+    En este tipo de relación un registro de la tabla principal puede relacionarse con más de
+    un registro de la tabla secundaria y un registro de la tabla secundaria también puede
+    relacionarse con más de un registro de la tabla principal. 
+   </p>
+
+   <p>
+    Para detectar las relaciones “varios a varios” entre las tablas, es importante que observe 
+    la relación en los dos sentidos. Este tipo de relación requiere cambiar el diseño de la base de datos
+    antes de poder especificar correctamente la relación, porque es muy complicado para el administrador de la
+    base extraer la información de las tablas secundarias así. La solución es crear una tercera tabla
+    que divida la relación “varios a varios” en dos relaciones “uno a varios”. En esta tercera tabla
+    se incluiría la clave principal de cada una de las dos tablas anteriores.
+   </p>
+   
+   Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
+   de otra tabla. 
+   
+   <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
+          que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
+          una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
+          de la relación
+       </p>
+   
+   
+   
+   
+   
+   
+   </ol>
+   
+   <h2 class="number-title"> Integridad referencial</h2>
+
+       <p>La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
+         de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
+          y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.</p>
+
+              
+      <p>
+        Supongamos que tenemos una relación de uno a varios entre las tablas Transportistas y Pedidos y vamos a
+        eliminar un
+        transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
+        <b>"huérfanos"</b> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
+         pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
+        </b>
+        
+        <p>
+        El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
+        sincronizadas para que esta situación similares a la expuesta arriba nunca ocurran. 
+        Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. 
+        Una vez habilitada, Access rechazará todas las operaciones 
+        que infrinjan la integridad referencial para esa relación de tabla. Esto significa que Access rechaza las 
+        actualizaciones que cambien el destino de una referencia, así como las eliminaciones que quiten el destino de
+        una referencia. Sin embargo, es posible que tenga la necesidad perfectamente válida de cambiar la clave principal
+        de un transportista que tiene pedidos en la tabla Pedidos. Para tales casos, lo que realmente necesita es
+        que Access actualice automáticamente todas las filas afectadas como parte de una única operación. De ese modo, 
+        Access se asegura de que la actualización es completa y la base de datos no tiene un estado incoherente, con 
+        algunas filas actualizadas y otras no. Por ello, Access incluye la opción Actualizar/Eliminar en cascada
+        los campos relacionados.
+        </p>
+        
+
+      <ul>
+          <h3><li> <b>Actualizar en cascada</b></li></h3>
+    <p>
+    Cuando se aplica la integridad referencial, se selecciona la opción Actualizar
+    en cascada los campos relacionados y, después, se actualiza una clave principal, Access actualiza 
+    automáticamente todos los  campos que hagan referencia a la clave principal.
+    </p>
+        
+    <h3><li><b> Eliminar  en cascada</b></li></h3>
+
+    <p>
+        También es posible que tenga la necesidad válida de eliminar una fila y todos los registros relacionados
+        (por ejemplo, un registro Transportista y todos los pedidos relacionados de ese transportista). Por ello, 
+        Access incluye la opción Eliminar en cascada los registros relacionados. Si aplica la integridad referencial,
+         selecciona la opción Eliminar en cascada los registros relacionados y, después, elimina un registro en la parte
+        de la clave principal de la relación, Access eliminará automáticamente todos los registros que hagan referencia 
+        a la clave principal.
+    </p>
+</ul>  
+
+    <p><b>Observación:</b>
+    La relación entre dos tablas es única y se establece siempre a través de un campo común a ambas.
+    No es necesario que el campo tenga el mismo nombre, pero sí es recomendable  nombrar 
+    los campos comunes del mismo modo, para evitar posibles equivocaciones a la hora de crear las relaciones.
+    </p>
+
+  <h2 class="number-title"> Vista relaciones</h2>
+
+  <p>Para ver todas las relaciones existentes definidas para una base de datos,
+  abra la base de datos de Access, vaya a la pestaña <b>Herramientas de base de datos</b> y,
+   a continuación, seleccione <b>Relaciones</b>.
+</p>
+
+Las líneas en la vista Relaciones indican las conexiones entre las tablas.
+En la siguiente imagen, la tabla a la izquierda es la <b>tabla primaria</b>. 
+La tabla a la derecha es la <b>tabla secundaria</b>. La línea entre ellas conecta
+los campos (en este caso, Numero de trabajador,  Director) usados para emparejar los datos.
+
+<div class="flexbox">
+    <img src="./Imagenes/relaciones.png" alt="relaciones", width="55%" height="auto">
+  </div>
+  
+<p>Las líneas y los símbolos muestran cómo se relacionan las tablas:</p>
+
+<ul>
+    <li>Una línea de conexión gruesa significa que exige integridad referencial de datos.
+         Eso es bueno. Mantiene sus datos sincronizados. </li>
+
+    <li>En la ilustración, el número 1 indica que puede haber un único registro coincidente en esa tabla. 
+        <!-- En la tabla pedidos que se muestra aquí, un único registro coincide con cada pedido. --></li>
+        
+    <li>El símbolo ∞ indica que muchos de los registros pueden incluir la misma Id. 
+        <!-- En la tabla Detalles de pedido que se muestra aquí, puede aparecer un pedido 
+        (indicado con su Id. de pedido) varias veces porque el mismo pedido puede incluir varios productos.-->
+    </li>
+
+</ul>
+
+<p><b>Observaciones:</b>
+<ul>
+    <li>Para crear una relación uno a uno</li>
+    Ambos campos comunes (normalmente, los campos de clave principal y clave externa) deben tener un índice único.
+    Esto significa que la propiedad Indizado de estos campos debe tener el valor Sí (Sin duplicados). 
+    Si ambos campos tienen un índice único, Access crea una relación uno a uno.
+    
+    <li> Para crear una relación uno a varios</li>
+    El campo en el lado uno de la relación (normalmente, el campo de clave principal) debe tener un índice único.
+    Esto significa que la propiedad Indizado de este campo debe tener el valor Sí (Sin duplicados). El campo ubicado 
+    en el lado varios de la relación no debe tener un índice único. Puede tener un índice, pero debe permitir los
+    duplicados. Esto quiere decir que la propiedad Indizado de este campo debe tener el valor No o Sí (Con duplicados). 
+    Cuando un campo tiene un índice único y el otro no, Access crea una relación uno a varios.
+    
+</ul>
+
+</p>
+
+</div>
+<!--
 <div class="info-box">
     <h2 class="number-title"> Introducción </h2>
     <p>
@@ -1057,3 +1289,4 @@
 
 </div>
 </body>
+  -->

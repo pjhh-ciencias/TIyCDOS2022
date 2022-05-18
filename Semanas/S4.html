@@ -86,7 +86,7 @@
 
 <body class="fondo-body" >
 
-<h1 class="number-title flexbox"> </h1>
+<h1 class="number-title flexbox"> Semana del 9 de mayo </h1>
 
 
 
@@ -101,6 +101,8 @@
   El Asistente para búsquedas simplifica el proceso, rellena automáticamente las propiedades del campo apropiado
   y crea las relaciones de tabla adecuadas.
 </p>
+
+
 
 <button class="respButton hvr-grow ">Crear un campo de búsqueda  en la vista Diseño: Lista de valores </button>
  <div class="resp-box flexbox">
@@ -214,7 +216,7 @@
  </div>
 </div>
 
-
+<!-- 
 <div class="nota-box">
     <h2 class="number-title"> Relaciones</h2>
 
@@ -234,21 +236,48 @@
 
    <h2 class="number-title"> Tipos de relaciones entre tablas</h2>
 
-   <p>Entre dos tablas de cualquier base de datos relacional pueden haber dos tipos de relaciones,
-       relaciones uno a uno y relaciones uno a mucho. Existen tres tipos de relaciones entre tablas:</p>
+   <p> Recordemos que una <bf>clave principal</bf> es una columna (o combinación de columnas) que permite identificar 
+    de forma inequívoca cada fila de la tabla, por lo que no pueden haber en una tabla dos filas con el mismo 
+    valor en la columna definida como clave principal. Una <bf>clave foránea</bf> es una columna (o combinación de columnas)
+    que contiene un valor que hace referencia a una fila de otra tabla (en algunos casos puede ser la misma tabla).
+   </p>
+
+  
+   <p><b>Ejemplo:</b>  
+    Si tenemos dos tablas,  alumnos y cursos, en la tabla de alumnos pondríamos una columna curso: para saber en qué curso
+    está matriculado el alumno, la columna curso en la tabla de alumnos es clave foránea, mientras que la columna codigo 
+    de la tabla de cursos será clave primaria.
+    </p>
+
+
+    
+    <p>
+        Una tabla tiene una única clave primaria. Una tabla puede contener cero o más claves foráneas. Cuando se define una
+        columna como clave principal, ninguna fila de la tabla puede contener un valor nulo en esa columna ni tampoco 
+        se pueden repetir valores en la columna. Cuando se define una columna como clave foránea,
+        las filas de la tabla pueden contener en esa columna o bien el valor nulo, o bien un valor que existe en la otra tabla. 
+        Eso es lo que se denomina integridad referencial que consiste en que los datos que referencian otros (clave foránea)
+         deben ser correctos.
+        </p>
+
+   <p>
+    Entre dos tablas de cualquier base de datos relacional pueden haber tres tipos de relaciones entre tablas,
+    relaciones uno a uno, relaciones uno a mucho y relaciones varios a varios:
+   </p>
    
    <ol>
    <b><li><h3> Relación Uno a Uno:</h3></li></b>
    <p>
-    Un registro de una tabla sólo puede estar relacionado con un único registro de la otra tabla y viceversa.
+    En este tipo de relación un registro de la tabla principal se relaciona con un solo registro
+    de la tabla secundaria y un registro de la tabla secundaria se relaciona con un solo registro de
+    la tabla principal.
    </p>
+
    <p>
-       En una relación uno a uno, cada registro de la primera tabla solo puede tener un registro coincidente
-       en la segunda tabla y viceversa. Esta relación no es común porque la mayor parte de las veces la información
-       relacionada de este modo se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla 
-       con muchos campos, para aislar parte de una tabla por razones de seguridad o para almacenar información que solo 
-       se aplica a un subconjunto de la tabla principal. Cuando identifique esta relación, ambas tablas deben compartir 
-       un campo común.
+    Esta relación no es común porque la mayor parte de las veces la información relacionada de este modo 
+    se almacena en la misma tabla. Puede usar la relación uno a uno para dividir una tabla  con muchos campos,
+    para aislar parte de una tabla por razones de seguridad o para almacenar información que solo se aplica 
+    a un subconjunto de la tabla principal.
    </p>
    
    <button class="respButton hvr-grow ">Ejemplo: Relacion Uno a Uno </button>
@@ -262,12 +291,37 @@
     </div>
    
    
-    <b> <li><h3> Relación Uno a Varios: </h3></li></b> Cuando un elemento en una tabla puede tener una relación con varios elementos 
+    <b> <li><h3> Relación Uno a Varios: </h3></li></b> 
+    
+    <p>
+    Esta relación indica a Access que hay un registro en la tabla principal que se relaciona  con un solo registro de la tabla secundaria.
+    Este tipo de relación es el más frecuente en una base de datos relacional.
+   </p>
+
+
+
+
+   <b><li><h3>Varios a varios:</h3></li></b>
+   
+   <p>
+    En este tipo de relación un registro de la tabla principal puede relacionarse con más de
+    un registro de la tabla secundaria y un registro de la tabla secundaria también puede
+    relacionarse con más de un registro de la tabla principal. 
+   </p>
+
+   <p>
+    Para detectar las relaciones “varios a varios” entre las tablas, es importante que observe 
+    la relación en los dos sentidos. Este tipo de relación requiere cambiar el diseño de la base de datos
+    antes de poder especificar correctamente la relación, porque es muy complicado para el administrador de la
+    base extraer la información de las tablas secundarias así. La solución es crear una tercera tabla
+    que divida la relación “varios a varios” en dos relaciones “uno a varios”. En esta tercera tabla
+    se incluiría la clave principal de cada una de las dos tablas anteriores.
+   </p>
+   
+   Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
    de otra tabla. 
    
-   <b><li><h3>Varios a varios:</h3></li></b> Cuando uno o más elementos en una tabla puede tener una relación con uno o más elementos 
-       de otra tabla. 
-       <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
+   <p>Para representar una relación de varios a varios, debe crear una tercera tabla, a menudo denominada tabla de unión, 
           que divide la relación de varios a varios en dos relaciones uno a varios. Debe insertar la clave principal de cada 
           una de las dos tablas en la tercera. Como resultado, la tercera tabla registra cada ocurrencia, o instancia, 
           de la relación
@@ -312,14 +366,14 @@
         
 
       <ul>
-          <li> <b>Actualizar en cascada</b></li>
+          <h3><li> <b>Actualizar en cascada</b></li></h3>
     <p>
     Cuando se aplica la integridad referencial, se selecciona la opción Actualizar
     en cascada los campos relacionados y, después, se actualiza una clave principal, Access actualiza 
     automáticamente todos los  campos que hagan referencia a la clave principal.
     </p>
         
-    <li><b> Eliminar  en cascada</b></li>
+    <h3><li><b> Eliminar  en cascada</b></li></h3>
 
     <p>
         También es posible que tenga la necesidad válida de eliminar una fila y todos los registros relacionados
@@ -330,6 +384,13 @@
         a la clave principal.
     </p>
 </ul>  
+
+    <p><b>Observación:</b>
+    La relación entre dos tablas es única y se establece siempre a través de un campo común a ambas.
+    No es necesario que el campo tenga el mismo nombre, pero sí es recomendable  nombrar 
+    los campos comunes del mismo modo, para evitar posibles equivocaciones a la hora de crear las relaciones.
+    </p>
+
   <h2 class="number-title"> Vista relaciones</h2>
 
   <p>Para ver todas las relaciones existentes definidas para una base de datos,
@@ -353,18 +414,34 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
          Eso es bueno. Mantiene sus datos sincronizados. </li>
 
     <li>En la ilustración, el número 1 indica que puede haber un único registro coincidente en esa tabla. 
-        <!-- En la tabla pedidos que se muestra aquí, un único registro coincide con cada pedido. --></li>
+        </li>
         
     <li>El símbolo ∞ indica que muchos de los registros pueden incluir la misma Id. 
-        <!-- En la tabla Detalles de pedido que se muestra aquí, puede aparecer un pedido 
-        (indicado con su Id. de pedido) varias veces porque el mismo pedido puede incluir varios productos.-->
+        
     </li>
 
 </ul>
 
+<p><b>Observaciones:</b>
+<ul>
+    <li>Para crear una relación uno a uno</li>
+    Ambos campos comunes (normalmente, los campos de clave principal y clave externa) deben tener un índice único.
+    Esto significa que la propiedad Indizado de estos campos debe tener el valor Sí (Sin duplicados). 
+    Si ambos campos tienen un índice único, Access crea una relación uno a uno.
+    
+    <li> Para crear una relación uno a varios</li>
+    El campo en el lado uno de la relación (normalmente, el campo de clave principal) debe tener un índice único.
+    Esto significa que la propiedad Indizado de este campo debe tener el valor Sí (Sin duplicados). El campo ubicado 
+    en el lado varios de la relación no debe tener un índice único. Puede tener un índice, pero debe permitir los
+    duplicados. Esto quiere decir que la propiedad Indizado de este campo debe tener el valor No o Sí (Con duplicados). 
+    Cuando un campo tiene un índice único y el otro no, Access crea una relación uno a varios.
+    
+</ul>
 
+</p>
 
 </div>
+-->
 <!-- 
 
 
