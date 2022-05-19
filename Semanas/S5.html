@@ -90,8 +90,26 @@
 <h1 class="number-title flexbox"> Semana del 16 de mayo</h1>
 
 
+
+
+
 <div class="nota-box">
     <h2 class="number-title"> Relaciones</h2>
+
+    <h2 class="number-title"> Clave principal</h2>
+
+   <p>
+    La <b>clave (llave) principal</b> de una tabla consta de uno o más campos que identifican de
+    forma exclusiva cada registro almacenado en la tabla. El tipo de campo puede ser “Texto” o
+    “Autonumérico” (el campo contador de Access).
+   </p>
+    
+   <p>
+    Para establecer la clave principal haga clic en el campo que desee utilizar como clave
+    principal. Si desea crear una clave principal de múltiples campos, mantenga presionada la
+    tecla <Crtl> y haga clic sobre cada uno de los campos que desee incluir. 
+   </p>
+
 
 <p>
     Uno de los objetivos de un buen diseño de base de datos es eliminar la redundancia de los datos (datos duplicados).
@@ -209,52 +227,50 @@
    
    <h2 class="number-title"> Integridad referencial</h2>
 
-       <p>La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
+       <p>
+         La <b>integridad referencial</b> es un sistema de reglas que utilizan la mayoría de las bases
          de datos relacionales para asegurarse que los registros de tablas relacionadas son válidos
-          y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.</p>
+         y que no se borren o cambien datos relacionados de forma accidental produciendo errores de integridad.
+         El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
+         ente las tablas relacionadas sincronizadas.
+        </p>
+
 
               
       <p>
         Supongamos que tenemos una relación de uno a varios entre las tablas Transportistas y Pedidos y vamos a
-        eliminar un
-        transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
+        eliminar un transportista. Si el destinatario que desea quitar tiene pedidos en la tabla Pedidos, dichos pedidos quedarán
         <b>"huérfanos"</b> si elimina el registro Transportista. Los pedidos todavía contendrán un Id. de transportista, 
-         pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
+        pero el Id. ya no será válido, porque el registro al que hace referencia ya no existe.
         </b>
         
         <p>
-        El propósito de la integridad referencial es evitar los registros huérfanos y mantener las referencias 
-        sincronizadas para que esta situación similares a la expuesta arriba nunca ocurran. 
-        Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. 
-        Una vez habilitada, Access rechazará todas las operaciones 
-        que infrinjan la integridad referencial para esa relación de tabla. Esto significa que Access rechaza las 
-        actualizaciones que cambien el destino de una referencia, así como las eliminaciones que quiten el destino de
-        una referencia. Sin embargo, es posible que tenga la necesidad perfectamente válida de cambiar la clave principal
-        de un transportista que tiene pedidos en la tabla Pedidos. Para tales casos, lo que realmente necesita es
-        que Access actualice automáticamente todas las filas afectadas como parte de una única operación. De ese modo, 
-        Access se asegura de que la actualización es completa y la base de datos no tiene un estado incoherente, con 
-        algunas filas actualizadas y otras no. Por ello, Access incluye la opción Actualizar/Eliminar en cascada
-        los campos relacionados.
+        Para exigir la integridad referencial, es preciso habilitarla para una relación de tabla. Una vez habilitada,
+        Access rechazará todas las operaciones que infrinjan la integridad referencial para esa relación de tabla. 
+        Esto significa que Access rechaza las actualizaciones que cambien el destino de una referencia,
+        así como las eliminaciones que quiten el destino deuna referencia. Sin embargo, es posible que tenga la
+        necesidad perfectamente válida de cambiar la clave principal de un transportista que tiene pedidos en la 
+        tabla Pedidos. Para tales casos, lo que realmente necesita es que Access actualice automáticamente todas las
+        filas afectadas como parte de una única operación. De ese modo,  Access se asegura de que la actualización es 
+        completa y la base de datos no tiene un estado incoherente, con algunas filas actualizadas y otras no.
+        Por ello, Access incluye la opción Actualizar/Eliminar en cascada los campos relacionados.
         </p>
         
 
       <ul>
           <h3><li> <b>Actualizar en cascada</b></li></h3>
     <p>
-    Cuando se aplica la integridad referencial, se selecciona la opción Actualizar
-    en cascada los campos relacionados y, después, se actualiza una clave principal, Access actualiza 
+    Cuando se aplica la integridad referencial y se selecciona la opción Actualizar
+    en cascada. Si actuaiza/modifica una clave principal, Access actualiza 
     automáticamente todos los  campos que hagan referencia a la clave principal.
     </p>
         
     <h3><li><b> Eliminar  en cascada</b></li></h3>
 
     <p>
-        También es posible que tenga la necesidad válida de eliminar una fila y todos los registros relacionados
-        (por ejemplo, un registro Transportista y todos los pedidos relacionados de ese transportista). Por ello, 
-        Access incluye la opción Eliminar en cascada los registros relacionados. Si aplica la integridad referencial,
-         selecciona la opción Eliminar en cascada los registros relacionados y, después, elimina un registro en la parte
-        de la clave principal de la relación, Access eliminará automáticamente todos los registros que hagan referencia 
-        a la clave principal.
+     Cuando se aplica la integridad referencial y se selecciona la opción Eliminar en cascada.
+     Access eliminará todos los registros relacionados cuando borre un registro principal, por ejemplo 
+     si elimina un cliente, Access también borrara todos los registros de los pedidos para ese cliente.
     </p>
 </ul>  
 
@@ -315,6 +331,103 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
 </p>
 
 </div>
+
+
+<div class="nota-box">
+    <h2 class="number-title"> Consultas </h2>
+    
+     <p>
+        Uno de tantos potenciales  reales de una base de datos reside en su capacidad para mostrar los datos que
+        se desea y en el orden en que se los necesita, con las consultas se responde a  preguntas sobre los
+        datos almacenados en las tablas. Los datos de una consulta pueden proceder de una o varias
+        tablas. Una vez creada una consulta se la puede utilizar para un formulario, un informe, un
+        gráfico e incluso para otra consulta.
+     </p>
+
+
+    <p>
+    Las consultas son los objetos de una base de datos que permiten recuperar datos de una tabla,
+    modificarlos e incluso almacenar el resultado en otra tabla.
+    </p>
+    <p>
+    El objetivo de una consulta es poder analizar los datos que previamente hemos
+    introducido en nuestra base de datos. Es decir, podemos definir una consulta que nos
+    muestre los empleados contratados en el último año. En nuestra base de datos estarán
+    almacenados los datos de todos los empleados, pero nos interesa analizar los que
+    fueron contratados durante el último año.
+    </p>
+
+    <p>
+     En una consulta de selección, especifique qué campos quiere utilizar y, a continuación,
+     defina los criterios para que devuelva el conjunto de registros que quiere ver. Para
+     consultas de este tipo tiene dos opciones:
+     Asistente de consultas. Veremos dos:
+     o Asistentes para consultas sencillas
+     o Asistente para consultas de tabla de referencia cruzadas.
+     Diseñador de Consultas. Permite definir consultas más elaboradas y complejas.
+    </p>
+
+
+    <h2 class="number-title"> Tipos de Consultas</h2>
+
+    <p>
+    En general existen dos  tipos de consultas en Access: Consultas de selección y de acción. Las 
+    consultas de selección permiten seleccionar informacin de un conjunto de datos mientras que con 
+    las consultas de acción podemos además operar  sobre  los datos seleccionados.
+    </p>
+
+    <p>
+    A su vez hay tres tipos de consultas de acción: de actualización, de eliminación  y de datos anexados. 
+    </p>
+    
+    
+
+
+
+
+
+
+    <ul>
+    <h3><li><b>Consultas de selección.</b></li></h3>
+
+    <p>
+     Es la más utilizada, con este tipo de consulta se puede ver lo datos de las tablas, analizar
+     dichos datos e incluso hacer cambios en ellos. Es posible ver datos procedentes de una sola
+     tabla o consulta, o bien agregar campos de varias tablas o consultas distintas.
+    </p>
+
+    <p>
+    Son las consultas que extraen o nos muestran datos. Muestran aquellos datos de una tabla que cumplen
+    los criterios especificados. Una vez obtenido el resultado podremos consultar los datos para modificarlos 
+    (esto se podrá hacer o no según la consulta). Una consulta de selección genera una tabla lógica
+    (se llama lógica porque no está físicamente en el disco duro sino en la memoria del ordenador y
+    cada vez que se abre se vuelve a calcular).
+    </p>
+
+    <h3><li><b>Consulta de Tablas de Referencias Cruzadas</b></li></h3>
+
+    <p>
+    Una consulta de referencias cruzadas es una matriz de resumen bidimensional que se
+    genera a partir de tablas. Esta consulta presenta datos resumidos en un formato similar a una
+    hoja de calculo, que se crea a partir de los campos especificados.
+    </p>
+
+    <li><b>Consultas de acción.</b></li>
+
+    <li><b>Consultas específicas de SQL.</b></li>
+     <p>
+        Son consultas que realizan cambios a los registros. Existen varios tipos de consultas de acción,
+         de eliminación, de actualización, de datos anexados y de creación de tablas. Las veremos más adelante.
+     </p>
+    <li><b></b></li>
+    </ul>
+    
+
+</div>
+
+
+
+
 <!--
 <div class="info-box">
     <h2 class="number-title"> Introducción </h2>
