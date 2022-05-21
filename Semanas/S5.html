@@ -337,35 +337,13 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     <h2 class="number-title"> Consultas </h2>
     
      <p>
-        Uno de tantos potenciales  reales de una base de datos reside en su capacidad para mostrar los datos que
-        se desea y en el orden en que se los necesita, con las consultas se responde a  preguntas sobre los
-        datos almacenados en las tablas. Los datos de una consulta pueden proceder de una o varias
-        tablas. Una vez creada una consulta se la puede utilizar para un formulario, un informe, un
-        gráfico e incluso para otra consulta.
+      El objetivo de una consulta es poder analizar los datos que previamente hemos
+      introducido en nuestra base de datos. Los datos de una consulta pueden proceder de una o varias
+      tablas. Una vez creada una consulta se la puede utilizar para un formulario, un informe, un
+      gráfico e incluso para otra consulta. Por ejemplo: Es posible  crear una consulta que nos muestre 
+      las ventas realizadas en el último año.
+     
      </p>
-
-
-    <p>
-    Las consultas son los objetos de una base de datos que permiten recuperar datos de una tabla,
-    modificarlos e incluso almacenar el resultado en otra tabla.
-    </p>
-    <p>
-    El objetivo de una consulta es poder analizar los datos que previamente hemos
-    introducido en nuestra base de datos. Es decir, podemos definir una consulta que nos
-    muestre los empleados contratados en el último año. En nuestra base de datos estarán
-    almacenados los datos de todos los empleados, pero nos interesa analizar los que
-    fueron contratados durante el último año.
-    </p>
-
-    <p>
-     En una consulta de selección, especifique qué campos quiere utilizar y, a continuación,
-     defina los criterios para que devuelva el conjunto de registros que quiere ver. Para
-     consultas de este tipo tiene dos opciones:
-     Asistente de consultas. Veremos dos:
-     o Asistentes para consultas sencillas
-     o Asistente para consultas de tabla de referencia cruzadas.
-     Diseñador de Consultas. Permite definir consultas más elaboradas y complejas.
-    </p>
 
 
     <h2 class="number-title"> Tipos de Consultas</h2>
@@ -379,12 +357,6 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     <p>
     A su vez hay tres tipos de consultas de acción: de actualización, de eliminación  y de datos anexados. 
     </p>
-    
-    
-
-
-
-
 
 
     <ul>
@@ -395,6 +367,8 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
      dichos datos e incluso hacer cambios en ellos. Es posible ver datos procedentes de una sola
      tabla o consulta, o bien agregar campos de varias tablas o consultas distintas.
     </p>
+
+   
 
     <p>
     Son las consultas que extraen o nos muestran datos. Muestran aquellos datos de una tabla que cumplen
@@ -412,17 +386,107 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     hoja de calculo, que se crea a partir de los campos especificados.
     </p>
 
-    <li><b>Consultas de acción.</b></li>
+    <h3><li><b>Consultas de acción.</b></li></h3>
 
-    <li><b>Consultas específicas de SQL.</b></li>
-     <p>
-        Son consultas que realizan cambios a los registros. Existen varios tipos de consultas de acción,
-         de eliminación, de actualización, de datos anexados y de creación de tablas. Las veremos más adelante.
-     </p>
-    <li><b></b></li>
-    </ul>
+    Las consultas de acción son aquellas que, además de permitir la selección de datos,
+    posibilitan efectuar operaciones con estos, con el objetivo de obtener resultados que modifiquen
+    la información o estructura de la base de datos
+
+    <p> Mencionaremos brevemente sus variantes:
+
+        <h4><ul><b>Consultas de creación de tablas: </b></ul></h4>
+        Permiten crear nuevas tablas con base en el contenido de otras. El contenido de las nuevas puede
+        incluir parcial o completamente el contenido de otra tabla.
+
+        <h4><ul><b> Consultas de referencias cruzadas:</b></ul></h4>
+        
+        Posibilitan realizar cálculos con los datos existentes en las tablas. Se pueden llevar a cabo cálculos 
+        de totales, con base en los valores de un determinado campo, agrupándolos tanto en columnas como en filas.
+
+        <h4><ul><b> Consultas de datos anexados: </b></ul></h4>
+        
+        Permiten agregar datos en tablas existentes. Debe existir la tabla original (que es la que contiene los
+        datos) y la tabla destino (la cual recibirá los nuevos datos). Es decir que se copiarán los
+        datos de la tabla original en la tabla destino.
+
+
+        <h4><ul><b> Consultas de eliminación: </b></ul></h4>
+
+        Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
+        permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
     
 
+        <h4><ul><b> Consultas de actualización: </b></ul></h4>
+        Eliminan registros de una tabla que cumplan con los criterios especificados. Este tipo de consultas 
+        permite supresiones ágiles, pero debemos tener cuidado ya que luego no es posible recuperar los datos borrados.
+        
+    </p>
+
+    </ul>
+
+   
+   <h3>En una consulta es posible definir campos calculados:</h3>
+
+
+   <p>
+   Al igual que podemos definir en una tabla un campo cuyo tipo de datos sea Calculado también podemos incluir campos
+   calculados en las consultas.
+   </p>
+
+   <p>
+   ¿Cuándo incluir la expresión en una tabla y cuándo en una consulta? La respuesta dependerá de cada caso concreto. 
+   Si el resultado de la expresión se va a utilizar frecuentemente en consultas, listados o estadísticas, puede ser más
+   interesante guardar el dato en la propia tabla. Si en cambio se trata de un cálculo más específico puede ser preferible
+   no utilizar espacio en el disco para conservar estos valores, definiendo un campo calculado en la consulta.
+   </p>
+   
+   <p>
+    Para definir un campo como calculado, simplemente deberemos escribir una expresión en el espacio reservado 
+    para indicar el campo. La sintaxis será:
+   </p>
+
+    <p>
+     <b>Nombre del campo: expresión</b>
+    </p>
+    
+<h3>Encabezados de columna</h3>
+ 
+   <p>
+    Podemos cambiar el encabezado de las columnas del resultado de la consulta.
+   </p>
+   <p>
+    Normalmente aparece en el encabezado de la columna el nombre de la columna, si queremos cambiar ese encabezado lo 
+    indicamos en la fila Campo: escribiéndolo delante del nombre del campo y seguido de dos puntos ( : ). Se suele 
+    utilizar sobre todo para los campos calculados.
+   </p>
+
+
+   <h3>Consultas con parámetros</h3>
+
+   <p>
+    A menudo, en una consulta necesitamos utilizar un valor que no es conocido en ese momento sino que queremos que lo
+    introduzca el usuario cuando se ejecute la consulta. 
+   </p>
+
+   <p>
+    En este caso necesitamos utilizar en nuestra consulta un parámetro. Un parámetro funciona de forma parecida 
+    a un campo de tabla, pero el valor que almacena lo introduce el usuario cuando se ejecuta la consulta.
+   </p>
+   <p>
+    En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
+   </p>
+
+
+   <p>
+    <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
+    de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
+   </p>
+
+   <p>
+    Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
+    La diferencia entre escribir directamente un nombre de parámetro y definirlo con el botón Parámetros es que, 
+    si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
+   </p>
 </div>
 
 
