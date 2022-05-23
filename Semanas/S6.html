@@ -88,10 +88,11 @@
 
 <h1 class="number-title flexbox"> Semana del 22 de mayo</h1>
 
+
 <div class="nota-box">
-<h2 class="number-title"> Consultas: continuación</h2>
+<h2 class="number-title"> Consultas: Criterios</h2>
 
-
+A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.
 
 <h3>Campos calculados:</h3>
 
@@ -160,9 +161,18 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
 
 <h2 class="number-title"> Condiciones</h2>
 
+<h3>Los operadores de comparación</h3>
+
+<p>Estos operadores comparan el valor de una expresión con el valor de otra. Independientemente del operador 
+   si uno de los valores es nulo, el resultado de la comparación será nulo (ni verdadero ni falso).</p>
+
 <h3>El operador Entre</h3>
 
-<p></p>
+<p>Tiene la siguiente sintaxis:</p>
+
+<center><b> Expresión Entre valor1 Y valor2 </b></center>
+<p>Examina si el valor de la expresión está comprendido entre los dos valores definidos por valor1 y valor2.
+   Normalmente la expresión será un nombre de campo.</p>
 
 <h3>El operador In</h3>
 
@@ -171,6 +181,116 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
 <center> <b>Expresión In (valor1, valor2, ...)</b></center>
 
 <p>Examina si el valor de la expresión es uno de los valores incluidos en la lista de valores escritos entre paréntesis.</p>
+
+
+
+<h3>El operador Es nulo</h3>
+
+<p>
+Cuando una columna que interviene en una condición contiene el valor nulo, el resultado de la condición no es verdadero 
+ni falso, sino nulo, sea cual sea el test que se haya utilizado. Por eso si queremos listar las filas que no tienen valor
+en una determinada columna, no podemos utilizar la condición columna = nulo debemos utilizar un operador especial,
+ el operador Es nulo. Tiene la siguiente sintaxis:
+</p>
+<center><b>Expresión Es nulo, </b> </center>
+<p>donde expresión normalmente será un nombre de columna.</p>
+
+<h3>El operador Como    </h3>
+<p>Se utiliza cuando queremos utilizar caracteres comodines para formar el valor con el que comparar.</p>
+
+<p>
+Por ejemplo queremos visualizar los empleados cuyo nombre acabe en 'o'. Tenemos que utilizar el comodín *
+y utilizar el operador <b>Como</b> para que Access reconozca el * como un comodín y no como el carácter asterisco.
+La condición sería nombre como '*o'.
+</p>
+
+<p>
+ El valor que contiene los comodines se conoce como patrón y tiene que ir encerrado entre comillas (simples o dobles). 
+ La sintaxis es la siguiente:
+</p>
+<center> <b>Expresión Como 'patrón'</b></center>
+
+<p>En la siguiente tabla te indicamos los caracteres comodines que se pueden poner en un patrón y su significado.</p>
+
+<table class="info">
+    <tr>
+      <th>Caracteres en patr&oacute;n</th>
+      <th>Significado</th>
+    </tr>
+    <tr>
+      <td>?</td>
+      <td>Un car&aacute;cter cualquiera</td>
+    </tr>
+    <tr>
+      <td>*</td>
+      <td>Cero o m&aacute;s caracteres</td>
+    </tr>
+    <tr>
+      <td>#</td>
+      <td>Un d&iacute;gito cualquiera (0-9)</td>
+    </tr>
+    <tr>
+      <td><strong>[</strong>ListaCaracteres<strong>]</strong></td>
+      <td>Un car&aacute;cter cualquiera de listacaracteres</td>
+    </tr>
+    <tr>
+      <td><strong>[!</strong>ListaCaracteres<strong>]</strong></td>
+      <td>Un car&aacute;cter cualquiera no incluido en listacaracteres</td>
+    </tr>
+  </table>
+
+
+<ul>
+  <li>
+     <p>
+     <b>ListaCaracteres:</b> representa una lista de caracteres y puede incluir casi cualquier carácter, incluyendo dígitos, 
+      los caracteres se escriben uno detrás de otro sin espacios en blanco ni comas. Por ejemplo para sacar los nombres
+      que empiezan por a,g,r o v el patrón sería: '[agrv]*'
+    </p>
+  </li>
+
+    <li>
+    <p>
+    Los caracteres especiales corchete de apertura [, interrogación ?, almohadilla # y asterisco * dejan de ser 
+    considerados comodines cuando van entre corchetes. Por ejemplo para buscar los nombres que contienen un asterisco,
+    el patrón sería: '*[*]*' en este caso el segundo * dentro del patrón no actúa como comodín sino como un carácter 
+    cualquiera porque va dentro de los corchetes.
+    </p>
+    </li>
+  
+    <li>
+     <p>Si no se encierra entre corchetes, la exclamación ! representa el carácter exclamación.</p>
+    </li>
+    
+    <li>
+    <p>
+    El corchete de cierre ] se puede utilizar fuera de una listacaracteres como carácter independiente pero no se puede
+    utilizar en una listacaracteres. Por ejemplo, el patrón 'a]*' permite encontrar nombres que empiecen por una a seguida de un corchete de cierre.
+    </p>
+    </li>
+
+    <li>
+    <p>La secuencia de caracteres [] se considera una cadena de caracteres de longitud cero ("").</p>
+    </li>
+
+    <li>
+    <p>
+    Se puede especificar un intervalo de caracteres en ListaCaracteres colocando un guión - para separar los límites inferior y superior del intervalo.
+    Por ejemplo, la secuencia [A-Z ] en patrón representa cualquier carácter comprendido en el intervalo de la A a la Z. 
+    Cuando se especifica un intervalo de caracteres, éstos deben aparecer en orden ascendente (de menor a mayor).[A-Z] es un intervalo válido,
+    pero [Z-A] no lo es. Se pueden incluir múltiples intervalos entre corchetes, sin necesidad de delimitadores. 
+    El guión - define un intervalo únicamente cuando aparece dentro de los corchetes entre dos caracteres, en cualquier otro caso representa el carácter guión.
+    </p>
+    </li>
+  
+    <p><b>Ejemplo</b></p>
+     Por ejemplo queremos saber los alumnos de determinada provincia (son los que tienen un código postal
+     que empieza por 46 seguido de tres dígitos cualesquiera, la condición podría ser [código postal] como '46###'
+    </ul>
+
+
+
+
 </div>
 
 
