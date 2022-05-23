@@ -378,13 +378,7 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     cada vez que se abre se vuelve a calcular).
     </p>
 
-    <h3><li><b>Consulta de Tablas de Referencias Cruzadas</b></li></h3>
-
-    <p>
-    Una consulta de referencias cruzadas es una matriz de resumen bidimensional que se
-    genera a partir de tablas. Esta consulta presenta datos resumidos en un formato similar a una
-    hoja de calculo, que se crea a partir de los campos especificados.
-    </p>
+   
 
     <h3><li><b>Consultas de acción.</b></li></h3>
 
@@ -425,68 +419,6 @@ los campos (en este caso, Numero de trabajador,  Director) usados para emparejar
     </ul>
 
    
-   <h3>En una consulta es posible definir campos calculados:</h3>
-
-
-   <p>
-   Al igual que podemos definir en una tabla un campo cuyo tipo de datos sea Calculado también podemos incluir campos
-   calculados en las consultas.
-   </p>
-
-   <p>
-   ¿Cuándo incluir la expresión en una tabla y cuándo en una consulta? La respuesta dependerá de cada caso concreto. 
-   Si el resultado de la expresión se va a utilizar frecuentemente en consultas, listados o estadísticas, puede ser más
-   interesante guardar el dato en la propia tabla. Si en cambio se trata de un cálculo más específico puede ser preferible
-   no utilizar espacio en el disco para conservar estos valores, definiendo un campo calculado en la consulta.
-   </p>
-   
-   <p>
-    Para definir un campo como calculado, simplemente deberemos escribir una expresión en el espacio reservado 
-    para indicar el campo. La sintaxis será:
-   </p>
-
-    <p>
-     <b>Nombre del campo: expresión</b>
-    </p>
-    
-<h3>Encabezados de columna</h3>
- 
-   <p>
-    Podemos cambiar el encabezado de las columnas del resultado de la consulta.
-   </p>
-   <p>
-    Normalmente aparece en el encabezado de la columna el nombre de la columna, si queremos cambiar ese encabezado lo 
-    indicamos en la fila Campo: escribiéndolo delante del nombre del campo y seguido de dos puntos ( : ). Se suele 
-    utilizar sobre todo para los campos calculados.
-   </p>
-
-
-   <h3>Consultas con parámetros</h3>
-
-   <p>
-    A menudo, en una consulta necesitamos utilizar un valor que no es conocido en ese momento sino que queremos que lo
-    introduzca el usuario cuando se ejecute la consulta. 
-   </p>
-
-   <p>
-    En este caso necesitamos utilizar en nuestra consulta un parámetro. Un parámetro funciona de forma parecida 
-    a un campo de tabla, pero el valor que almacena lo introduce el usuario cuando se ejecuta la consulta.
-   </p>
-   <p>
-    En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
-   </p>
-
-
-   <p>
-    <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
-    de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
-   </p>
-
-   <p>
-    Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
-    La diferencia entre escribir directamente un nombre de parámetro y definirlo con el botón Parámetros es que, 
-    si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
-   </p>
 </div>
 
 
