@@ -90,6 +90,97 @@
 
 
 <div class="nota-box">
+
+<h2 class="number-title"> Consultas:  Combinaciones</h2>
+
+<div class="flexbox">
+    <img src="..\Imagenes\S6\nueva_combinacion.PNG" alt="relaciones" width="40%" height="auto">
+  </div>
+
+
+Si no ve una relación entre los campos coincidentes, puede  agregar una combinación.
+Arrastre el campo que desee de un origen de datos hasta el campo correspondiente de otro origen de datos. 
+La tabla desde la que arrastra es la que aparecerá a la izquierda en el cuadro de diálogo Propiedades de la combinación.
+De forma predeterminada, Access crea una <em>combinación interna</em>.
+Si necesita una <em>combinación externa</em>, puede  cambiar su tipo.
+
+
+
+
+
+<h2 class="number-title"> Consultas:  Combinaciones internas y combinaciones externas </h2>
+
+
+<div class="flexbox">
+    <img src="..\Imagenes\S6\Combinaciones.PNG" alt="relaciones" width="40%" height="auto">
+  </div>
+
+<h3>Combinaciones internas</h3>
+<p>
+Solo incluye las filas (registros) en la que los campos combinados de ambas tablas sean iguales.
+</p>
+
+
+
+<p>
+Las combinaciones internas solo muestran los datos cuando hay un identificador coincidente de ambos orígenes de datos 
+conectados. 
+</p>
+
+<p>
+<b>Ejemplo:</b> si desea mostrar los productos y cantidades vendidos, debe crear una combinación interna entre
+las tablas Productos y Detalles del pedido. Cuando se ejecuta la consulta, solo devolverá los productos que aparecen 
+en pedidos (solo los productos que tienen pedidos asociados con ellos) y que, por tanto, aparecen en ambas tablas 
+</p>
+
+
+<h3>Combinaciones externas</h3>
+
+<p>
+A veces, en las consultas, desea ver todos los registros de una tabla junto con los registros coincidentes de otra.
+Para ello, podemos utilizar las <b>combinaciones externas</b>. Las combinaciones externas devuelven todos los datos
+de un origen de datos y algunos de los datos de otro origen de datos o tabla.
+</p>
+
+<p>
+<b>Ejemplo:</b> si desea ver qué productos todavía no ha vendido, cree una consulta que muestre la Id. de producto
+de la tabla Productos y las Id. de pedido coincidentes de la tabla Detalles de pedidos. Los productos que no tengan 
+registros coincidentes en la tabla Detalles de pedido devuelven el nombre del producto sin ningún valor en el 
+campo Id. de pedido.   
+</p>
+
+<h3>Combinaciones externas izquierdas y combinaciones externas derechas</h3>
+
+<p>
+En una combinación externa, la tabla que muestra <b>todos sus registros</b> se denomina <b>tabla base.</b>
+La tabla que muestra <b>solo algunos registros</b> (coincidentes) se denomina <b>tabla secundaria.</b>
+</p>
+
+<ol>
+ <b> <li><h3>Combinaciones externas izquierdas </h3></li>  </b>
+
+<p>
+Incluye <b>todos</b> los registros de la tabla con el nombre Izquierda y <b>solo</b> aquellos registros de la tabla
+con el nombre Derecha en los que los campos combinados sean iguales, por ejemplo, todos los pedidos,
+pero solo las cantidades y el Id. de producto de aquellos pedidos que tienen productos asociados con ellos.   
+</p>
+
+ <b> <li><h3>Combinaciones externas derchas </h3></li>  </b>
+
+<p>
+Incluye <b>todos</b> los registros de la tabla con el nombre Derecha y <b>solo</b> aquellos registros de la tabla con el nombre
+Izquierda en los que los campos combinados sean iguales, por ejemplo,todos los productos,
+incluso aquellos para los que no hay pedido, en cuyo caso mostrará valores en blanco en los campos Cantidad 
+e Id. de pedido.   
+</p>
+</ol>
+
+
+<p>
+<b>Observacion:</b> Es importante saber qué tabla está a la izquierda y cuál está a la derecha, pues puede diferenciar 
+la forma en la que las tablas se organizan en la ventana de consulta. Para entender qué datos recibirá de su consulta,
+lea el texto cuidadosamente en el cuadro de diálogo Propiedades de la combinación.
+</p>
 <h2 class="number-title"> Consultas: Criterios</h2>
 
 A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.
@@ -159,7 +250,6 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
  si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
 </p>
 
-<h2 class="number-title"> Condiciones</h2>
 
 <h3>Los operadores de comparación</h3>
 
