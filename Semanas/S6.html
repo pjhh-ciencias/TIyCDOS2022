@@ -14,20 +14,7 @@
     <!-- This part is to load main.js -->
     <script type="text/javascript" src="../main.js"></script>
 
-
-    <!-- Next part is for new coomands -->
-    <script>
-      window.MathJax = {
-        tex: {
-          macros: {
-            sen: "\\operatorname{sen}",
-            seg: ["\\overrightarrow{#1}", 1]
-          },
-          tags: "ams", /* this part is for numbered equations */
-          inlineMath: [['$', '$'], ['\\(', '\\)']]
-        }
-      };
-    </script>
+ 
 
     <!-- This part is for using single $ for latex input, instead of \(\) -->
     <!--<script>
@@ -165,7 +152,7 @@ con el nombre Derecha en los que los campos combinados sean iguales, por ejemplo
 pero solo las cantidades y el Id. de producto de aquellos pedidos que tienen productos asociados con ellos.   
 </p>
 
- <b> <li><h3>Combinaciones externas derchas </h3></li>  </b>
+ <b> <li><h3>Combinaciones externas derechas </h3></li>  </b>
 
 <p>
 Incluye <b>todos</b> los registros de la tabla con el nombre Derecha y <b>solo</b> aquellos registros de la tabla con el nombre
@@ -181,13 +168,52 @@ e Id. de pedido.
 la forma en la que las tablas se organizan en la ventana de consulta. Para entender qué datos recibirá de su consulta,
 lea el texto cuidadosamente en el cuadro de diálogo Propiedades de la combinación.
 </p>
-<h2 class="number-title"> Consultas: Criterios</h2>
+<h2 class="number-title"> Consultas: criterios de consulta</h2>
 
-A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.
+<p>
+Los criterios de consulta ayudan a centrar la búsqueda en elementos específicos de la base de datos de Access.
+Si algún elemento coincide con todos los criterios introducidos, aparecerá en los resultados de la consulta. 
+Para agregar un criterio a una consulta de Access, ábrala en la vista Diseño e identifique los campos (columnas)
+para los que desea especificar criterios. Si este campo no está en la cuadrícula de diseño, haga doble clic en el 
+campo para agregarlo y entonces escriba el criterio en la fila Criterios de ese campo
+</p>
 
+
+
+<p>
+Un criterio de busqueda es una expresión/cadena que puede estar compuesta por referencias de campo, operadores y constantes. 
+Access compara estas expresiones con valores de campo de consulta para determinar si incluir
+el registro que contiene cada valor. Por ejemplo, = "Oaxaca" es una expresión que Access puede comparar con valores de un campo
+de texto en una consulta. Si el valor de ese campo en un registro determinado es "Oaxaca", Access incluye el registro en los resultados de la consulta.   
+</p>
+
+
+
+
+
+
+
+<button class="respButton hvr-grow ">  Encabezados de columna </button>
+<div class="resp-box flexbox">
+<div class="flexbox">  
 <h3>Campos calculados:</h3>
 
+<h3>Encabezados de columna:</h3>
+<p>
+ Podemos cambiar el encabezado de las columnas del resultado de la consulta.
+</p>
+<p>
+ Normalmente aparece en el encabezado de la columna el nombre de la columna, si queremos cambiar ese encabezado lo 
+ indicamos en la fila Campo: escribiéndolo delante del nombre del campo y seguido de dos puntos ( : ). Se suele 
+ utilizar sobre todo para los campos calculados.
+</p>
+</div>
+</div>
 
+<button class="respButton hvr-grow ">  Campos calculados </button>
+<div class="resp-box flexbox">
+<div class="flexbox">  
+<h3>Campos calculados:</h3>
 <p>
 Al igual que podemos definir en una tabla un campo cuyo tipo de datos sea Calculado también podemos incluir campos
 calculados en las consultas.
@@ -209,18 +235,118 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
   <b>Nombre del campo: expresión</b>
 </center>
  
+</div>
+</div>
 
 
-<h3>Encabezados de columna:</h3>
+<button class="respButton hvr-grow "> El operador Como </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
 
-<p>
- Podemos cambiar el encabezado de las columnas del resultado de la consulta.
-</p>
-<p>
- Normalmente aparece en el encabezado de la columna el nombre de la columna, si queremos cambiar ese encabezado lo 
- indicamos en la fila Campo: escribiéndolo delante del nombre del campo y seguido de dos puntos ( : ). Se suele 
- utilizar sobre todo para los campos calculados.
-</p>
+    <h3>El operador Como    </h3>
+    <p>Se utiliza cuando queremos utilizar caracteres comodines para formar el valor con el que comparar.</p>
+    
+    <p>
+    Por ejemplo queremos visualizar los empleados cuyo nombre acabe en 'o'. Tenemos que utilizar el comodín *
+    y utilizar el operador <b>Como</b> para que Access reconozca el * como un comodín y no como el carácter asterisco.
+    La condición sería nombre como '*o'.
+    </p>
+    
+    <p>
+     El valor que contiene los comodines se conoce como patrón y tiene que ir encerrado entre comillas (simples o dobles). 
+     La sintaxis es la siguiente:
+    </p>
+    <center> <b>Expresión Como 'patrón'</b></center>
+    
+    <p>En la siguiente tabla te indicamos los caracteres comodines que se pueden poner en un patrón y su significado.</p>
+    
+    <table class="info">
+        <tr>
+          <th>Caracteres en patr&oacute;n</th>
+          <th>Significado</th>
+        </tr>
+        <tr>
+          <td>?</td>
+          <td>Un car&aacute;cter cualquiera</td>
+        </tr>
+        <tr>
+          <td>*</td>
+          <td>Cero o m&aacute;s caracteres</td>
+        </tr>
+        <tr>
+          <td>#</td>
+          <td>Un d&iacute;gito cualquiera (0-9)</td>
+        </tr>
+        <tr>
+          <td><strong>[</strong>ListaCaracteres<strong>]</strong></td>
+          <td>Un car&aacute;cter cualquiera de listacaracteres</td>
+        </tr>
+        <tr>
+          <td><strong>[!</strong>ListaCaracteres<strong>]</strong></td>
+          <td>Un car&aacute;cter cualquiera no incluido en listacaracteres</td>
+        </tr>
+      </table>
+    
+    
+    <ul>
+      <li>
+         <p>
+         <b>ListaCaracteres:</b> representa una lista de caracteres y puede incluir casi cualquier carácter, incluyendo dígitos, 
+          los caracteres se escriben uno detrás de otro sin espacios en blanco ni comas. Por ejemplo para sacar los nombres
+          que empiezan por a,g,r o v el patrón sería: '[agrv]*'
+        </p>
+      </li>
+    
+        <li>
+        <p>
+        Los caracteres especiales corchete de apertura [, interrogación ?, almohadilla # y asterisco * dejan de ser 
+        considerados comodines cuando van entre corchetes. Por ejemplo para buscar los nombres que contienen un asterisco,
+        el patrón sería: '*[*]*' en este caso el segundo * dentro del patrón no actúa como comodín sino como un carácter 
+        cualquiera porque va dentro de los corchetes.
+        </p>
+        </li>
+      
+        <li>
+         <p>Si no se encierra entre corchetes, la exclamación ! representa el carácter exclamación.</p>
+        </li>
+        
+        <li>
+        <p>
+        El corchete de cierre ] se puede utilizar fuera de una listacaracteres como carácter independiente pero no se puede
+        utilizar en una listacaracteres. Por ejemplo, el patrón 'a]*' permite encontrar nombres que empiecen por una a seguida de un corchete de cierre.
+        </p>
+        </li>
+    
+        <li>
+        <p>La secuencia de caracteres [] se considera una cadena de caracteres de longitud cero ("").</p>
+        </li>
+    
+        <li>
+        <p>
+        Se puede especificar un intervalo de caracteres en ListaCaracteres colocando un guión - para separar los límites inferior y superior del intervalo.
+        Por ejemplo, la secuencia [A-Z ] en patrón representa cualquier carácter comprendido en el intervalo de la A a la Z. 
+        Cuando se especifica un intervalo de caracteres, éstos deben aparecer en orden ascendente (de menor a mayor).[A-Z] es un intervalo válido,
+        pero [Z-A] no lo es. Se pueden incluir múltiples intervalos entre corchetes, sin necesidad de delimitadores. 
+        El guión - define un intervalo únicamente cuando aparece dentro de los corchetes entre dos caracteres, en cualquier otro caso representa el carácter guión.
+        </p>
+        </li>
+      
+        <p><b>Ejemplo</b></p>
+         Por ejemplo queremos saber los alumnos de determinada provincia (son los que tienen un código postal
+         que empieza por 46 seguido de tres dígitos cualesquiera, la condición podría ser [código postal] como '46###'
+        </ul>
+    
+    
+    
+</div>
+</div>
+
+
+
+
+<button class="respButton hvr-grow "> Consultas con parámetros </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
 
 
 <h3>Consultas con parámetros:</h3>
@@ -238,11 +364,11 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
  En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
 </p>
 
-
 <p>
  <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
  de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
 </p>
+
 
 <p>
  Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
@@ -251,132 +377,685 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
 </p>
 
 
-<h3>Los operadores de comparación</h3>
+</div>
+</div>
 
-<p>Estos operadores comparan el valor de una expresión con el valor de otra. Independientemente del operador 
-   si uno de los valores es nulo, el resultado de la comparación será nulo (ni verdadero ni falso).</p>
 
-<h3>El operador Entre</h3>
-
-<p>Tiene la siguiente sintaxis:</p>
-
-<center><b> Expresión Entre valor1 Y valor2 </b></center>
-<p>Examina si el valor de la expresión está comprendido entre los dos valores definidos por valor1 y valor2.
-   Normalmente la expresión será un nombre de campo.</p>
-
-<h3>El operador In</h3>
-
-<p>Tiene la siguiente sintaxis:</p>
-
-<center> <b>Expresión In (valor1, valor2, ...)</b></center>
-
-<p>Examina si el valor de la expresión es uno de los valores incluidos en la lista de valores escritos entre paréntesis.</p>
+<p>A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.</p>
 
 
 
-<h3>El operador Es nulo</h3>
+<button class="respButton hvr-grow ">  Criterios para campos de texto, Memo e hipervínculo </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+Los ejemplos siguientes son para el campo estado_origen de una consulta que se basa en una tabla que almacena información de contactos. 
 
-<p>
-Cuando una columna que interviene en una condición contiene el valor nulo, el resultado de la condición no es verdadero 
-ni falso, sino nulo, sea cual sea el test que se haya utilizado. Por eso si queremos listar las filas que no tienen valor
-en una determinada columna, no podemos utilizar la condición columna = nulo debemos utilizar un operador especial,
- el operador Es nulo. Tiene la siguiente sintaxis:
-</p>
-<center><b>Expresión Es nulo, </b> </center>
-<p>donde expresión normalmente será un nombre de columna.</p>
-
-<h3>El operador Como    </h3>
-<p>Se utiliza cuando queremos utilizar caracteres comodines para formar el valor con el que comparar.</p>
-
-<p>
-Por ejemplo queremos visualizar los empleados cuyo nombre acabe en 'o'. Tenemos que utilizar el comodín *
-y utilizar el operador <b>Como</b> para que Access reconozca el * como un comodín y no como el carácter asterisco.
-La condición sería nombre como '*o'.
-</p>
-
-<p>
- El valor que contiene los comodines se conoce como patrón y tiene que ir encerrado entre comillas (simples o dobles). 
- La sintaxis es la siguiente:
-</p>
-<center> <b>Expresión Como 'patrón'</b></center>
-
-<p>En la siguiente tabla te indicamos los caracteres comodines que se pueden poner en un patrón y su significado.</p>
-
-<table class="info">
+<table>
+    <thead>
+        <tr>
+            <td colspan="2"> <center><h3>Criterios para campos de texto, Memo e hipervínculo</h3></center></td>
+           </tr>
+      <tr>
+        <th style="width:380px">
+          <p>
+            <b class="ocpLegacyBold">Criterios</b>
+          </p>
+        </th>
+        <th>
+          <p>
+            <b class="ocpLegacyBold">Descripción</b>
+          </p>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+        
+      <tr>
+        <td>
+          <p>&gt;25 y &lt;50</p>
+        </td>
+        <td>
+          <p>Este criterio se aplica a un campo de número, como Precio o ExistenciasDeUnidades. Solo incluye aquellos registros en los que el campo Precio o ExistenciasDeUnidades contiene <b class="ocpLegacyBold">un valor superior a 25 y menor que 50</b>.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>DifFecha ( "aaaa", [FechaNacimiento], Fecha()) &gt; 30</p>
+        </td>
+        <td>
+          <p>Este criterio se aplica a un campo de fecha y hora, como FechaNacimiento. Solo los registros en los que <b class="ocpLegacyBold">el número de años que transcurren entre la </b><b class="ocpLegacyBold">FechaNacimiento</b><b class="ocpLegacyBold"> de una persona y la fecha de hoy es mayor que 30</b> se incluyen en el resultado de la consulta. </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Is Null</p>
+        </td>
+        <td>
+          <p>Este criterio se puede aplicar a cualquier tipo de campo para mostrar los registros en los que <b class="ocpLegacyBold">el valor del campo es NULL</b>. </p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+            <p>"China"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el campo PaísRegión tenga el valor China.</p>
+          </td>
+      </tr>
+      <tr>
+        <td>
+            <p>No "México"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el campo PaísRegión tenga un valor distinto de México.</p>
+          </td>
+          <td>
+      </tr>
+      <tr>
+        <td>
+            <p>Como U*</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países o regiones cuyos nombres empiecen por "U", como Uruguay, Uganda, etc. </p>
+          </td>
+      </td>
+      </tr>
+      <tr>
+        <td>
+            <p>No como U*</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países o regiones cuyos nombres empiezan por un carácter distinto de "U".</p>
+          </td>
+      </tr>
+      <tr>
+    <td>
+        <p>Como "*Corea*"</p>
+    </td>
+    <td>
+      <p>Devuelvan registros de todos los países o regiones que contengan la cadena "Corea".</p>
+    </td>
+      </tr>
+      <tr>
+        <td>
+            <p>No como "*Corea*"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países o regiones que no contengan la cadena "Corea".</p>
+          </td>
+      </tr>
     <tr>
-      <th>Caracteres en patr&oacute;n</th>
-      <th>Significado</th>
+        <td>
+      <p>Como "*ina"</p>
+    </td>
+    <td>
+      <p>Devuelvan registros de todos los países o regiones cuyos nombres acaben con "ina", como China y Argentina.</p>
+    </td>
     </tr>
     <tr>
-      <td>?</td>
-      <td>Un car&aacute;cter cualquiera</td>
+        <td>
+        <p>No como "*ina"</p>
+    </td>
+    <td>
+      <p>Devuelvan registros de todos los países o regiones cuyos nombres no acaben con "ina", como China y Argentina.</p>
+    </td>
     </tr>
     <tr>
-      <td>*</td>
-      <td>Cero o m&aacute;s caracteres</td>
+        <td>
+            <p>Es Nulo</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que no hay ningún valor en el campo.</p>
+          </td>
     </tr>
     <tr>
-      <td>#</td>
-      <td>Un d&iacute;gito cualquiera (0-9)</td>
+        <td>
+            <p>No es Nulo</p>
+          </td>
+          <td>
+            <p>Devuelvan elementos en los que no falta el valor del campo PrecioUnidad.</p>
+          </td>
     </tr>
     <tr>
-      <td><strong>[</strong>ListaCaracteres<strong>]</strong></td>
-      <td>Un car&aacute;cter cualquiera de listacaracteres</td>
+        <td>
+                  <p>"" (un par de comillas)</p>
+                </td>
+                <td>
+                  <p>Devuelvan registros en los que el campo tiene un valor en blanco (pero no nulo). Por ejemplo, los registros de ventas realizadas a otro departamento podrían contener un valor en blanco en el campo PaísRegión.</p>
     </tr>
     <tr>
-      <td><strong>[!</strong>ListaCaracteres<strong>]</strong></td>
-      <td>Un car&aacute;cter cualquiera no incluido en listacaracteres</td>
+        <td>
+            <p>No ""</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el campo PaísRegión no tiene un valor en blanco.</p>
+          </td>
     </tr>
+    <tr>
+        <td>
+            <p>"" O Es Nulo</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que no hay ningún valor en el campo, o bien el campo tiene un valor en blanco.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>No es Nulo Y Sin ""</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el campo PaísRegión tiene un valor no en blanco y no nulo.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>No es Nulo Y Sin ""</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el campo PaísRegión tiene un valor no en blanco y no nulo.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt;= "México"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países o regiones a partir de México y posteriores por orden alfabético.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Como "[A-D]*"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de países o regiones cuyos nombres empiezan por las letras "A" a la "D".</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>"Estados Unidos" O "Reino Unido"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de Estados Unidos y Reino Unido.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>En("Francia", "China", "Alemania", "Japón")</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países y regiones especificados en la lista.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Der([PaísRegión], 1) = "y"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de todos los países y regiones cuya última letra sea "y".</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Longitud([PaísRegión]) &gt; 10</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de países y regiones cuyo nombre esté formado por más de 10 caracteres.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Como "Chi??"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros países o regiones, como China y Chile, cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
+        
+          </td>
+    </tr>
+  
   </table>
+</div>
+</div>
 
 
-<ul>
-  <li>
-     <p>
-     <b>ListaCaracteres:</b> representa una lista de caracteres y puede incluir casi cualquier carácter, incluyendo dígitos, 
-      los caracteres se escriben uno detrás de otro sin espacios en blanco ni comas. Por ejemplo para sacar los nombres
-      que empiezan por a,g,r o v el patrón sería: '[agrv]*'
-    </p>
-  </li>
 
-    <li>
-    <p>
-    Los caracteres especiales corchete de apertura [, interrogación ?, almohadilla # y asterisco * dejan de ser 
-    considerados comodines cuando van entre corchetes. Por ejemplo para buscar los nombres que contienen un asterisco,
-    el patrón sería: '*[*]*' en este caso el segundo * dentro del patrón no actúa como comodín sino como un carácter 
-    cualquiera porque va dentro de los corchetes.
-    </p>
-    </li>
-  
-    <li>
-     <p>Si no se encierra entre corchetes, la exclamación ! representa el carácter exclamación.</p>
-    </li>
+
+<button class="respButton hvr-grow ">  Criterios para campos de número, moneda y autonuméricos </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+
+    Los ejemplos siguientes son para el campo Precio_unitario de una consulta que se basa en una tabla que almacena información de productos.
+    El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> <center><h3>Criterios para campos de número, moneda y autonuméricos</h3></center></th>
+           </tr>
+           <tr>
+            <th style="width:200px">
+              <p>
+                <b class="ocpLegacyBold">Criterios</b>
+              </p>
+            </th>
+           
+            <th>
+              <p>
+                <b class="ocpLegacyBold">Descripción</b>
+              </p>
+            </th>
+          </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>
+            <p>No 1000</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio unitario del producto no es 1000 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&lt; 100<br>&lt;= 100</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio unitario es menor que &#36;100  (&lt;100). La segunda expresión (&lt;=100) muestra los registros en los que el precio por unidad es menor o igual que &#36;100 .</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt;99,99<br>&gt;=99,99</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio unitario es mayor que 99.99 $ (&gt;99.99). La segunda expresión muestra los registros en los que el precio por unidad es mayor o igual que 99.99 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>20 o 25</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio por unidad es 20 $ o 25 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt;49,99 Y &lt;99,99<br>O bien,<br>Entre 50 Y 100</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio unitario está entre 49,99 $ y 99,99 $ (pero sin incluir estas cantidades).</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&lt;50 O &gt;100</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio por unidad no está entre 50 $ y 100 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>En(20, 25, 30)</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio por unidad es 20 $, 25 $ o 30 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Como "*4,99"</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio por unidad acaba con "4,99", como 4,99 $, 14,99 $, 24,99 $, etc.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Is Null</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que no se ha especificado ningún valor en el campo PrecioUnidad.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>No es Nulo</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que no falta el valor del campo PrecioUnidad.</p>
+          </td>
+    </tr>
+</tbody>
+</table>
+
+</div>
+</div>
+
+
+
+<button class="respButton hvr-grow ">  Criterios para campos de fecha y hora </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+Los ejemplos siguientes son para el campo FechaPedido en una consulta basada en una tabla que almacena información de Pedidos. 
+El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+
+<table>
+    <thead>
+        <tr>
+            <th colspan="2"> <center><h3>Criterios para campos de número, moneda y autonuméricos</h3></center></th>
+           </tr>
+           <tr>
+            <th style="width:300px">
+              <p>
+                <b class="ocpLegacyBold">Criterios</b>
+              </p>
+            </th>
+           
+            <th>
+              <p>
+                <b class="ocpLegacyBold">Descripción</b>
+              </p>
+            </th>
+          </tr>
+    </thead>
+    <tbody>
+
+    <tr>
+        <td>
+            <p>#02/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar el 2 de febrero de 2006. Recuerde rodear los valores de fecha con el carácter # para que Access pueda distinguir entre valores de fecha y cadenas de texto. </p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>No 1000</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que el precio unitario del producto no es 1000 $.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>No #02/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar cualquier día menos el 2 de febrero de 2006.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&lt; #02/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar después del 2 de febrero de 2006.</p>
+            <p>Si desea ver las transacciones que tuvieron lugar en esta fecha o antes de ella, use el operador <b class="ocpLegacyBold">&lt;=</b> en vez del operador <b class="ocpLegacyBold">&lt;</b>.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt; #02/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar antes del 2 de febrero de 2006.</p>
+            <p>Si desea ver las transacciones que tuvieron lugar en esta fecha o después de ella, use el operador <b class="ocpLegacyBold">&gt;=</b> en vez del operador <b class="ocpLegacyBold">&gt;</b>.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&gt;#02/02/2006# y &lt;#04/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan los registros en los que las transacciones tuvieron lugar entre el 2 de febrero de 2006 y el 4 de febrero de 2006.</p>
+            <p>También puede usar el operador <b class="ocpLegacyBold">Entre</b> para filtrar según un intervalo de valores, incluidos los extremos. Por ejemplo, Entre #02/02/2006# y #04/02/2006# es lo mismo que &gt;=#02/02/2006# y &lt;=#04/02/2006#.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>&lt;#02/02/2006# o &gt;#04/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan los registros en los que las transacciones tuvieron lugar antes del 2 de febrero de 2006 o después del 4 de febrero de 2006.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>#02/02/2006# o #03/02/2006#</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar el 2 de febrero de 2006 o el 3 de febrero de 2006.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>DatePart("m", [SalesDate]) = 12</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que las transacciones tuvieron lugar en diciembre de cualquier año.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>DatePart("q", [SalesDate]) = 1</p>
+          </td>
+          <td>
+            <p>Devuelvan registros en los que las transacciones tuvieron lugar en el primer trimestre de cualquier año.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Fecha()</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar el día actual. Si hoy es 02/02/2006, verá los registros en los que el campo FechaPedido esté definido en 2 de febrero de 2006.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Fecha()-1</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar el día anterior al día actual. Si hoy es 02/02/2006, verá los registros del 1 de febrero de 2006.</p>
+          </td>
+    </tr>
+    <tr>
+        <td>
+            <p>Date() + 1</p>
+          </td>
+          <td>
+            <p>Devuelvan registros de transacciones que tuvieron lugar el día posterior al día actual. Si hoy es 02/02/2006, verá los registros del 3 de febrero de 2006.</p>
+          </td>
+    </tr>
+
+
+
+
+
+
+
+    <tr>
+        
+        <td>
+          <p>DatePart("ww", [SalesDate]) = DatePart("ww", Date()) and Year( [SalesDate]) = Year(Date())</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tuvieron lugar durante la semana actual. La semana empieza el domingo y acaba el sábado.</p>
+        </td>
+      </tr>
+      <tr>
+        
+        <td>
+          <p>Year([SalesDate])* 53 + DatePart("ww", [SalesDate]) = Year(Date())* 53 + DatePart("ww", Date()) - 1 </p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tuvieron lugar durante la semana pasada. La semana empieza el domingo y acaba el sábado.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate])* 53+DatePart("ww", [SalesDate]) = Year(Date())* 53+DatePart("ww", Date()) + 1 </p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tendrán lugar la semana siguiente. La semana empieza el domingo y acaba el sábado.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Between Date() and Date()-6</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tuvieron lugar durante los últimos 7 días. Si hoy es el 02/02/2006, verá los registros correspondientes al intervalo comprendido entre el 24 de enero de 2006 y el 2 de febrero de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate]) = Year(Now()) And Month([SalesDate]) = Month(Now())</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del mes actual. Si hoy es 02/02/2006, verá los registros de febrero de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate])* 12 + DatePart("m", [SalesDate]) = Year(Date())* 12 + DatePart("m", Date()) - 1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del mes anterior. Si hoy es 02/02/2006, verá los registros de enero de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate])* 12 + DatePart("m", [SalesDate]) = Year(Date())* 12 + DatePart("m", Date()) + 1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del mes siguiente. Si hoy es 02/02/2006, verá los registros de marzo de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Between Date( ) And DateAdd("M", -1, Date( ))</p>
+        </td>
+        <td>
+          <p>Registros de ventas de un mes. Si hoy es 02/02/2006, verá los registros del período entre el 2 de enero de 2006. y el 2 de febrero de 2006</p>
+        </td>
+      </tr>
+      <tr>
+        
+        <td>
+          <p>Year([SalesDate]) = Year(Now()) And DatePart("q", Date()) = DatePart("q", Now())</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del trimestre en curso. Si hoy es 02/02/2006, verá los registros correspondientes al primer trimestre de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+                <td>
+          <p>Year([SalesDate])*4+DatePart("q",[SalesDate]) = Year(Date())*4+DatePart("q",Date())- 1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del trimestre anterior. Si hoy es 02/02/2006, verá los registros correspondientes al último trimestre de 2005.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate])*4+DatePart("q",[SalesDate]) = Year(Date())*4+DatePart("q",Date())+1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del trimestre siguiente. Si hoy es 02/02/2006, verá los registros correspondientes al segundo trimestre de 2006.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Year([SalesDate]) = Year(Date())</p>
+        </td>
+        <td>
+          <p>Devuelvan registros del año en curso. Si hoy es 02/02/2006, verá los registros del año 2006.</p>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <p>Year([SalesDate]) = Year(Date()) - 1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tuvieron lugar durante el año pasado. Si hoy es 02/02/2006, verá los registros del año 2005.</p>
+        </td>
+      </tr>
+      <tr>
+      
+        <td>
+          <p>Year([SalesDate]) = Year(Date()) + 1</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones con fecha del año siguiente. Si hoy es 02/02/2006, verá los registros del año 2007.</p>
+        </td>
+      </tr>
+      <tr>
+        
+        <td>
+          <p>Year([SalesDate]) = Year(Date()) and Month([SalesDate]) &lt;= Month(Date()) and Day([SalesDate]) &lt;= Day (Date())</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones fechados entre el 1 de enero del año en curso y hoy. Si hoy es 02/02/2006, verá los registros del período entre el 1 de enero de 2006 y el 02/02/2006.</p>
+        </td>
+      </tr>
+      <tr>
+      
+        <td>
+          <p>&lt; Date()</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tengan lugar después de hoy.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>&gt; Date()</p>
+        </td>
+        <td>
+          <p>Devuelvan registros de transacciones que tendrán lugar después de hoy.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Is Null</p>
+        </td>
+        <td>
+          <p>Devuelvan registros en los que falte la fecha de la transacción.</p>
+        </td>
+      </tr>
+      <tr>
+       
+        <td>
+          <p>Is Not Null</p>
+        </td>
+        <td>
+          <p>Devuelvan registros en los que se conozca la fecha de la transacción.</p>
+        </td>
+      </tr>
+
+
+
+
     
-    <li>
-    <p>
-    El corchete de cierre ] se puede utilizar fuera de una listacaracteres como carácter independiente pero no se puede
-    utilizar en una listacaracteres. Por ejemplo, el patrón 'a]*' permite encontrar nombres que empiecen por una a seguida de un corchete de cierre.
-    </p>
-    </li>
+    </tbody>
+</table>
 
-    <li>
-    <p>La secuencia de caracteres [] se considera una cadena de caracteres de longitud cero ("").</p>
-    </li>
+</div>
+</div>
 
-    <li>
-    <p>
-    Se puede especificar un intervalo de caracteres en ListaCaracteres colocando un guión - para separar los límites inferior y superior del intervalo.
-    Por ejemplo, la secuencia [A-Z ] en patrón representa cualquier carácter comprendido en el intervalo de la A a la Z. 
-    Cuando se especifica un intervalo de caracteres, éstos deben aparecer en orden ascendente (de menor a mayor).[A-Z] es un intervalo válido,
-    pero [Z-A] no lo es. Se pueden incluir múltiples intervalos entre corchetes, sin necesidad de delimitadores. 
-    El guión - define un intervalo únicamente cuando aparece dentro de los corchetes entre dos caracteres, en cualquier otro caso representa el carácter guión.
-    </p>
-    </li>
-  
-    <p><b>Ejemplo</b></p>
-     Por ejemplo queremos saber los alumnos de determinada provincia (son los que tienen un código postal
-     que empieza por 46 seguido de tres dígitos cualesquiera, la condición podría ser [código postal] como '46###'
-    </ul>
+
 
 
 
