@@ -104,15 +104,11 @@ Si necesita una <em>combinación externa</em>, puede  cambiar su tipo.
 
 <h3>Combinaciones internas</h3>
 <p>
-Solo incluye las filas (registros) en la que los campos combinados de ambas tablas sean iguales.
-</p>
-
-
-
-<p>
-Las combinaciones internas solo muestran los datos cuando hay un identificador coincidente de ambos orígenes de datos 
+Solo incluye las filas (registros) en la que los campos combinados de ambas tablas sean iguales, es decir, 
+solo muestran los datos cuando hay un identificador coincidente de ambos orígenes de datos 
 conectados. 
 </p>
+
 
 <p>
 <b>Ejemplo:</b> si desea mostrar los productos y cantidades vendidos, debe crear una combinación interna entre
@@ -120,13 +116,28 @@ las tablas Productos y Detalles del pedido. Cuando se ejecuta la consulta, solo 
 en pedidos (solo los productos que tienen pedidos asociados con ellos) y que, por tanto, aparecen en ambas tablas 
 </p>
 
+<p>
+    La mayoría de las veces, no es necesario hacer nada para usar una combinación interna. 
+    Si las tablas que agrega a una consulta ya tienen relaciones, Access crea automáticamente una combinación interna
+    entre cada par de tablas relacionadas, al agregar las tablas. Si se aplica la integridad referencial,
+    Access muestra también un "1" sobre la línea de la combinación para indicar la tabla del lado "uno" de una relación
+    de uno a varios y un símbolo de infinito (∞) para indicar la tabla del lado "varios"
+</p>
 
+<p>
+    Incluso si no ha creado relaciones, Access crea automáticamente combinaciones internas si agrega dos tablas a una 
+    consulta y cada una de ellas tiene un campo con el mismo tipo de datos o compatible y uno de los campos de
+    combinación es un clave principal. Los símbolos "uno" y "varios" no se muestran en este caso, porque no se
+     exige la integridad referencial.
+</p>
 <h3>Combinaciones externas</h3>
 
 <p>
 A veces, en las consultas, desea ver todos los registros de una tabla junto con los registros coincidentes de otra.
-Para ello, podemos utilizar las <b>combinaciones externas</b>. Las combinaciones externas devuelven todos los datos
-de un origen de datos y algunos de los datos de otro origen de datos o tabla.
+Para ello, podemos utilizar las <b>combinaciones externas</b>. Las combinaciones externas indican  a una consulta que,
+aunque algunas de las filas de ambos lados de la combinación se corresponden exactamente, la consulta debe incluir
+todas las filas de una tabla y también las filas de la otra tabla que comparten un valor común a ambos lados
+de la combinación. Las combinaciones externas pueden ser combinaciones externas izquierdas o pueden ser combinaciones externas derechas.
 </p>
 
 <p>
@@ -191,13 +202,14 @@ de texto en una consulta. Si el valor de ese campo en un registro determinado es
 
 
 
+<p>A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.</p>
 
 
+
+<!--
 <button class="respButton hvr-grow ">  Encabezados de columna </button>
 <div class="resp-box flexbox">
 <div class="flexbox">  
-<h3>Campos calculados:</h3>
-
 <h3>Encabezados de columna:</h3>
 <p>
  Podemos cambiar el encabezado de las columnas del resultado de la consulta.
@@ -209,6 +221,8 @@ de texto en una consulta. Si el valor de ese campo en un registro determinado es
 </p>
 </div>
 </div>
+-->
+
 
 <button class="respButton hvr-grow ">  Campos calculados </button>
 <div class="resp-box flexbox">
@@ -227,14 +241,27 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
 </p>
 
 <p>
- Para definir un campo como calculado, simplemente deberemos escribir una expresión en el espacio reservado 
- para indicar el campo. La sintaxis será:
+ Para crear a cabo un campo calculado, debemos situarnos en una celda vacía del diseño de la consulta y escribir la sintaxis
+correspondiente, que se compone de:
+<ul>
+<b> <li>Nombre del campo:</li></b>
+<p>
+cadena de caracteres que se corresponde con el nombre que tendrá el campo que se calculará.
 </p>
-
- <center> 
-  <b>Nombre del campo: expresión</b>
+<b><li>Dos puntos:</li> </b>
+<p>
+luego de escribir el nombre del campo, tenemos que agregar dos puntos (:) para separarlo del cálculo que se va a realizar.
+</p>
+<b><li>Fórmula:</li> </b>
+<p>sintaxis que determina los cálculos que se deben hacer para obtener los valores del nuevo campo. En nuestro caso, la sintaxis es:
+<center> 
+<b>Total:[Precio]*[Cantidad]</b>
 </center>
- 
+</p>
+</ul>
+
+<p><b>Observación: En el caso de las consultas, los campos calculados   las operaciones unicamente pueden ser definidas sobre  
+    campos con datos númericos </b> </p>
 </div>
 </div>
 
@@ -299,7 +326,7 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
     
         <li>
         <p>
-        Los caracteres especiales corchete de apertura [, interrogación ?, almohadilla # y asterisco * dejan de ser 
+        Los caracteres especiales corchete de apertura [, interrogación ?, Hashtag # y asterisco * dejan de ser 
         considerados comodines cuando van entre corchetes. Por ejemplo para buscar los nombres que contienen un asterisco,
         el patrón sería: '*[*]*' en este caso el segundo * dentro del patrón no actúa como comodín sino como un carácter 
         cualquiera porque va dentro de los corchetes.
@@ -342,53 +369,12 @@ no utilizar espacio en el disco para conservar estos valores, definiendo un camp
 </div>
 
 
-
-
-<button class="respButton hvr-grow "> Consultas con parámetros </button>
-<div class="resp-box flexbox">
-<div class="flexbox">   
-
-
-<h3>Consultas con parámetros:</h3>
-
-<p>
- A menudo, en una consulta necesitamos utilizar un valor que no es conocido en ese momento sino que queremos que lo
- introduzca el usuario cuando se ejecute la consulta. 
-</p>
-
-<p>
- En este caso necesitamos utilizar en nuestra consulta un parámetro. Un parámetro funciona de forma parecida 
- a un campo de tabla, pero el valor que almacena lo introduce el usuario cuando se ejecuta la consulta.
-</p>
-<p>
- En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
-</p>
-
-<p>
- <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
- de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
-</p>
-
-
-<p>
- Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
- La diferencia entre escribir directamente un nombre de parámetro y definirlo con el botón Parámetros es que, 
- si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
-</p>
-
-
-</div>
-</div>
-
-
-<p>A continuación se presentan  distintos operadores que podemos utilizar en una condición/criterio dentro de una regla de validación y/o consulta.</p>
-
-
-
 <button class="respButton hvr-grow ">  Criterios para campos de texto, Memo e hipervínculo </button>
 <div class="resp-box flexbox">
 <div class="flexbox">   
-Los ejemplos siguientes son para el campo estado_origen de una consulta que se basa en una tabla que almacena información de contactos. 
+<p>
+Los ejemplos siguientes son para el campo Estado de una consulta que se basa en una tabla que almacena información de contactos. 
+</p>
 
 <table>
     <thead>
@@ -410,22 +396,8 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
     </thead>
     <tbody>
         
-      <tr>
-        <td>
-          <p>&gt;25 y &lt;50</p>
-        </td>
-        <td>
-          <p>Este criterio se aplica a un campo de número, como Precio o ExistenciasDeUnidades. Solo incluye aquellos registros en los que el campo Precio o ExistenciasDeUnidades contiene <b class="ocpLegacyBold">un valor superior a 25 y menor que 50</b>.</p>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <p>DifFecha ( "aaaa", [FechaNacimiento], Fecha()) &gt; 30</p>
-        </td>
-        <td>
-          <p>Este criterio se aplica a un campo de fecha y hora, como FechaNacimiento. Solo los registros en los que <b class="ocpLegacyBold">el número de años que transcurren entre la </b><b class="ocpLegacyBold">FechaNacimiento</b><b class="ocpLegacyBold"> de una persona y la fecha de hoy es mayor que 30</b> se incluyen en el resultado de la consulta. </p>
-        </td>
-      </tr>
+     
+     <!-- 
       <tr>
         <td>
           <p>Is Null</p>
@@ -435,69 +407,70 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
         </td>
       </tr>
       <tr>
+          -->
         <td>
-            <p>"China"</p>
+            <p>"Oaxaca"</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el campo PaísRegión tenga el valor China.</p>
+            <p>Devuelvan registros en los que el campo Estado tenga el valor Oaxaca.</p>
           </td>
       </tr>
       <tr>
         <td>
-            <p>No "México"</p>
+            <p>NoEs "Durango"</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el campo PaísRegión tenga un valor distinto de México.</p>
+            <p>Devuelvan registros en los que el campo Estado tenga un valor distinto de Durango.</p>
           </td>
           <td>
       </tr>
       <tr>
         <td>
-            <p>Como U*</p>
+            <p>Como "U*"</p>
           </td>
           <td>
-            <p>Devuelvan registros de todos los países o regiones cuyos nombres empiecen por "U", como Uruguay, Uganda, etc. </p>
+            <p>Devuelvan registros de todos los estados cuyos nombres empiecen por "C", como , Chiapas, etc. </p>
           </td>
       </td>
       </tr>
       <tr>
         <td>
-            <p>No como U*</p>
+            <p>NoEs como "D*"</p>
           </td>
           <td>
-            <p>Devuelvan registros de todos los países o regiones cuyos nombres empiezan por un carácter distinto de "U".</p>
+            <p>Devuelvan registros de todos los estados cuyos nombres empiezan por un carácter distinto de "D".</p>
           </td>
       </tr>
       <tr>
     <td>
-        <p>Como "*Corea*"</p>
+        <p>Como "*Oaxaca*"</p>
     </td>
     <td>
-      <p>Devuelvan registros de todos los países o regiones que contengan la cadena "Corea".</p>
+      <p>Devuelvan registros de todos los estados que contengan la cadena "Oaxaca".</p>
     </td>
       </tr>
       <tr>
         <td>
-            <p>No como "*Corea*"</p>
+            <p>NoEs como "*Mexico*"</p>
           </td>
           <td>
-            <p>Devuelvan registros de todos los países o regiones que no contengan la cadena "Corea".</p>
+            <p>Devuelvan registros de todos estados que no contengan la cadena "Mexico".</p>
           </td>
       </tr>
     <tr>
         <td>
-      <p>Como "*ina"</p>
+      <p>Como "*a"</p>
     </td>
     <td>
-      <p>Devuelvan registros de todos los países o regiones cuyos nombres acaben con "ina", como China y Argentina.</p>
+      <p>Devuelvan registros de todos los estados cuyos nombres acaben con "a", como Oaxaca y Puebla .</p>
     </td>
     </tr>
     <tr>
         <td>
-        <p>No como "*ina"</p>
+        <p>NoEs como "*s"</p>
     </td>
     <td>
-      <p>Devuelvan registros de todos los países o regiones cuyos nombres no acaben con "ina", como China y Argentina.</p>
+      <p>Devuelvan registros de todos los países o regiones cuyos nombres no acaben con "s", como Oaxaca y Chihuahua.</p>
     </td>
     </tr>
     <tr>
@@ -513,7 +486,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>No es Nulo</p>
           </td>
           <td>
-            <p>Devuelvan elementos en los que no falta el valor del campo PrecioUnidad.</p>
+            <p>Devuelvan elementos en los que no falta el valor del campo.</p>
           </td>
     </tr>
     <tr>
@@ -521,14 +494,16 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
                   <p>"" (un par de comillas)</p>
                 </td>
                 <td>
-                  <p>Devuelvan registros en los que el campo tiene un valor en blanco (pero no nulo). Por ejemplo, los registros de ventas realizadas a otro departamento podrían contener un valor en blanco en el campo PaísRegión.</p>
+                  <p>Devuelvan registros en los que el campo tiene un valor en blanco (pero no nulo). 
+                    Por ejemplo, los registros de ventas realizadas a otro departamento podrían contener un valor 
+                    en blanco en el campo Estado.</p>
     </tr>
     <tr>
         <td>
-            <p>No ""</p>
+            <p>NoEs ""</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el campo PaísRegión no tiene un valor en blanco.</p>
+            <p>Devuelvan registros en los que el campo Estado no tiene un valor en blanco.</p>
           </td>
     </tr>
     <tr>
@@ -544,7 +519,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>No es Nulo Y Sin ""</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el campo PaísRegión tiene un valor no en blanco y no nulo.</p>
+            <p>Devuelvan registros en los que el campo Estado tiene un valor no en blanco y no nulo.</p>
           </td>
     </tr>
     <tr>
@@ -552,7 +527,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>No es Nulo Y Sin ""</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el campo PaísRegión tiene un valor no en blanco y no nulo.</p>
+            <p>Devuelvan registros en los que el campo Estado tiene un valor no en blanco y no nulo.</p>
           </td>
     </tr>
     <tr>
@@ -581,7 +556,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
     </tr>
     <tr>
         <td>
-            <p>En("Francia", "China", "Alemania", "Japón")</p>
+            <p>En("Francia", "Oaxaca", "Alemania", "Japón")</p>
           </td>
           <td>
             <p>Devuelvan registros de todos los países y regiones especificados en la lista.</p>
@@ -589,7 +564,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
     </tr>
     <tr>
         <td>
-            <p>Der([PaísRegión], 1) = "y"</p>
+            <p>Der([Estado], 1) = "y"</p>
           </td>
           <td>
             <p>Devuelvan registros de todos los países y regiones cuya última letra sea "y".</p>
@@ -597,7 +572,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
     </tr>
     <tr>
         <td>
-            <p>Longitud([PaísRegión]) &gt; 10</p>
+            <p>Longitud([Estado]) &gt; 10</p>
           </td>
           <td>
             <p>Devuelvan registros de países y regiones cuyo nombre esté formado por más de 10 caracteres.</p>
@@ -608,7 +583,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>Como "Chi??"</p>
           </td>
           <td>
-            <p>Devuelvan registros países o regiones, como China y Chile, cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
+            <p>Devuelvan registros países o regiones, como Oaxaca y Chile, cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
         
           </td>
     </tr>
@@ -623,9 +598,10 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
 <button class="respButton hvr-grow ">  Criterios para campos de número, moneda y autonuméricos </button>
 <div class="resp-box flexbox">
 <div class="flexbox">   
-
-    Los ejemplos siguientes son para el campo Precio_unitario de una consulta que se basa en una tabla que almacena información de productos.
-    El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+<p>
+Los ejemplos siguientes son para el campo Precio_unitario de una consulta que se basa en una tabla que almacena información de productos.
+El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+</p>
 <table>
     <thead>
         <tr>
@@ -646,12 +622,20 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
           </tr>
     </thead>
     <tbody>
+        <tr>
+            <td>
+              <p>&gt;25 y &lt;50</p>
+            </td>
+            <td>
+              <p>Este criterio devuelve aquellos registros en los que el campo Precio_unitario contiene <b class="ocpLegacyBold">un valor superior a 25 y menor que 50</b>.</p>
+            </td>
+          </tr>
     <tr>
         <td>
-            <p>No 1000</p>
+            <p>NoEs 1000</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio unitario del producto no es 1000 $.</p>
+            <p>Devuelvan registros en los que el precio unitario del producto no es $1000 .</p>
           </td>
     </tr>
     <tr>
@@ -667,7 +651,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>&gt;99,99<br>&gt;=99,99</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio unitario es mayor que 99.99 $ (&gt;99.99). La segunda expresión muestra los registros en los que el precio por unidad es mayor o igual que 99.99 $.</p>
+            <p>Devuelvan registros en los que el precio unitario es mayor que $99.99  (&gt;99.99). La segunda expresión muestra los registros en los que el precio por unidad es mayor o igual que 99.99 $.</p>
           </td>
     </tr>
     <tr>
@@ -675,7 +659,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>20 o 25</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio por unidad es 20 $ o 25 $.</p>
+            <p>Devuelvan registros en los que el precio por unidad es $20  o $25.</p>
           </td>
     </tr>
     <tr>
@@ -683,7 +667,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>&gt;49,99 Y &lt;99,99<br>O bien,<br>Entre 50 Y 100</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio unitario está entre 49,99 $ y 99,99 $ (pero sin incluir estas cantidades).</p>
+            <p>Devuelvan registros en los que el precio unitario está entre $49,99  y $99,99  (pero sin incluir estas cantidades).</p>
           </td>
     </tr>
     <tr>
@@ -691,7 +675,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>&lt;50 O &gt;100</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio por unidad no está entre 50 $ y 100 $.</p>
+            <p>Devuelvan registros en los que el precio por unidad no está entre $50  y $100 .</p>
           </td>
     </tr>
     <tr>
@@ -699,7 +683,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>En(20, 25, 30)</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio por unidad es 20 $, 25 $ o 30 $.</p>
+            <p>Devuelvan registros en los que el precio por unidad es $20 , $25  o $30 .</p>
           </td>
     </tr>
     <tr>
@@ -707,7 +691,7 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
             <p>Como "*4,99"</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio por unidad acaba con "4,99", como 4,99 $, 14,99 $, 24,99 $, etc.</p>
+            <p>Devuelvan registros en los que el precio por unidad acaba con "4.99", como $4.99 , $14.99, $24.99, etc.</p>
           </td>
     </tr>
     <tr>
@@ -737,8 +721,10 @@ Los ejemplos siguientes son para el campo estado_origen de una consulta que se b
 <button class="respButton hvr-grow ">  Criterios para campos de fecha y hora </button>
 <div class="resp-box flexbox">
 <div class="flexbox">   
+<p>
 Los ejemplos siguientes son para el campo FechaPedido en una consulta basada en una tabla que almacena información de Pedidos. 
 El criterio se especifica en la fila Criterios del campo en la cuadrícula de diseño de la consulta.
+</p>
 
 <table>
     <thead>
@@ -760,7 +746,14 @@ El criterio se especifica en la fila Criterios del campo en la cuadrícula de di
           </tr>
     </thead>
     <tbody>
-
+        <tr>
+            <td>
+              <p>DifFecha ( "aaaa", [FechaPedido], Fecha()) &gt; 30</p>
+            </td>
+            <td>
+              <p>Devuelve solo los registros en los que <b class="ocpLegacyBold">el número de años que transcurren entre la </b><b class="ocpLegacyBold">FechaPedido</b><b class="ocpLegacyBold"> y la fecha de hoy es mayor que 30</b> se incluyen en el resultado de la consulta. </p>
+            </td>
+          </tr>
     <tr>
         <td>
             <p>#02/02/2006#</p>
@@ -774,7 +767,7 @@ El criterio se especifica en la fila Criterios del campo en la cuadrícula de di
             <p>No 1000</p>
           </td>
           <td>
-            <p>Devuelvan registros en los que el precio unitario del producto no es 1000 $.</p>
+            <p>Devuelvan registros en los que el precio unitario del producto no es $1000.</p>
           </td>
     </tr>
     <tr>
@@ -1056,6 +1049,45 @@ El criterio se especifica en la fila Criterios del campo en la cuadrícula de di
 </div>
 
 
+
+
+
+
+<button class="respButton hvr-grow "> Consultas con parámetros </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+
+
+<h3>Consultas con parámetros:</h3>
+
+<p>
+ A menudo, en una consulta necesitamos utilizar un valor que no es conocido en ese momento sino que queremos que lo
+ introduzca el usuario cuando se ejecute la consulta. 
+</p>
+
+<p>
+ En este caso necesitamos utilizar en nuestra consulta un parámetro. Un parámetro funciona de forma parecida 
+ a un campo de tabla, pero el valor que almacena lo introduce el usuario cuando se ejecuta la consulta.
+</p>
+<p>
+ En una consulta cuando utilizamos un nombre de campo que no está en el origen de datos, Access considera este campo como un parámetro y cuando se ejecuta la consulta nos pide Introducir el valor del parámetro mediante un cuadro de diálogo
+</p>
+
+<p>
+ <b>Observacion</b> Cuando pongamos el nombre del parámetro es importante escribirlo entre corchetes,
+ de lo contrario Access le añadirá comillas y no lo considerará como un nombre de parámetro sino como un valor.
+</p>
+
+
+<p>
+ Otra forma de utilizar un parámetro en una consulta es definiéndolo mediante el botón Parámetros de la pestaña Diseño.
+ La diferencia entre escribir directamente un nombre de parámetro y definirlo con el botón Parámetros es que, 
+ si le hemos asignado un tipo de dato, Access comprueba automáticamente el tipo del valor introducido por el usuario.
+</p>
+
+
+</div>
+</div>
 
 
 
