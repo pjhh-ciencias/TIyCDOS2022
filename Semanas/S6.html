@@ -254,14 +254,14 @@ luego de escribir el nombre del campo, tenemos que agregar dos puntos (:) para s
 </p>
 <b><li>Fórmula:</li> </b>
 <p>sintaxis que determina los cálculos que se deben hacer para obtener los valores del nuevo campo. En nuestro caso, la sintaxis es:
-<center> 
-<b>Total:[Precio]*[Cantidad]</b>
-</center>
 </p>
 </ul>
+<center> 
+  <b>Total:[Precio]*[Cantidad]</b>
+  </center>
 
-<p><b>Observación: En el caso de las consultas, los campos calculados   las operaciones unicamente pueden ser definidas sobre  
-    campos con datos númericos </b> </p>
+<p><b>Observación:</b> En el caso de las consultas, los campos calculados   las operaciones unicamente pueden ser definidas sobre  
+    campos con datos númericos  </p>
 </div>
 </div>
 
@@ -358,9 +358,11 @@ luego de escribir el nombre del campo, tenemos que agregar dos puntos (:) para s
         </p>
         </li>
       
-        <p><b>Ejemplo</b></p>
+        <p>
+        <b>Ejemplo</b>
          Por ejemplo queremos saber los alumnos de determinada provincia (son los que tienen un código postal
          que empieza por 46 seguido de tres dígitos cualesquiera, la condición podría ser [código postal] como '46###'
+        </p>
         </ul>
     
     
@@ -548,18 +550,18 @@ Los ejemplos siguientes son para el campo Estado de una consulta que se basa en 
     </tr>
     <tr>
         <td>
-            <p>"Estados Unidos" O "Reino Unido"</p>
+            <p>"Durango" O "Zacatecas"</p>
           </td>
           <td>
-            <p>Devuelvan registros de Estados Unidos y Reino Unido.</p>
+            <p>Devuelvan registros donde aparecen los  estados de Durango y Zacatecas.</p>
           </td>
     </tr>
     <tr>
         <td>
-            <p>En("Francia", "Oaxaca", "Alemania", "Japón")</p>
+            <p>En("Chiapas", "Oaxaca", "Guerrero")</p>
           </td>
           <td>
-            <p>Devuelvan registros de todos los países y regiones especificados en la lista.</p>
+            <p>Devuelvan registros de todos los estados especificados en la lista.</p>
           </td>
     </tr>
     <tr>
@@ -567,7 +569,7 @@ Los ejemplos siguientes son para el campo Estado de una consulta que se basa en 
             <p>Der([Estado], 1) = "y"</p>
           </td>
           <td>
-            <p>Devuelvan registros de todos los países y regiones cuya última letra sea "y".</p>
+            <p>Devuelvan registros de todos los estados cuya última letra sea "y".</p>
           </td>
     </tr>
     <tr>
@@ -575,7 +577,7 @@ Los ejemplos siguientes son para el campo Estado de una consulta que se basa en 
             <p>Longitud([Estado]) &gt; 10</p>
           </td>
           <td>
-            <p>Devuelvan registros de países y regiones cuyo nombre esté formado por más de 10 caracteres.</p>
+            <p>Devuelvan registros de estados cuyo nombre esté formado por más de 10 caracteres.</p>
           </td>
     </tr>
     <tr>
@@ -583,7 +585,7 @@ Los ejemplos siguientes son para el campo Estado de una consulta que se basa en 
             <p>Como "Chi??"</p>
           </td>
           <td>
-            <p>Devuelvan registros países o regiones, como Oaxaca y Chile, cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
+            <p>Devuelvan registros países o regiones, como Chiapas  cuyos nombres tengan cinco caracteres y los primeros tres sean "Chi".</p>
         
           </td>
     </tr>
@@ -1092,6 +1094,241 @@ El criterio se especifica en la fila Criterios del campo en la cuadrícula de di
 
 
 
+
+<button class="respButton hvr-grow "> Función DifFecha </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+
+
+<h3> Función DifFecha</h3>
+
+<p>
+  
+La función DifFecha nos permite calcular el número de intervalos de tiempo transcurridos entre dos fechas especificadas. 
+Este intervalo de tiempo pueden ser días, meses, semanas, años, etc. Lo importante a la hora de utilizar
+la función DifFecha es indicar el intervalo adecuado.
+La sintaxis de la función tiene 5 argumentos: los tres primeros son obligatorios y los dos últimos son opcionales.
+
+<center> <b>DifFecha (“intervalo”;[fecha 1];[fecha 2];primer_día_semana; primera_semana_año)</b></center></p>
+
+
+<table class="banded">
+  <thead>
+    <tr>
+      <td>
+        <p>argumento</p>
+      </td>
+      <td>
+        <p>Descripción</p>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p>
+          <i class="ocpItalic">intervalo</i>
+        </p>
+      </td>
+      <td>
+        <p>Obligatorio. Expresión de cadena que es el intervalo de tiempo que se usa para calcular la diferencia entre <b class="ocpLegacyBold"><i class="ocpItalic">fecha1</i></b> y <b class="ocpLegacyBold"><i class="ocpItalic">fecha2.</i></b></p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <i class="ocpItalic">fecha1</i>, <i class="ocpItalic">fecha2</i></p>
+      </td>
+      <td>
+        <p>Obligatorio. <b class="ocpLegacyBold">Variant</b> (<b class="ocpLegacyBold">Fecha</b>). Dos fechas que se desea utilizar en el cálculo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <i class="ocpItalic">primer_día_semana</i>
+        </p>
+      </td>
+      <td>
+        <p>Opcional. Un constante que especifica el primer día de la semana. Si no se especifica ningún valor, se supone que es el domingo.</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>
+          <i class="ocpItalic">primera_semana_año</i>
+        </p>
+      </td>
+      <td>
+        <p>Opcional. Una constante que especifica la primera semana del año. Si no se especifica, se entiende que la primera semana es aquella que contiene el día 1 de enero.</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Configuración</h3>
+
+
+<table class="banded">
+  <thead>
+    <tr>
+      <td>
+        <p>Configuración</p>
+      </td>
+      <td>
+        <p>Descripción</p>
+      </td>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>
+        <p>yyyy</p>
+      </td>
+      <td>
+        <p>Año</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>q</p>
+      </td>
+      <td>
+        <p>Trimestre</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>m</p>
+      </td>
+      <td>
+        <p>Mes</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>y</p>
+      </td>
+      <td>
+        <p>Día del año</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>d</p>
+      </td>
+      <td>
+        <p>Día</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>w</p>
+      </td>
+      <td>
+        <p>Weekday</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>ww</p>
+      </td>
+      <td>
+        <p>Semana</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>h</p>
+      </td>
+      <td>
+        <p>Hora</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>n</p>
+      </td>
+      <td>
+        <p>Minuto</p>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <p>s</p>
+      </td>
+      <td>
+        <p>Segundo</p>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+<p>
+  El intervalo es el primer argumento de la función, hemos de escribirlo entre comillas,
+  pudiendo disponer de los siguientes intervalos:
+  <ul>
+    <li>“a” años</li>
+    <li>“d” días</li>
+<li>“w” día de la semana (por ejemplo miércoles transcurridos entre las dos fechas)</li>
+<li>“ww” semanas</li>
+<li>“m” meses</li>
+<li>“q” trimestres</li>
+<li>“y” días del año (transcurridos entre dos fechas, es lo mismo que especificar d)</li>
+<li>“yyyy” años</li>
+<li>“h” horas</li>
+<li>“n” minutos</li>
+<li>“s” segundos</li>
+    </li>
+  </ul>
+</p>
+
+<p> Fecha 1 y Fecha 2 son las fechas entre las cuales queremos calcular el intervalo.</p>
+
+<p><b>Ejemplo:</b> Tenemos una tabla de pedidos, y queremos saber cuantos días han transcurrido 
+  entre la fecha de pedido y la fecha de entrega. Creamos una consulta en la que utilizamos la función DifFecha 
+  con la siguiente expresión:
+
+<center><b>Días transcurridos:DifFecha("d";[Fecha_Pedido];[Fecha_Entrega])</b></center>
+
+
+</p>
+
+<p><b>ARGUMENTOS OPCIONALES:</b></p>
+
+<p>
+  Primer día de la semana, es una constante numérica, por defecto es 1, y corresponde al domingo, 
+  ya que se rige por el calendario anglosajón, cuyas semanas comienzan en domingo. Si queremos especificar 
+  que el primer día de la semana es el lunes escribiríamos un 2).
+</p>
+
+
+
+
+<p>
+  Primera semana, en este argumento se indica cual es la primera semana del año. Si no es especificamos nada, 
+  Access toma como primera semana del año la semana del 1 de enero.
+</p>
+
+
+
+
+</div>
+</div>
+
+
+
+
+
+<button class="respButton hvr-grow "> Funciones (organizadas por categoría) </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+
+  <p>
+  <a href="https://support.microsoft.com/es-es/office/funciones-organizadas-por-categor%C3%ADa-b8b136c3-2716-4d39-94a2-658ce330ed83
+  ">Funciones comunes que se usan en expresiones de Microsoft Access.</a>.
+  </p>
 </div>
 
 
