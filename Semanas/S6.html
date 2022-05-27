@@ -1321,6 +1321,68 @@ La sintaxis de la función tiene 5 argumentos: los tres primeros son obligatorio
 
 
 
+<button class="respButton hvr-grow ">  Consulta de Totales </button>
+<div class="resp-box flexbox">
+<div class="flexbox">   
+<p>Para calcular los totales dentro de una consulta, pulsa el botón Totales de la barra de herramientas en Vista Diseño para abrir la fila Total en la cuadrícula de diseño.</p>
+
+<h3>Totales dentro de grupos</h3>
+<p>
+  La primera vez que pulsemos el botón Totales en la barra de herramientas, Access visualiza Agrupar
+  por en la fila Total de todos los campos que se encuentren en la cuadrícula de diseño.
+  En este momento, los registros de cada campo estarán agrupados pero NO totalizados.
+  Podemos crear totales reemplazando el ajuste Agrupar por con algunas funciones de totales en la fila Total.
+</p>  
+
+<p>Access proporciona hasta nueve funciones de totales diferentes:</p>
+
+<table>
+  <tbody>
+  <tr>
+  <td width="14%" valign="top"><em>Suma&nbsp;</em></td>
+  <td width="86%" valign="top">Calcula la <em>suma</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>Promedio&nbsp;</em></td>
+  <td width="86%" valign="top">Calcula la <em>media aritm&eacute;tica</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. <strong>Access</strong> no incluye los valores nulos en el c&aacute;lculo&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>M&iacute;n&nbsp;</em></td>
+  <td width="86%" valign="top">Da por resultado el <em>m&iacute;nimo</em> valor encontrado en esta columna dentro de cada grupo. Para valores num&eacute;ricos, devuelve el valor m&aacute;s peque&ntilde;o. Para valores de texto, devuelve el valor m&aacute;s peque&ntilde;o en la secuencia recogida, sin tener en cuenta las may&uacute;sculas o min&uacute;sculas. <strong>Access</strong> ignora los valores nulos&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>M&aacute;x&nbsp;</em></td>
+  <td width="86%" valign="top">Da por resultado el <em>mayor</em> valor encontrado en esta columna dentro de cada grupo. Para valores num&eacute;ricos, devuelve el valor mayor. Para valores de texto, devuelve el valor m&aacute;s alto en la secuencia recogida, sin tener en cuenta las may&uacute;sculas o min&uacute;sculas. <strong>Access</strong> ignora los valores nulos&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>Cuenta&nbsp;</em></td>
+  <td width="86%" valign="top">Da por resultado el <em>n&uacute;mero de filas</em> en las que el campo especificado no posee un valor nulo. Tambi&eacute;n podemos introducir la expresi&oacute;n <em>Cuenta(*) </em>en la fila Campo para contar todas las filas de cada grupo, independientemente de la existencia de valores nulos&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>DesVest&nbsp;</em></td>
+  <td width="86%" valign="top">Calcula la <em>desviaci&oacute;n t&iacute;pica </em>de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. Si el grupo no contiene al menos dos filas, <strong>Access</strong> devuelve un valor nulo&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>Var&nbsp;</em></td>
+  <td width="86%" valign="top">Calcula la <em>varianza</em> de todos los valores de este campo en cada grupo. S&oacute;lo podemos especificar esta funci&oacute;n en columnas de campos num&eacute;ricos o de moneda. Si el grupo no contiene al menos dos filas, <strong>Access</strong> devuelve un valor nulo&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>Primero&nbsp;</em></td>
+  <td width="86%" valign="top">Devuelve el <em>primer</em> valor de este campo&nbsp;</td>
+  </tr>
+  <tr>
+  <td width="14%" valign="top"><em>&Uacute;ltimo&nbsp;</em></td>
+  <td width="86%" valign="top">Devuelve el <em>&uacute;ltimo</em> valor de este campo&nbsp;</td>
+  </tr>
+  </tbody>
+  </table>
+  En la lista desplegable de la fila Total de la cuadrícula, también podemos encontrar un parámetro llamado Expresión. Elija este parámetro cuando desees crear una expresión en la fila Campo que utilice alguna de las funciones de totales listadas anteriormente.
+</div>
+</div>
+
+
+
+
 <button class="respButton hvr-grow "> Funciones (organizadas por categoría) </button>
 <div class="resp-box flexbox">
 <div class="flexbox">   
@@ -1329,7 +1391,7 @@ La sintaxis de la función tiene 5 argumentos: los tres primeros son obligatorio
   <a href="https://support.microsoft.com/es-es/office/funciones-organizadas-por-categor%C3%ADa-b8b136c3-2716-4d39-94a2-658ce330ed83
   ">Funciones comunes que se usan en expresiones de Microsoft Access.</a>.
   </p>
-</div>
+
 
 
 </body>
